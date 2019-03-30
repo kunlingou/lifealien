@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kunlinr.lifealien.enclosure.mapper.EnclosureMapper">
+  <resultMap id="BaseResultMap" type="com.kunlinr.lifealien.enclosure.po.Enclosure">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="refid" jdbcType="VARCHAR" property="refid" />
+    <result column="enclosure_name" jdbcType="VARCHAR" property="enclosureName" />
+    <result column="enclosure_size" jdbcType="DOUBLE" property="enclosureSize" />
+    <result column="enclosure_type" jdbcType="VARCHAR" property="enclosureType" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.kunlinr.lifealien.enclosure.po.Enclosure">
+    <result column="enclosure_data" jdbcType="LONGVARBINARY" property="enclosureData" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, refid, enclosure_name, enclosure_size, enclosure_type
+  </sql>
+  <sql id="Blob_Column_List">
+    enclosure_data
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.kunlinr.lifealien.enclosure.po.EnclosureExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from enclosure
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.kunlinr.lifealien.enclosure.po.EnclosureExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from enclosure
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from enclosure
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from enclosure
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.kunlinr.lifealien.enclosure.po.EnclosureExample">
+    delete from enclosure
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.kunlinr.lifealien.enclosure.po.Enclosure">
+    insert into enclosure (id, refid, enclosure_name, 
+      enclosure_size, enclosure_type, enclosure_data
+      )
+    values (#{id,jdbcType=VARCHAR}, #{refid,jdbcType=VARCHAR}, #{enclosureName,jdbcType=VARCHAR}, 
+      #{enclosureSize,jdbcType=DOUBLE}, #{enclosureType,jdbcType=VARCHAR}, #{enclosureData,jdbcType=LONGVARBINARY}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.kunlinr.lifealien.enclosure.po.Enclosure">
+    insert into enclosure
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="refid != null">
+        refid,
+      </if>
+      <if test="enclosureName != null">
+        enclosure_name,
+      </if>
+      <if test="enclosureSize != null">
+        enclosure_size,
+      </if>
+      <if test="enclosureType != null">
+        enclosure_type,
+      </if>
+      <if test="enclosureData != null">
+        enclosure_data,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="refid != null">
+        #{refid,jdbcType=VARCHAR},
+      </if>
+      <if test="enclosureName != null">
+        #{enclosureName,jdbcType=VARCHAR},
+      </if>
+      <if test="enclosureSize != null">
+        #{enclosureSize,jdbcType=DOUBLE},
+      </if>
+      <if test="enclosureType != null">
+        #{enclosureType,jdbcType=VARCHAR},
+      </if>
+      <if test="enclosureData != null">
+        #{enclosureData,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.kunlinr.lifealien.enclosure.po.EnclosureExample" resultType="java.lang.Long">
+    select count(*) from enclosure
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update enclosure
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.refid != null">
+        refid = #{record.refid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enclosureName != null">
+        enclosure_name = #{record.enclosureName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enclosureSize != null">
+        enclosure_size = #{record.enclosureSize,jdbcType=DOUBLE},
+      </if>
+      <if test="record.enclosureType != null">
+        enclosure_type = #{record.enclosureType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.enclosureData != null">
+        enclosure_data = #{record.enclosureData,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update enclosure
+    set id = #{record.id,jdbcType=VARCHAR},
+      refid = #{record.refid,jdbcType=VARCHAR},
+      enclosure_name = #{record.enclosureName,jdbcType=VARCHAR},
+      enclosure_size = #{record.enclosureSize,jdbcType=DOUBLE},
+      enclosure_type = #{record.enclosureType,jdbcType=VARCHAR},
+      enclosure_data = #{record.enclosureData,jdbcType=LONGVARBINARY}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update enclosure
+    set id = #{record.id,jdbcType=VARCHAR},
+      refid = #{record.refid,jdbcType=VARCHAR},
+      enclosure_name = #{record.enclosureName,jdbcType=VARCHAR},
+      enclosure_size = #{record.enclosureSize,jdbcType=DOUBLE},
+      enclosure_type = #{record.enclosureType,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.kunlinr.lifealien.enclosure.po.Enclosure">
+    update enclosure
+    <set>
+      <if test="refid != null">
+        refid = #{refid,jdbcType=VARCHAR},
+      </if>
+      <if test="enclosureName != null">
+        enclosure_name = #{enclosureName,jdbcType=VARCHAR},
+      </if>
+      <if test="enclosureSize != null">
+        enclosure_size = #{enclosureSize,jdbcType=DOUBLE},
+      </if>
+      <if test="enclosureType != null">
+        enclosure_type = #{enclosureType,jdbcType=VARCHAR},
+      </if>
+      <if test="enclosureData != null">
+        enclosure_data = #{enclosureData,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.kunlinr.lifealien.enclosure.po.Enclosure">
+    update enclosure
+    set refid = #{refid,jdbcType=VARCHAR},
+      enclosure_name = #{enclosureName,jdbcType=VARCHAR},
+      enclosure_size = #{enclosureSize,jdbcType=DOUBLE},
+      enclosure_type = #{enclosureType,jdbcType=VARCHAR},
+      enclosure_data = #{enclosureData,jdbcType=LONGVARBINARY}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.kunlinr.lifealien.enclosure.po.Enclosure">
+    update enclosure
+    set refid = #{refid,jdbcType=VARCHAR},
+      enclosure_name = #{enclosureName,jdbcType=VARCHAR},
+      enclosure_size = #{enclosureSize,jdbcType=DOUBLE},
+      enclosure_type = #{enclosureType,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

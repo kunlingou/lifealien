@@ -27,7 +27,7 @@
         </javaTypeResolver>
 
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="com.kunlinr.lifealien.main.po"
+        <javaModelGenerator targetPackage="com.kunlinr.lifealien.enclosure.po"
             targetProject=".\src">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
@@ -35,14 +35,14 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
-        <sqlMapGenerator targetPackage="com.kunlinr.lifealien.main.mapper" 
+        <sqlMapGenerator targetPackage="com.kunlinr.lifealien.enclosure.mapper" 
             targetProject=".\src">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
         <!-- targetPackage：mapper接口生成的位置 -->
         <javaClientGenerator type="XMLMAPPER"
-            targetPackage="com.kunlinr.lifealien.main.mapper" 
+            targetPackage="com.kunlinr.lifealien.enclosure.mapper" 
             targetProject=".\src">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false" />
@@ -53,7 +53,7 @@
         <table tableName="%"></table>
         的方式，会默认将数据表中的"_"去掉并以驼峰的形式生成实体类名
          -->
-        <table tableName="user" domainObjectName="User"></table>
+        <table tableName="enclosure" domainObjectName="Enclosure"></table>
         <!-- 有些表的字段需要指定java类型
          <table schema="" tableName="">
             <columnOverride column="" javaType="" />

@@ -4,15 +4,13 @@
             <div class='title'>{{title}}</div>
             <div class='oneLine'>
                 <span class='num' :class='{textThrough:isShow}'><img :src="image"></span>
-                
-                <!-- <span class="unit">台件</span> -->
             </div>
             <div class='twoLine'>
                 <span class='bigNum' :class='{textThrough:isShow}'>{{value}}次</span>
             </div>
             <div class='clickInto' :class='{noCanUse:isShow,canUse:!isShow}'>点击进入</div>
         </Card>
-        <div class="logoLine"></div>      
+        <div class="logoLine"></div>
     </div>
 </template>
 <script>
@@ -20,7 +18,7 @@ export default {
     name: 'iconCard',
     props:{
         iconData:{
-            type:Array
+            type:Object
         }
     },
     data() {
@@ -34,112 +32,31 @@ export default {
     },
     methods:{
         clickInto(){
-            window.open(this.iconData.url,'_blank');
-            // switch(this.type){
-            //     case 'manageFund': this.$router.push('/UnitAssets'); break;
-            //     case 'preEnterFund': this.$router.push('/portalyurk'); break;
-            //     case 'noEnterFund': this.$Message.info('暂不支持此功能'); break;
-            //     case 'waitDealFund': this.$router.push('/WaitDealAsset'); break;
-            //     default: break;
-            // }
+            if("add" === this.iconData.url){
+                this.add();
+            }else{
+                window.open(this.iconData.url,'_blank');
+            }
+        },
+        add(){
+            this.$Modal.confirm({
+                title: 'Title',
+                content: '<p>Content of dialog</p><p>Content of dialog</p>',
+                onOk: () => {
+                    this.$Message.info('Clicked ok');
+                },
+                onCancel: () => {
+                    this.$Message.info('Clicked cancel');
+                }
+            });
         },
         getData(){
           this.title = this.iconData.title
           this.image = this.iconData.image
-          this.getManageFundData();
-            // switch(this.type){
-            //     case 'manageFund': this.title='管辖资产'; this.getManageFundData(); break;
-            //     case 'preEnterFund': this.title='预入库资产'; this.getPreEnterFundData(); break;
-            //     case 'noEnterFund': this.title='采购未入库资产'; this.getNoEnterFundData(); break;
-            //     case 'waitDealFund': this.title='待处置资产'; this.getWaitDealFundData(); break;
-            //     default: break;
-            // }
-        },
-        getManageFundData(){
-            this.$http.post(this.rootUrl+'cardStatistics/pliceAssets').then(
-                function(response) {
-                    if(response.status==200||response.statusText=='OK'){
-                        this.num=response.data[0].shul;
-                        this.value=response.data[0].jiaz
-                    }
-                }.bind(this)
-            )
-            .catch(
-                function(error) {
-                    
-                }.bind(this)
-            );
-        },
-        getPreEnterFundData(){
-            this.$http.post(this.rootUrl+'/cardStatistics/expectedStorage').then(
-                function(response) {
-                    if(response.status==200||response.statusText=='OK'){
-                        this.num=response.data[0].shul;
-                        this.value=response.data[0].jiaz
-                    }
-                }.bind(this)
-            )
-            .catch(
-                function(error) {
-                    
-                }.bind(this)
-            );
-        },
-        getNoEnterFundData(){
-            this.$http.post(this.rootUrl+'/cardStatistics/purchaseUnExpectedStorage').then(
-                function(response) {
-                    if(response.status==200||response.statusText=='OK'){
-                        this.num=response.data[0].shul;
-                        this.value=response.data[0].jiaz
-                    }
-                }.bind(this)
-            )
-            .catch(
-                function(error) {
-                    
-                }.bind(this)
-            );
-        },
-        getWaitDealFundData(){
-            this.$http.post(this.rootUrl+'/cardStatistics/pendingDisposal').then(
-                function(response) {
-                    if(response.status==200||response.statusText=='OK'){
-                        this.num=response.data[0].shul;
-                        this.value=response.data[0].jiaz
-                    }
-                }.bind(this)
-            )
-            .catch(
-                function(error) {
-                    
-                }.bind(this)
-            );
-        },
-        toMoneyStr(moneystamp){
-            moneystamp=moneystamp.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-            return moneystamp+=".00";
         }
     },
     created(){
         this.getData();
-    },
-    mounted(){
-        $('.fundCardBody').mouseenter(function(){
-            $(this).children("div:nth-child(1)").children("div:nth-child(2)").addClass("textUp")
-            $(this).children("div:nth-child(1)").children("div:nth-child(2)").removeClass("textDown")
-            $(this).children("div:nth-child(1)").children("div:nth-child(3)").hide(0)
-            $(this).children("div:nth-child(1)").children("div:last-child").fadeIn(200)
-        });
-        $('.fundCardBody').mouseleave(function(){
-            $(this).children("div:nth-child(1)").children("div:nth-child(2)").addClass("textDown")
-            $(this).children("div:nth-child(1)").children("div:nth-child(2)").removeClass("textUp")
-            $(this).children("div:nth-child(1)").children("div:nth-child(3)").show(0)
-            $(this).children("div:nth-child(1)").children("div:last-child").fadeOut(0)
-        });
-
-        if(this.type=='noEnterFund'){
-            this.isShow=true;
-        }
     }
 }
 </script>
@@ -238,5 +155,14 @@ export default {
 @keyframes textDown{
     from{padding-top:24px}
     to{padding-top:34px}
+}
+.vertical-center-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ivu-modal{
+        top: 0;
+    }
 }
 </style>
