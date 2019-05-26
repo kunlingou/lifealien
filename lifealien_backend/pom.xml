@@ -16,6 +16,7 @@
 		<module>lifealien.enclosure</module>
 		<module>lifealien.database</module>
 		<module>lifealien.mail</module>
+		<module>lifealien.spring</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
