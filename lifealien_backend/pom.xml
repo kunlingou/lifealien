@@ -14,6 +14,8 @@
 		<module>lifealien.main</module>
 		<module>lifealien.mybatis_generator</module>
 		<module>lifealien.enclosure</module>
+		<module>lifealien.database</module>
+		<module>lifealien.mail</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -48,6 +50,11 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>14.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -55,8 +62,15 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skipTests>true</skipTests>    <!--默认关掉单元测试 -->
 				</configuration>
 			</plugin>
 		</plugins>

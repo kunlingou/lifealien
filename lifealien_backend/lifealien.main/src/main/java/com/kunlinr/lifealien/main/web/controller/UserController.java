@@ -1,7 +1,6 @@
 package com.kunlinr.lifealien.main.web.controller;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kunlinr.lifealien.enclosure.mapper.EnclosureMapper;
-import com.kunlinr.lifealien.enclosure.po.Enclosure;
+import com.kunlinr.lifealien.main.entity.User;
 import com.kunlinr.lifealien.main.mapper.UserMapper;
+import com.kunlinr.lifealien.main.service.UserService;
 import com.kunlinr.lifealien.main.web.controller.pagination.PaginationMultiTypeValuesHelper;
 
 @RestController
@@ -23,8 +22,17 @@ public class UserController {
 	@Autowired
 	UserMapper userMapper;
 	
+	@Autowired
+	UserService userService;
+	
 //	@Autowired
 //	EnclosureMapper enclosureMapper;
+	@RequestMapping("/save")
+	public User save() {
+		User user = new User(0X19L, "goukunlin", "苟坤林");
+		userService.save(user);
+		return userService.findName("goukunlin");
+	}
 	
 	@RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, produces = MediaType.APPLICATION_JSON_VALUE)
 	public Map<String, PaginationMultiTypeValuesHelper> getUserAll(

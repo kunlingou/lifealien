@@ -9,7 +9,9 @@
           <router-link to="/iconList">
             <MenuItem name="1-1">网站列表</MenuItem>
           </router-link>
-          <MenuItem name="1-2">评论管理</MenuItem>
+          <router-link to="/mail">
+            <MenuItem name="1-2">邮件管理</MenuItem>
+          </router-link>
           <MenuItem name="1-3">举报管理</MenuItem>
         </Submenu>
         <Submenu name="2">
