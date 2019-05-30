@@ -13,8 +13,8 @@ export default {
             users:[],
             user_columns:[
                 {title:'编号', key:'id'},
-                {title:'姓名', key:'name'},
-                {title:'用户名', key:'userName'},
+                {title:'姓名', key:'title'},
+                {title:'用户名', key:'username'},
                 {title:'密码', key:'password'},
             ]
         }

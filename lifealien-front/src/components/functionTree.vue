@@ -12,7 +12,9 @@
           <router-link to="/mail">
             <MenuItem name="1-2">邮件管理</MenuItem>
           </router-link>
-          <MenuItem name="1-3">举报管理</MenuItem>
+           <router-link to="/socket">
+            <MenuItem name="1-3">socket管理</MenuItem>
+          </router-link>
         </Submenu>
         <Submenu name="2">
           <template slot="title">

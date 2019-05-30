@@ -17,6 +17,8 @@
 		<module>lifealien.database</module>
 		<module>lifealien.mail</module>
 		<module>lifealien.spring</module>
+		<module>lifealien.test</module>
+		<module>lifealien.websocket</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

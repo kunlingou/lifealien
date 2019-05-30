@@ -11,6 +11,7 @@ import userList from "./components/userList";
 import HelloWorld from "./components/HelloWorld";
 import iconList from "./components/iconList";
 import mail from "./views/mail";
+import socket from "./views/socket";
 // import functionTree from "./components/functionTree";
 
 Vue.use(VueRouter);
@@ -29,6 +30,7 @@ var routes = [
   { path: "/userList",name: "userList", component: userList },
   { path: "/iconList",component: iconList },
   { path: "/mail",component: mail },
+  { path: "/socket",component: socket }
 ]
 
 var router = new VueRouter({

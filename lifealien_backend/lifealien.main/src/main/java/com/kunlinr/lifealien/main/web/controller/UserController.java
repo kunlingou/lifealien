@@ -29,7 +29,7 @@ public class UserController {
 //	EnclosureMapper enclosureMapper;
 	@RequestMapping("/save")
 	public User save() {
-		User user = new User(0X19L, "goukunlin", "苟坤林");
+		User user = new User(0X19L, "goukunlin", "苟坤林","123456");
 		userService.save(user);
 		return userService.findName("goukunlin");
 	}
@@ -42,7 +42,8 @@ public class UserController {
 	){
 		Map<String, PaginationMultiTypeValuesHelper> results = new HashMap<>();
 		PaginationMultiTypeValuesHelper multiValue = new PaginationMultiTypeValuesHelper();
-		multiValue.setResults(userMapper.selectByExample(null));
+//		multiValue.setResults(userMapper.selectByExample(null));
+		multiValue.setResults(userService.findAll());
 		multiValue.setCount(4);
 		multiValue.setPage(1);
 		multiValue.setTotal(4L);

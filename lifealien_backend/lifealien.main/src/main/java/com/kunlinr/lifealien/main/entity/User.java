@@ -16,20 +16,24 @@ public class User implements Serializable{
 	public User() {
 	}
 	
-	public User(Long id,String name,String title) {
+	public User(Long id,String username,String title,String password) {
 		this.id = id;
-		this.name = name;
+		this.username = username;
 		this.title = title;
+		this.password = password;
 	}
 
 	@Id
 	protected Long id;
 	
-	@Column(name = "name")
-	protected String name;
-	
 	@Column(name = "title")
 	protected String title;
+	
+	@Column(name = "username")
+	protected String username;
+	
+	@Column(name = "password")
+	protected String password;
 
 	public Long getId() {
 		return id;
@@ -39,19 +43,31 @@ public class User implements Serializable{
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getTitle() {
 		return title;
 	}
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 }
