@@ -7,23 +7,12 @@
 		<artifactId>lifealien_backend</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>lifealien.spring</artifactId>
+	<artifactId>lifealien.collection</artifactId>
 	<dependencies>
-		<!--mysql数据库驱动 -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.38</version>
-		</dependency>
-		<dependency>
-			<groupId>com.mchange</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.5.3</version>
-		</dependency>
-		<dependency>
-			<groupId>com.kunlinr</groupId>
-			<artifactId>lifealien.sql</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.58</version>
 		</dependency>
 	</dependencies>
 </project>
