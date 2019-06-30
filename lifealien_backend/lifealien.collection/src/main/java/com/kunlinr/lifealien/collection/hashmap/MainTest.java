@@ -28,6 +28,11 @@ public class MainTest {
 		HashMap<String, Object> hashMap = new HashMap<String, Object>();
 		Hashtable<String, Object> hashtable = new Hashtable<String, Object>();
 		ConcurrentHashMap<String, Object> concurrentHashMap = new ConcurrentHashMap<String,Object>();
+		
+		HashMap<String, Object> hashMap1 = new HashMap<String, Object>(1,1);
+		hashMap1.put("1", 1);
+		hashMap1.put("2", 1);
+		
 //		hashMap.put(null, "1");
 //		hashMap.put(null, null);
 //		
@@ -51,16 +56,32 @@ public class MainTest {
 //		System.out.println(v != v);
 		
 		HashMap<String, Object> hashMap2 = new HashMap<String, Object>(1 << 4);
-		
 		for(int i=0;i<13;i++) {
-			if(i==12) {
-				System.out.println();
-			}
-			hashMap2.put(String.valueOf(i), 0);
+			hashMap2.put(String.valueOf(i), 1);
 		}
+		System.out.println(hashMap2.hashCode());//5228
 		
-		int tableSizeFor = tableSizeFor(65);
-		System.out.println(tableSizeFor);
+		HashMap<String, Object> hashMap3 = new HashMap<String, Object>(0,0);
+		for(int i=0;i<13;i++) {
+			hashMap3.put(String.valueOf(i), 1);
+		}
+		System.out.println(hashMap3.hashCode());//5228
+		System.out.println(((Object)hashMap2).equals(hashMap3));//true
+		
+		System.out.println(new Student("a").equals(new Student("a")));//false
+		Student aa = new Student("a");
+		System.out.println(aa.hashCode());//1410986873
+		aa.name = "bcdefg";
+		System.out.println(aa.hashCode());//1410986873
+		aa.name = "a";
+		System.out.println(aa.hashCode());//1410986873
+		
+		Student bb = new Student("a",new String[] {"爱好1","爱好2"});
+		System.out.println(bb.hashCode());//2110245805
+		bb.likes = new String[] {"爱好1","爱好4"};
+		System.out.println(bb.hashCode());//2110245805
+//		int tableSizeFor = tableSizeFor(65);
+//		System.out.println(tableSizeFor);
 	}
 	
 	/**
@@ -107,5 +128,16 @@ public class MainTest {
 		newFixedThreadPool.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
 		long end = System.nanoTime()-start;
 		System.out.println("cost for : "+end);
+	}
+}
+class Student {
+	String name;
+	String[] likes;
+	public Student(String name){
+		this.name = name;
+	}
+	public Student(String name,String[] likes){
+		this.name = name;
+		this.likes = likes;
 	}
 }
