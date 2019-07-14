@@ -9,8 +9,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 
-import org.junit.Test;
-
 import com.mchange.v2.c3p0.cfg.C3P0Config;
 import com.mchange.v2.c3p0.impl.C3P0Defaults;
 import com.mchange.v2.cfg.DelayedLogItem;

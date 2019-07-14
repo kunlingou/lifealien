@@ -19,6 +19,8 @@
 		<module>lifealien.spring</module>
 		<module>lifealien.test</module>
 		<module>lifealien.websocket</module>
+		<module>lifealien.collection</module>
+		<module>lifealien.sql</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -73,7 +75,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<configuration>
-					<skipTests>true</skipTests>    <!--默认关掉单元测试 -->
+					<skipTests>false</skipTests>    <!--默认(打开)单元测试 -->
 				</configuration>
 			</plugin>
 		</plugins>

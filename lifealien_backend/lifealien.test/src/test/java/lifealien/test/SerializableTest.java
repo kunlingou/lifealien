@@ -1,4 +1,4 @@
-package com.kunlinr.lifealien.test.serializable;
+package lifealien.test;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,6 +8,8 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 
 import org.junit.Test;
+
+import com.kunlinr.lifealien.test.serializable.Person;
 
 public class SerializableTest {
 	public void serializable() {

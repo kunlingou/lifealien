@@ -1,4 +1,4 @@
-package com.kunlinr.lifealien.test.leetcode;
+package lifealien.test;
 
 import org.junit.Test;
 
