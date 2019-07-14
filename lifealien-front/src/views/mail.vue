@@ -40,29 +40,29 @@ export default {
         //   data: data,
         // });
         // var email = require("emailjs");
-        // debugger
-        // var email = require("emailjs/email");
-        // var server = email.server.connect({
-        //   user: "1162729917@qq.com", // 你的QQ用户
-        //   password: "wrxnxhxtbxuxgfia", // 注意，不是QQ密码，而是刚才生成的授权码
-        //   host: "smtp.qq.com", // 主机，不改
-        //   ssl: false // 使用ssl
-        // });
+        debugger
+        var email = require("emailjs/email");
+        var server = email.server.connect({
+          user: "1162729917@qq.com", // 你的QQ用户
+          password: "wrxnxhxtbxuxgfia", // 注意，不是QQ密码，而是刚才生成的授权码
+          host: "smtp.qq.com", // 主机，不改
+          ssl: true // 使用ssl
+        });
 
-        // //开始发送邮件
-        // server.send(
-        //   {
-        //     text: "邮件内容", //邮件内容
-        //     from: "1162729917@qq.com", //谁发送的
-        //     to: "kunlingou@foxmail.com", //发送给谁的
-        //     cc: "17888835939@163.com",
-        //     subject: "邮件主题" //邮件主题
-        //   },
-        //   function(err, message) {
-        //     //回调函数
-        //     console.log(err || message);
-        //   }
-        // );
+        //开始发送邮件
+        server.send(
+          {
+            text: "邮件内容", //邮件内容
+            from: "1162729917@qq.com", //谁发送的
+            to: "kunlingou@foxmail.com", //发送给谁的
+            cc: "17888835939@163.com",
+            subject: "邮件主题" //邮件主题
+          },
+          function(err, message) {
+            //回调函数
+            console.log(err || message);
+          }
+        );
       }
     }
   }
