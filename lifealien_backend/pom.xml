@@ -21,6 +21,7 @@
 		<module>lifealien.websocket</module>
 		<module>lifealien.collection</module>
 		<module>lifealien.sql</module>
+		<module>lifealien.servlet</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
