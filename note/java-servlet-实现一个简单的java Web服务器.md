@@ -23,68 +23,64 @@
 package com.kunlinr.lifealien.servlet.server;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
 
-public class Response {
-	private static final int BUFFER_SIZE = 1024;
-	private Request request;
-	private OutputStream output;
+public class HttpServer {
+	/**WEB_ROOT是HTML和其它文件存放的目录. 这里的WEB_ROOT为工作目录下的WebContent目录*/
+	public static final String WEB_ROOT = System.getProperty("user.dir")+File.separator+"WebContent";
+	//关闭服务命令
+	public static final String SHUTDOWN_COMMAND = "/SHUTDOWN";
 	
-	public Response(OutputStream output) {
-        this.output = output;
-    }
-
-	public void setRequest(Request request) {
-		this.request = request;
+	public static void main(String[] args) {
+		HttpServer server = new HttpServer();
+		server.await();
 	}
 
 	/**
-	 * 发送静态资源
-	 * @throws IOException
+	 * 等待连接请求
 	 */
-	public void sendStaticResource() throws IOException {
-		byte[] bytes = new byte[BUFFER_SIZE];
-        FileInputStream fis = null;
-        try {
-            //将web文件写入到OutputStream字节流中
-            File file = new File(HttpServer.WEB_ROOT, request.getUri());
-            if (file.exists()) {
-            	fis = new FileInputStream(file);
-            	List<byte[]> contentbytes = new ArrayList<>();
-            	int ch = fis.read(bytes, 0, BUFFER_SIZE);
-            	int size = 0;
-                while (ch != -1) {
-                	contentbytes.add(bytes);
-                    ch = fis.read(bytes, 0, BUFFER_SIZE);
-                    size += BUFFER_SIZE;
-                }
-                String head = "HTTP/1.1 200 OK\r\n" + "Content-Type: text/html\r\n"
-                        + "Content-Length: "+size+"\r\n" + "\r\n";
-                byte[] headbytes = head.getBytes();
-                output.write(headbytes,0,headbytes.length);
-                for(byte[] contentbyte:contentbytes) {
-                	output.write(contentbyte);
-                }
-            } else {
-                // file not found
-                String errorMessage = "HTTP/1.1 404 File Not Found\r\n" + "Content-Type: text/html\r\n"
-                        + "Content-Length: 23\r\n" + "\r\n" + "<h1>File Not Found</h1>";
-                output.write(errorMessage.getBytes());
-            }
-        } catch (Exception e) {
-            // thrown if cannot instantiate a File object
-            System.out.println(e.toString());
-        } finally {
-            if (fis != null)
-                fis.close();
-        }
+	private void await() {
+		ServerSocket serverSocket = null;
+		int port = 8080;
+		try {
+			//服务器套接字对象
+			serverSocket = new ServerSocket(port,0,InetAddress.getByName("127.0.0.1"));
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.exit(1);
+		}
+		//循环等待请求
+		while(true) {
+			Socket socket = null;
+			InputStream input = null;
+			OutputStream output = null;
+			try {
+				socket = serverSocket.accept();
+				input = socket.getInputStream();
+				output = socket.getOutputStream();
+				//创建Request
+				Request request = new Request(input);
+				//检查是否关闭服务命令
+				if(request.getUri().equals(SHUTDOWN_COMMAND)) {
+					break;
+				}
+				//创建Response
+				Response response = new Response(output);
+				response.setRequest(request);
+				response.sendStaticResource();
+				//关闭socket
+				socket.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+				continue;
+			}
+		}
 	}
 }
-
 ```
 
 ### Request
