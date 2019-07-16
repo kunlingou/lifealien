@@ -20,3 +20,4 @@ goto end
 
 :end
 pause
+endlocal

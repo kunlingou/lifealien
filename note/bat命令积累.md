@@ -2,7 +2,7 @@
 
 ##  实例
 
-### 代码的批量构建拉取和提交
+### 代码的批量拉取、构建和提交
 
 ```bash
 @echo off
@@ -29,8 +29,9 @@ if "%a%"=="y" ( goto pushbackend
 ) else (goto metadata)
 
 :pushbackend
+set /p backendcomment=请输入备注信息：
 git add ./gams2.datatrans
-git commit -m "数据迁移"
+git commit -m "%date:~0,4%%date:~5,2%%date:~8,2%-数据迁移-%backendcomment%"
 git push
 goto metadata
 
@@ -50,7 +51,11 @@ goto front
 echo 模块名称:front
 cd ./src/code/normal
 git pull
+goto end
+
+:end
 pause
+endlocal
 ```
 
 ### 文件夹合并
@@ -122,3 +127,25 @@ goto :eof
 
 10:57 2019/7/16
 ```
+### 启动服务
+
+```
+@echo off
+setlocal
+title "np_backend"
+
+:Init
+set JAVA_CMD="D:\Program Files\Java\JDK1.8\bin\java.exe"
+if exist %JAVA_CMD% (
+   set VAR_CMD=%JAVA_CMD%
+) else set VAR_CMD=java
+
+set VAR_VM_ARGUMENTS="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=7777"
+
+:Run
+%VAR_CMD% %VAR_VM_ARGUMENTS:~1,-1% -jar "%~dp0gams2.war" 
+
+:End
+endlocal
+```
+
