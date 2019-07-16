@@ -22,6 +22,7 @@
 		<module>lifealien.collection</module>
 		<module>lifealien.sql</module>
 		<module>lifealien.servlet</module>
+		<module>lifealien.filesystem</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
