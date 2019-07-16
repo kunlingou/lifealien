@@ -240,7 +240,7 @@ public class Response {
 
 2. 发送请求
 
-![1563286971745]((https://raw.githubusercontent.com/kunlingou/lifealien/master/pic/1563286971745.png)
+![1563286971745](https://raw.githubusercontent.com/kunlingou/lifealien/master/pic/1563286971745.png)
 
 3. 返回正文
 
