@@ -236,11 +236,11 @@ public class Response {
 
 1. 启动服务
 
-![1563286711709](../pic/1563286711709.png)
+![1563286711709](https://raw.githubusercontent.com/kunlingou/lifealien/master/pic/1563286711709.png)
 
 2. 发送请求
 
-![1563286971745](../pic/1563286971745.png)
+![1563286971745]((https://raw.githubusercontent.com/kunlingou/lifealien/master/pic/1563286971745.png)
 
 3. 返回正文
 
