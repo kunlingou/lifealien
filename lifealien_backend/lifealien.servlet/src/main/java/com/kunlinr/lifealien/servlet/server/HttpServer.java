@@ -26,6 +26,7 @@ public class HttpServer {
 		int port = 8080;
 		try {
 			//服务器套接字对象
+			/**@see java.net.DualStackPlainSocketImpl*/
 			serverSocket = new ServerSocket(port,0,InetAddress.getByName("127.0.0.1"));
 		}catch (Exception e) {
 			e.printStackTrace();
