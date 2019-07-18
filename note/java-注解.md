@@ -1,4 +1,4 @@
-## java注解
+## java-注解
 
 ### 元注解(meta-annotation)
 
@@ -59,12 +59,12 @@
 @Target(ElementType.TYPE)  
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Persons {
-    Person[] value();
+	Person[] value();
 }
 
 @Repeatable(Persons.class)
 public @interface Person{
-    String role() default "";
+	String role() default "";
 }
 
 @Person(role="CEO")
@@ -72,15 +72,15 @@ public @interface Person{
 @Person(role="father")
 @Person(role="son")
 public class Man {
-    String name="";
+	String name="";
 }
 
 //获取注解内容
 if(Man.class.isAnnotationPresent(Persons.class)) {
-    Persons p2=Man.class.getAnnotation(Persons.class);
-    for(Person t:p2.value()){
-        System.out.println(t.role());
-    }
+	Persons p2=Man.class.getAnnotation(Persons.class);
+	for(Person t:p2.value()){
+		System.out.println(t.role());
+	}
 }
 ```
 
@@ -117,10 +117,10 @@ if(Man.class.isAnnotationPresent(Persons.class)) {
 @Inherited
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MethodInfo {
-    String author() default "";
-    String date();
-    int revision() default 1;
-    String comments();
+	String author() default "";
+	String date();
+	int revision() default 1;
+	String comments();
 }
 ```
 
