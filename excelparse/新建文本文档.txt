@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TObject billdefine="sheet1" maxHeight="8287.507500000003" maxWidth="21543.75">
+  <TCell name="B2" type="text">
+    <TValue type="text" value="延期入库"/>
+    <TFont font_bold="True" horizontal="center" name="黑体" size="18.0" vertical="bottom"/>
+    <TPosition height="29.0175" width="177.1875">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" bottom_border="True" left_border="True" right_border="True" top_border="True">
+      <int/>
+      <NoneType/>
+    </TBorder>
+  </TCell>
+  <TCell name="B3" type="text">
+    <TValue type="text" value="2019年3月"/>
+    <TFont font_bold="True" horizontal="right" name="黑体" size="12.0" vertical="center"/>
+    <TPosition height="10.12875" width="177.1875">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" bottom_border="True" left_border="True" right_border="True" top_border="True">
+      <int/>
+      <NoneType/>
+    </TBorder>
+  </TCell>
+  <TCell name="B4" type="text">
+    <TValue type="text" value="设备名称"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C4" type="text">
+    <TValue type="text" value="数量"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D4" type="text">
+    <TValue type="text" value="价值"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B5" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C5" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D5" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B6" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C6" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D6" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B7" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C7" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D7" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B8" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C8" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D8" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B9" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C9" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D9" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B10" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C10" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D10" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B11" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C11" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D11" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B12" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C12" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D12" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B13" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C13" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D13" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B14" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C14" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D14" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B15" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C15" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D15" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B16" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C16" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D16" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B17" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C17" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D17" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B18" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C18" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D18" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B19" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C19" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D19" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B20" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C20" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D20" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B21" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C21" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D21" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B22" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C22" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D22" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B23" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C23" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D23" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B24" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C24" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D24" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B25" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C25" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D25" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B26" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C26" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D26" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B27" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C27" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D27" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B28" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C28" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D28" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B29" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C29" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D29" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B30" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C30" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D30" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B31" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C31" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D31" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B32" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C32" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D32" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B33" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C33" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D33" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B34" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C34" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D34" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B35" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C35" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D35" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B36" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C36" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D36" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B37" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C37" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D37" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B38" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C38" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D38" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B39" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C39" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D39" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B40" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C40" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D40" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B41" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C41" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D41" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B42" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C42" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D42" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B43" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C43" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D43" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B44" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C44" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D44" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B45" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C45" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D45" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B46" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C46" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D46" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B47" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C47" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D47" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B48" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C48" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D48" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B49" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C49" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D49" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="B50" type="text">
+    <TValue type="text" value="台式计算机"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="61.3125">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="C50" type="text">
+    <TValue type="text" value="1"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="71.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+  <TCell name="D50" type="text">
+    <TValue type="text" value="5000"/>
+    <TFont font_bold="False" horizontal="center" name="宋体" size="11.0" vertical="bottom"/>
+    <TPosition height="4.9275" width="44.4375">
+      <float/>
+      <float/>
+    </TPosition>
+    <TBorder border_color="0x0" border_style="thin" border_width="0.1" bottom_border="True" left_border="True" right_border="True" top_border="True"/>
+  </TCell>
+</TObject>

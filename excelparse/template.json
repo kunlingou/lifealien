@@ -1,0 +1,4583 @@
+{
+    "businessName": "延期入库",
+    "maxHeight": 8287.507500000003,
+    "maxWidth": 21543.75,
+    "printParams": [
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": null,
+                "border_width": 0,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": true,
+                "horizontal": "center",
+                "name": "黑体",
+                "size": 18.0,
+                "vertical": "bottom"
+            },
+            "name": "B2",
+            "position": {
+                "height": 29.0175,
+                "upper_left": [
+                    14.90625,
+                    16.425
+                ],
+                "width": 177.1875
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "延期入库"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": null,
+                "border_width": 0,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": true,
+                "horizontal": "right",
+                "name": "黑体",
+                "size": 12.0,
+                "vertical": "center"
+            },
+            "name": "B3",
+            "position": {
+                "height": 10.12875,
+                "upper_left": [
+                    14.90625,
+                    45.442499999999995
+                ],
+                "width": 177.1875
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "2019年3月"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B4",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    55.57124999999999
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "设备名称"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C4",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    55.57124999999999
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "数量"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D4",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    55.57124999999999
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "价值"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B5",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    60.498749999999994
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C5",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    60.498749999999994
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D5",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    60.498749999999994
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B6",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    65.42625
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C6",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    65.42625
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D6",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    65.42625
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B7",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    70.35374999999999
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C7",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    70.35374999999999
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D7",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    70.35374999999999
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B8",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    75.28124999999999
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C8",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    75.28124999999999
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D8",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    75.28124999999999
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B9",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    80.20874999999998
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C9",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    80.20874999999998
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D9",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    80.20874999999998
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B10",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    85.13624999999998
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C10",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    85.13624999999998
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D10",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    85.13624999999998
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B11",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    90.06374999999997
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C11",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    90.06374999999997
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D11",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    90.06374999999997
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B12",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    94.99124999999997
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C12",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    94.99124999999997
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D12",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    94.99124999999997
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B13",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    99.91874999999996
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C13",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    99.91874999999996
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D13",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    99.91874999999996
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B14",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    104.84624999999996
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C14",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    104.84624999999996
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D14",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    104.84624999999996
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B15",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    109.77374999999995
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C15",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    109.77374999999995
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D15",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    109.77374999999995
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B16",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    114.70124999999994
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C16",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    114.70124999999994
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D16",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    114.70124999999994
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B17",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    119.62874999999994
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C17",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    119.62874999999994
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D17",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    119.62874999999994
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B18",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    124.55624999999993
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C18",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    124.55624999999993
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D18",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    124.55624999999993
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B19",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    129.48374999999993
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C19",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    129.48374999999993
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D19",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    129.48374999999993
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B20",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    134.41124999999994
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C20",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    134.41124999999994
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D20",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    134.41124999999994
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B21",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    139.33874999999995
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C21",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    139.33874999999995
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D21",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    139.33874999999995
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B22",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    144.26624999999996
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C22",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    144.26624999999996
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D22",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    144.26624999999996
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B23",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    149.19374999999997
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C23",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    149.19374999999997
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D23",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    149.19374999999997
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B24",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    154.12124999999997
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C24",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    154.12124999999997
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D24",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    154.12124999999997
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B25",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    159.04874999999998
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C25",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    159.04874999999998
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D25",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    159.04874999999998
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B26",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    163.97625
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C26",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    163.97625
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D26",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    163.97625
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B27",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    168.90375
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C27",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    168.90375
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D27",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    168.90375
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B28",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    173.83125
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C28",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    173.83125
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D28",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    173.83125
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B29",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    178.75875000000002
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C29",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    178.75875000000002
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D29",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    178.75875000000002
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B30",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    183.68625000000003
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C30",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    183.68625000000003
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D30",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    183.68625000000003
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B31",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    188.61375000000004
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C31",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    188.61375000000004
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D31",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    188.61375000000004
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B32",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    193.54125000000005
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C32",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    193.54125000000005
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D32",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    193.54125000000005
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B33",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    198.46875000000006
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C33",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    198.46875000000006
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D33",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    198.46875000000006
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B34",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    203.39625000000007
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C34",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    203.39625000000007
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D34",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    203.39625000000007
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B35",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    208.32375000000008
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C35",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    208.32375000000008
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D35",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    208.32375000000008
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B36",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    213.25125000000008
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C36",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    213.25125000000008
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D36",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    213.25125000000008
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B37",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    218.1787500000001
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C37",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    218.1787500000001
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D37",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    218.1787500000001
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B38",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    223.1062500000001
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C38",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    223.1062500000001
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D38",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    223.1062500000001
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B39",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    228.0337500000001
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C39",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    228.0337500000001
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D39",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    228.0337500000001
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B40",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    232.96125000000012
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C40",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    232.96125000000012
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D40",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    232.96125000000012
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B41",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    237.88875000000013
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C41",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    237.88875000000013
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D41",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    237.88875000000013
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B42",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    242.81625000000014
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C42",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    242.81625000000014
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D42",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    242.81625000000014
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B43",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    247.74375000000015
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C43",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    247.74375000000015
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D43",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    247.74375000000015
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B44",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    252.67125000000016
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C44",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    252.67125000000016
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D44",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    252.67125000000016
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B45",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    257.59875000000017
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C45",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    257.59875000000017
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D45",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    257.59875000000017
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B46",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    262.5262500000002
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C46",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    262.5262500000002
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D46",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    262.5262500000002
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B47",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    267.4537500000002
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C47",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    267.4537500000002
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D47",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    267.4537500000002
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B48",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    272.3812500000002
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C48",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    272.3812500000002
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D48",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    272.3812500000002
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B49",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    277.3087500000002
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C49",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    277.3087500000002
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D49",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    277.3087500000002
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "B50",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    14.90625,
+                    282.2362500000002
+                ],
+                "width": 61.3125
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "台式计算机"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "C50",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    76.21875,
+                    282.2362500000002
+                ],
+                "width": 71.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "1"
+            }
+        },
+        {
+            "border": {
+                "border_color": "0x0",
+                "border_style": "thin",
+                "border_width": 0.1,
+                "bottom_border": true,
+                "left_border": true,
+                "right_border": true,
+                "top_border": true
+            },
+            "font": {
+                "font_bold": false,
+                "horizontal": "center",
+                "name": "宋体",
+                "size": 11.0,
+                "vertical": "bottom"
+            },
+            "name": "D50",
+            "position": {
+                "height": 4.9275,
+                "upper_left": [
+                    147.65625,
+                    282.2362500000002
+                ],
+                "width": 44.4375
+            },
+            "type": "text",
+            "value": {
+                "type": "text",
+                "value": "5000"
+            }
+        }
+    ]
+}

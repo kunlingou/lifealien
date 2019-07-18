@@ -1,0 +1,6 @@
+{
+    "datasource":{
+        "source":"gxzc_jy/gxzc_jy@10.2.21.134:1521/orcl",
+        "target":"np/np@10.2.8.62:1521/orcl"
+    }
+}

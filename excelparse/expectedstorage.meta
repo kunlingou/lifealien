@@ -1,0 +1,178 @@
+{
+    "name": "com.jiuqi.np.gams2.print.expectedstorage",
+    "description": "没有描述",
+    "title": "延期入库",
+    "type": "gams2.print",
+    "formats": "JSON",
+    "content": {
+        "billdefine": "sheet1",
+        "printParams": [
+            {
+                "name": "B2",
+                "value": {
+                    "value": "延期入库",
+                    "type": "text"
+                },
+                "font": {
+                    "name": "黑体",
+                    "size": 18.0,
+                    "horizontal": "center",
+                    "vertical": "bottom",
+                    "font_bold": true
+                },
+                "position": {
+                    "upper_left": [
+                        15.146075,
+                        18.855
+                    ],
+                    "width": 164.892175,
+                    "height": 33.3105,
+                    "rowNum": 2,
+                    "colNum": 2,
+                    "detail_height": 0
+                },
+                "type": "text",
+                "border": {
+                    "border_width": 0,
+                    "border_style": null,
+                    "border_color": "0x0",
+                    "bottom_border": true,
+                    "top_border": true,
+                    "left_border": true,
+                    "right_border": true
+                },
+                "grid_field": [],
+                "grid_colNum": 0
+            },
+            {
+                "name": "B3",
+                "value": {
+                    "value": "billCode",
+                    "type": "text"
+                },
+                "font": {
+                    "name": "黑体",
+                    "size": 12.0,
+                    "horizontal": "right",
+                    "vertical": "center",
+                    "font_bold": true
+                },
+                "position": {
+                    "upper_left": [
+                        15.146075,
+                        52.165499999999994
+                    ],
+                    "width": 164.892175,
+                    "height": 11.62725,
+                    "rowNum": 3,
+                    "colNum": 2,
+                    "detail_height": 0
+                },
+                "type": "text",
+                "border": {
+                    "border_width": 0,
+                    "border_style": null,
+                    "border_color": "0x0",
+                    "bottom_border": true,
+                    "top_border": true,
+                    "left_border": true,
+                    "right_border": true
+                },
+                "grid_field": [],
+                "grid_colNum": 0
+            },
+            {
+                "name": "B4",
+                "value": {
+                    "value": "设备名称",
+                    "type": "text"
+                },
+                "font": {
+                    "name": "宋体",
+                    "size": 11.0,
+                    "horizontal": "center",
+                    "vertical": "bottom",
+                    "font_bold": false
+                },
+                "position": {
+                    "upper_left": [
+                        15.146075,
+                        63.79275
+                    ],
+                    "width": 164.892175,
+                    "height": 10.99875,
+                    "rowNum": 4,
+                    "colNum": 2,
+                    "detail_height": 11.312999999999999
+                },
+                "type": "grid",
+                "border": {
+                    "border_width": 0.1,
+                    "border_style": "thin",
+                    "border_color": "0x0",
+                    "bottom_border": true,
+                    "top_border": true,
+                    "left_border": true,
+                    "right_border": true
+                },
+                "grid_field": [
+                    {
+                        "key": "zicmc",
+                        "name": "设备名称",
+                        "width": 95.44885000000001
+                    },
+                    {
+                        "key": "shul",
+                        "name": "数量",
+                        "width": 24.290875
+                    },
+                    {
+                        "key": "jiaz",
+                        "name": "价值",
+                        "width": 45.15245
+                    }
+                ],
+                "grid_colNum": 3
+            },
+            {
+                "name": "B24",
+                "value": {
+                    "value": "合计：",
+                    "type": "text"
+                },
+                "font": {
+                    "name": "宋体",
+                    "size": 11.0,
+                    "horizontal": "center",
+                    "vertical": "bottom",
+                    "font_bold": false
+                },
+                "position": {
+                    "upper_left": [
+                        15.146075,
+                        187.9214999999999
+                    ],
+                    "width": 95.44885000000001,
+                    "height": 5.656499999999999,
+                    "rowNum": 24,
+                    "colNum": 2,
+                    "detail_height": 0
+                },
+                "type": "text",
+                "border": {
+                    "border_width": 0,
+                    "border_style": null,
+                    "border_color": "0x0",
+                    "bottom_border": true,
+                    "top_border": true,
+                    "left_border": true,
+                    "right_border": true
+                },
+                "grid_field": [],
+                "grid_colNum": 0
+            }
+        ],
+        "maxHeight": 3006.4297499999984,
+        "maxWidth": 10575.961199999996
+    }
+}
