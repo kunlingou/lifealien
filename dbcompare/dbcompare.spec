@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['dbcompare.py'],
-             pathex=['D:\\Code\\python\\excelparse\\dbcompare'],
+             pathex=['D:\\Code\\lifealien\\dbcompare'],
              binaries=[],
              datas=[],
              hiddenimports=[],

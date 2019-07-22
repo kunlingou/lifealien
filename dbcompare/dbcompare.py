@@ -8,6 +8,7 @@ import pandas as pd
 import util.FileUtil as FileUtil
 
 if __name__ == '__main__':
+    print('start...')
     config = Factory.initConfig()
     connconfig = config.get("datasource")
     try:
