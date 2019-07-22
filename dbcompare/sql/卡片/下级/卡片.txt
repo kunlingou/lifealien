@@ -1,7 +1,0 @@
-select
-
-k.billcode,k.zicmc
-
-from gams_card k
-where rownum<10
-
