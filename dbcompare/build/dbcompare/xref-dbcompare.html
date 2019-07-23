@@ -75,6 +75,7 @@ imports:
  &#8226;   <a href="#_winapi">_winapi</a>
  &#8226;   <a href="#_winreg">_winreg</a>
  &#8226;   <a href="#abc">abc</a>
+ &#8226;   <a href="#analysis">analysis</a>
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#ast">ast</a>
  &#8226;   <a href="#atexit">atexit</a>
@@ -91,11 +92,13 @@ imports:
  &#8226;   <a href="#codeop">codeop</a>
  &#8226;   <a href="#collections">collections</a>
  &#8226;   <a href="#collections.abc">collections.abc</a>
+ &#8226;   <a href="#conn">conn</a>
  &#8226;   <a href="#conn.ConnFactory">conn.ConnFactory</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#copy">copy</a>
  &#8226;   <a href="#copyreg">copyreg</a>
  &#8226;   <a href="#datetime">datetime</a>
+ &#8226;   <a href="#dbcompare">dbcompare</a>
  &#8226;   <a href="#dbcompare.Factory">dbcompare.Factory</a>
  &#8226;   <a href="#difflib">difflib</a>
  &#8226;   <a href="#dis">dis</a>
@@ -356,6 +359,7 @@ imports:
  &#8226;   <a href="#unittest.util">unittest.util</a>
  &#8226;   <a href="#urllib">urllib</a>
  &#8226;   <a href="#urllib.parse">urllib.parse</a>
+ &#8226;   <a href="#util">util</a>
  &#8226;   <a href="#util.FileUtil">util.FileUtil</a>
  &#8226;   <a href="#uu">uu</a>
  &#8226;   <a href="#vms_lib">vms_lib</a>
@@ -762,8 +766,8 @@ imported by:
   <a target="code" href="" type="text/plain"><tt>'org.python'</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
-    <a href="#dbcompare.py">dbcompare.py</a>
- &#8226;   <a href="#pickle">pickle</a>
+    <a href="#copy">copy</a>
+ &#8226;   <a href="#dbcompare.py">dbcompare.py</a>
  &#8226;   <a href="#setuptools.sandbox">setuptools.sandbox</a>
  &#8226;   <a href="#xml.sax">xml.sax</a>
 
@@ -4074,6 +4078,17 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="analysis"></a>
+  <a target="code" href="///D:/Code/lifealien/dbcompare/analysis/__init__.py" type="text/plain"><tt>analysis</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imported by:
+    <a href="#dbcompare.py">dbcompare.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="argparse"></a>
   <a target="code" href="///D:/program%20files/python37/lib/argparse.py" type="text/plain"><tt>argparse</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -5157,6 +5172,7 @@ imported by:
 <span class="moduletype">NamespacePackage</span>  <div class="import">
 imported by:
     <a href="#conn.ConnFactory">conn.ConnFactory</a>
+ &#8226;   <a href="#dbcompare.py">dbcompare.py</a>
 
   </div>
 
@@ -5260,8 +5276,8 @@ imported by:
   <a target="code" href="///D:/program%20files/python37/lib/copy.py" type="text/plain"><tt>copy</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#copyreg">copyreg</a>
- &#8226;   <a href="#org">org</a>
+    <a href="#'org.python'">'org.python'</a>
+ &#8226;   <a href="#copyreg">copyreg</a>
  &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#weakref">weakref</a>
 
@@ -6156,6 +6172,7 @@ imported by:
 imported by:
     <a href="#dbcompare.ExeE">dbcompare.ExeE</a>
  &#8226;   <a href="#dbcompare.Factory">dbcompare.Factory</a>
+ &#8226;   <a href="#dbcompare.py">dbcompare.py</a>
 
   </div>
 
@@ -23953,8 +23970,8 @@ imported by:
   <a target="code" href="" type="text/plain"><tt>org</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
-    <a href="#copy">copy</a>
- &#8226;   <a href="#dbcompare.py">dbcompare.py</a>
+    <a href="#dbcompare.py">dbcompare.py</a>
+ &#8226;   <a href="#pickle">pickle</a>
 
   </div>
 
@@ -32880,8 +32897,7 @@ imported by:
   <a target="code" href="///D:/program%20files/python37/lib/pickle.py" type="text/plain"><tt>pickle</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#'org.python'">'org.python'</a>
- &#8226;   <a href="#_compat_pickle">_compat_pickle</a>
+    <a href="#_compat_pickle">_compat_pickle</a>
  &#8226;   <a href="#_pickle">_pickle</a>
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#codecs">codecs</a>
@@ -32890,6 +32906,7 @@ imports:
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#io">io</a>
  &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#org">org</a>
  &#8226;   <a href="#pprint">pprint</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#struct">struct</a>
@@ -38339,7 +38356,8 @@ imported by:
   <a target="code" href="///D:/Code/lifealien/dbcompare/util/__init__.py" type="text/plain"><tt>util</tt></a>
 <span class="moduletype">Package</span>  <div class="import">
 imported by:
-    <a href="#util.FileUtil">util.FileUtil</a>
+    <a href="#dbcompare.py">dbcompare.py</a>
+ &#8226;   <a href="#util.FileUtil">util.FileUtil</a>
  &#8226;   <a href="#util.parse_excel">util.parse_excel</a>
 
   </div>

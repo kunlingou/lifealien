@@ -92,9 +92,37 @@
    'd:\\program '
    'files\\python37\\lib\\site-packages\\pkg_resources\\__init__.py',
    'PYMODULE'),
+  ('pkg_resources._vendor.packaging.specifiers',
+   'd:\\program '
+   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor',
+   'd:\\program '
+   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging._compat',
+   'd:\\program '
+   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.markers',
+   'd:\\program '
+   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging',
+   'd:\\program '
+   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.packaging.requirements',
+   'd:\\program '
+   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
+   'PYMODULE'),
   ('pkg_resources._vendor.packaging.utils',
    'd:\\program '
    'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\utils.py',
+   'PYMODULE'),
+  ('pkg_resources._vendor.six',
+   'd:\\program '
+   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
    'PYMODULE'),
   ('pkg_resources._vendor.pyparsing',
    'd:\\program '
@@ -123,21 +151,9 @@
    'd:\\program '
    'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\version.py',
    'PYMODULE'),
-  ('pkg_resources._vendor.six',
-   'd:\\program '
-   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\six.py',
-   'PYMODULE'),
   ('pkg_resources._vendor.packaging._structures',
    'd:\\program '
    'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_structures.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.specifiers',
-   'd:\\program '
-   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\specifiers.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.markers',
-   'd:\\program '
-   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\markers.py',
    'PYMODULE'),
   ('pkg_resources._vendor.appdirs',
    'd:\\program '
@@ -146,22 +162,6 @@
   ('pkg_resources._vendor.packaging.__about__',
    'd:\\program '
    'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__about__.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging._compat',
-   'd:\\program '
-   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\_compat.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging.requirements',
-   'd:\\program '
-   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\requirements.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor',
-   'd:\\program '
-   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\__init__.py',
-   'PYMODULE'),
-  ('pkg_resources._vendor.packaging',
-   'd:\\program '
-   'files\\python37\\lib\\site-packages\\pkg_resources\\_vendor\\packaging\\__init__.py',
    'PYMODULE'),
   ('__main__',
    'D:\\Program Files\\Python37\\Scripts\\pyinstaller.exe\\__main__.py',
@@ -628,12 +628,12 @@
   ('ntpath', 'd:\\program files\\python37\\lib\\ntpath.py', 'PYMODULE'),
   ('_strptime', 'd:\\program files\\python37\\lib\\_strptime.py', 'PYMODULE'),
   ('datetime', 'd:\\program files\\python37\\lib\\datetime.py', 'PYMODULE'),
+  ('stringprep', 'd:\\program files\\python37\\lib\\stringprep.py', 'PYMODULE'),
   ('tracemalloc',
    'd:\\program files\\python37\\lib\\tracemalloc.py',
    'PYMODULE'),
-  ('_py_abc', 'd:\\program files\\python37\\lib\\_py_abc.py', 'PYMODULE'),
-  ('stringprep', 'd:\\program files\\python37\\lib\\stringprep.py', 'PYMODULE'),
   ('typing', 'd:\\program files\\python37\\lib\\typing.py', 'PYMODULE'),
+  ('_py_abc', 'd:\\program files\\python37\\lib\\_py_abc.py', 'PYMODULE'),
   ('__future__', 'd:\\program files\\python37\\lib\\__future__.py', 'PYMODULE'),
   ('difflib', 'd:\\program files\\python37\\lib\\difflib.py', 'PYMODULE'),
   ('ast', 'd:\\program files\\python37\\lib\\ast.py', 'PYMODULE'),
@@ -840,14 +840,21 @@
    'PYMODULE'),
   ('struct', 'd:\\program files\\python37\\lib\\struct.py', 'PYMODULE'),
   ('gettext', 'd:\\program files\\python37\\lib\\gettext.py', 'PYMODULE'),
-  ('copy', 'd:\\program files\\python37\\lib\\copy.py', 'PYMODULE'),
   ('textwrap', 'd:\\program files\\python37\\lib\\textwrap.py', 'PYMODULE'),
   ('argparse', 'd:\\program files\\python37\\lib\\argparse.py', 'PYMODULE'),
   ('doctest', 'd:\\program files\\python37\\lib\\doctest.py', 'PYMODULE'),
+  ('copy', 'd:\\program files\\python37\\lib\\copy.py', 'PYMODULE'),
+  ('conn', '-', 'PYMODULE'),
+  ('analysis',
+   'D:\\Code\\lifealien\\dbcompare\\analysis\\__init__.py',
+   'PYMODULE'),
+  ('dbcompare',
+   'D:\\Code\\lifealien\\dbcompare\\dbcompare\\__init__.py',
+   'PYMODULE'),
+  ('util', 'D:\\Code\\lifealien\\dbcompare\\util\\__init__.py', 'PYMODULE'),
   ('util.FileUtil',
    'D:\\Code\\lifealien\\dbcompare\\util\\FileUtil.py',
    'PYMODULE'),
-  ('util', 'D:\\Code\\lifealien\\dbcompare\\util\\__init__.py', 'PYMODULE'),
   ('util.parse_excel',
    'D:\\Code\\lifealien\\dbcompare\\util\\parse_excel.py',
    'PYMODULE'),
@@ -1713,37 +1720,33 @@
   ('setuptools',
    'd:\\program files\\python37\\lib\\site-packages\\setuptools\\__init__.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging._compat',
-   'd:\\program '
-   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
-   'PYMODULE'),
   ('setuptools._vendor.packaging.markers',
    'd:\\program '
    'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\markers.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging.specifiers',
+  ('setuptools._vendor.packaging',
    'd:\\program '
-   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
-   'PYMODULE'),
-  ('setuptools._vendor.packaging._structures',
-   'd:\\program '
-   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_structures.py',
-   'PYMODULE'),
-  ('setuptools._vendor.six',
-   'd:\\program '
-   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\six.py',
+   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
    'PYMODULE'),
   ('setuptools._vendor.packaging.utils',
    'd:\\program '
    'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\utils.py',
    'PYMODULE'),
-  ('setuptools._vendor',
+  ('setuptools._vendor.packaging.specifiers',
    'd:\\program '
-   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\__init__.py',
+   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\specifiers.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging',
+  ('setuptools._vendor.six',
    'd:\\program '
-   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__init__.py',
+   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\six.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging._structures',
+   'd:\\program '
+   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_structures.py',
+   'PYMODULE'),
+  ('setuptools._vendor.packaging.__about__',
+   'd:\\program '
+   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__about__.py',
    'PYMODULE'),
   ('setuptools._vendor.pyparsing',
    'd:\\program '
@@ -1757,9 +1760,13 @@
    'd:\\program '
    'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\version.py',
    'PYMODULE'),
-  ('setuptools._vendor.packaging.__about__',
+  ('setuptools._vendor.packaging._compat',
    'd:\\program '
-   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\__about__.py',
+   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\packaging\\_compat.py',
+   'PYMODULE'),
+  ('setuptools._vendor',
+   'd:\\program '
+   'files\\python37\\lib\\site-packages\\setuptools\\_vendor\\__init__.py',
    'PYMODULE'),
   ('setuptools.msvc',
    'd:\\program files\\python37\\lib\\site-packages\\setuptools\\msvc.py',
@@ -3179,9 +3186,6 @@
   ('dbcompare.Factory',
    'D:\\Code\\lifealien\\dbcompare\\dbcompare\\Factory.py',
    'PYMODULE'),
-  ('dbcompare',
-   'D:\\Code\\lifealien\\dbcompare\\dbcompare\\__init__.py',
-   'PYMODULE'),
   ('dbcompare.ExeE',
    'D:\\Code\\lifealien\\dbcompare\\dbcompare\\ExeE.py',
    'PYMODULE'),
@@ -3189,7 +3193,6 @@
   ('conn.ConnFactory',
    'D:\\Code\\lifealien\\dbcompare\\conn\\ConnFactory.py',
    'PYMODULE'),
-  ('conn', '-', 'PYMODULE'),
   ('pymysql',
    'd:\\program files\\python37\\lib\\site-packages\\pymysql\\__init__.py',
    'PYMODULE'),
