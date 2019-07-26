@@ -1,0 +1,33 @@
+{
+    "datasource":[{
+        "key":"上级",
+        "type":"mysql",
+        "host":"localhost",
+        "port":3306,
+        "user":"root",
+        "password":"mybatis",
+        "database":"lifeaide",
+        "charset":"utf8"
+    },{
+        "key":"下级",
+        "type":"mysql",
+        "host":"localhost",
+        "port":3306,
+        "user":"root",
+        "password":"mybatis",
+        "database":"test",
+        "charset":"utf8"
+    }],
+    "datasource1":{
+        "source":"gxzc_jy/gxzc_jy@10.2.21.134:1521/orcl",
+        "target":"np/np@10.2.8.62:1521/orcl"
+    },
+    "path":{
+        "sql_path":"sql",
+        "excel_path":"\\result\\excel",
+		"analysis_path":"\\result\\analysis"
+    },
+	"color":{
+		"error":"E5624B"
+	}
+}
