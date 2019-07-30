@@ -9,5 +9,27 @@
 | Protected |    √     |    √     |      √       |                |
 |  Public   |    √     |    √     |      √       |       √        |
 
-## 外观类
+### 外观类
+
+### 接口
+
+- 编译前
+
+```
+public interface Parent {
+	String get();
+	String name = "paretn";
+}
+```
+
+- 编译后
+
+```
+public abstract interface Parent
+{
+  public static final String name = "paretn";
+  
+  public abstract String get();
+}
+```
 
