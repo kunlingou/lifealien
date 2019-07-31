@@ -15,7 +15,7 @@
         "port":3306,
         "user":"root",
         "password":"mybatis",
-        "database":"test",
+        "database":"lifeaide",
         "charset":"utf8"
     }],
     "datasource1":{

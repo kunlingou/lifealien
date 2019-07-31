@@ -40,11 +40,15 @@ if __name__ == '__main__':
         for i in range(maxRow):
             for j in range(maxCol):
                 cell = ws.cell(row=i + 1, column=j + 1)
-                if tarWS1.cell(
-                        row=i + 1, column=j + 1).value == tarWS2.cell(
-                            row=i + 1, column=j + 1).value:
+                tar1Cell = tarWS1.cell(
+                        row=i + 1, column=j + 1)
+                tar2Cell = tarWS2.cell(
+                            row=i + 1, column=j + 1)
+                if str(tar1Cell.value).strip() == str(tar2Cell.value).strip():
                     cell.value = 0
                 else:
                     cell.value = 1
                     cell.fill = PatternFill("solid", fgColor=color_error)
+                    tar1Cell.fill = PatternFill("solid", fgColor=color_error)
+                    tar2Cell.fill = PatternFill("solid", fgColor=color_error)
         wb.save(target + ".xlsx")

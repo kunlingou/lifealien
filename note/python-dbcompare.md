@@ -19,3 +19,13 @@
 
 
 <https://blog.csdn.net/ck3207/article/details/78031505> 
+
+
+
+### 打包
+
+```
+pip install pyinstaller
+pyinstaller -F main.py
+```
+
