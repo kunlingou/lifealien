@@ -50,3 +50,53 @@ public class DataTransConfigController implements InitializingBean{
 }
 ```
 
+### 配置文件
+
+```
+@Configuration
+@PropertySource("classpath:mail.properties")
+public class MailConfiguration {
+
+    @Value("${mail.protocol}")
+    private String protocol;
+    @Value("${mail.host}")
+    private String host;
+    @Value("${mail.port}")
+    private int port;
+    @Value("${mail.smtp.auth}")
+    private boolean auth;
+    @Value("${mail.smtp.starttls.enable}")
+    private boolean starttls;
+    @Value("${mail.from}")
+spring boot 会自动注入mail.properties中的值
+
+ 
+
+mail.properties:
+
+mail.host=localhost
+mail.port=25
+mail.smtp.auth=false
+mail.smtp.starttls-enable=false
+mail.from=me@localhost
+mail.username=
+mail.password=
+
+
+@Configuration
+@PropertySource("classpath:datasource.properties")
+public class DataSourceConfig {
+
+    @Resource
+    private Environment env;
+
+public void getValue() {
+
+String name = env.getRequiredProperty("datasource.name");
+
+}
+datasource.properties:
+
+datasource.username=root
+```
+
