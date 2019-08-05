@@ -52,6 +52,8 @@ public class DataTransConfigController implements InitializingBean{
 
 ### 配置文件
 
+- <https://wenrisheng.iteye.com/blog/2231807> 
+
 ```
 @Configuration
 @PropertySource("classpath:mail.properties")
@@ -100,3 +102,6 @@ datasource.properties:
 datasource.username=root
 ```
 
+### spring cache
+
+- <https://www.cnblogs.com/yueshutong/p/9381540.html> 
