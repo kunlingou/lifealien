@@ -7,7 +7,9 @@ import java.util.concurrent.Executor;
 
 import org.junit.jupiter.api.Test;
 
-import com.kunlinr.lifealien.context.Store.Key;
+import com.kunlinr.lifealien.context.store.Store;
+import com.kunlinr.lifealien.context.store.TypeReference;
+import com.kunlinr.lifealien.context.store.Store.Key;
 
 public class ContextTest {
 	@Test

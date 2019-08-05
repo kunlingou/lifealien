@@ -1,4 +1,4 @@
-package com.kunlinr.lifealien.context;
+package com.kunlinr.lifealien.context.store;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -6,7 +6,13 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class Store {
+/**
+ * 类型安全的异构容器
+ * @author goukunlin
+ *
+ */
+public class TypeSafeStoreImpl{
+
 	private final Map<Key<?>, Object> values = new ConcurrentHashMap<>();
 	
 	public <T> void put(String key, T value, Class<T> valueType) {
@@ -26,7 +32,7 @@ public class Store {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public <T> void put(Key<T> key, T value){
+	private <T> void put(Key<T> key, T value){
 		Type type;
 		if((type = key.typeRef.getType()) instanceof Class) {
 			values.put(key, ((Class<T>)type).cast(value));
@@ -38,7 +44,7 @@ public class Store {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public <T> T get(Key<T> key) {
+	private <T> T get(Key<T> key) {
 		Type type;
 		if((type = key.typeRef.getType()) instanceof Class) {
 			return ((Class<T>)type).cast(values.get(key));
@@ -47,7 +53,7 @@ public class Store {
 		}
 	}
 	
-	public class Key<T>{
+	protected class Key<T>{
 		final String identifier;
 		final TypeReference<T> typeRef;
 		
