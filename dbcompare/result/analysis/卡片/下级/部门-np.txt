@@ -1,0 +1,25 @@
+select 
+a.id, ---行标识
+a.ordinal,  --排序字段
+a.gradation, --级次
+a.code, --代码
+a.name, --名称
+a.shortname, ---简名
+upper(replace(replace(a.parents,'/','00'),'-','')) as parents, --所有上级ID(因为格式不一样所以加了转换)
+a.parent, --上级部门
+a.parentname,  --上级部门名称
+b.title as nature, --部门属性()
+a.administrator, --部门管理员ID
+a.enabled, --是否启用
+a.creator,  --创建人
+to_char(a.createtime,'yyyymmdd') as createtime, --创建时间
+a.memo,  --备注
+a.isleaf, --是否末级节点
+a.orgid,  --所属单位
+a.modifyUser, --修改人
+a.modifyTime  --修改时间
+from gams_jc_department a
+left join biz_jy00_gams_jc_deptproperty b on b.id = a.nature
+left join org_t_admin o on o.orgid = a.orgid
+--where o.code='BJFZXY'
+order by o.code,a.code

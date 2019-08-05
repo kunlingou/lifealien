@@ -1,0 +1,35 @@
+select 
+g.recid,
+g.sortorder,
+g.level_1,
+g.stdcode,
+g.stdname,
+g.shortname,
+g.parents,
+(case
+   when length(g.parents) > 34 then
+        to_char(substr(g.parents, length(g.parents) - 65, 32))
+   else
+        '00000000000000000000000000000000'
+ end) as parent,    --上级部门
+(select a1.stdname from gams_jc_department a1 where a1.objectid in (select case
+   when length(a.parents) > 34 then
+        to_char(substr(a.parents, length(a.parents) - 65, 32))
+   else
+        '00000000000000000000000000000000'
+ end from gams_jc_department a where a.recid = g.recid )) as parentname,   --上级部门名称
+b.stdname as BIZ_JY00_BUMSXID, --部门属性
+' ' as administrator, --部门管理员(三期没有此字段，但是可以通过权限管理进行迁移，故通过前台检查迁移正确性)
+g.startflag,
+g.creator,
+to_char(g.createtime,'yyyymmdd') as createtime,
+g.memo,
+g.isleaf,
+g.unitid,
+g.MODIFYUSER,
+g.MODIFYTIME
+from gams_jc_department g
+left join md_org o on o.recid=g.unitid
+left join BIZ_JY00_GAMS_JC_DEPTPROPERTY b on b.recid = g.biz_jy00_bumsxid
+--where o.stdcode='105'
+order by o.stdcode,g.stdcode

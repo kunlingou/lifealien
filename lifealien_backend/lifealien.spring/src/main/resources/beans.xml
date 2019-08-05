@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- <bean name="hello" class="com.kunlinr.lifealien.spring.ioc.bean.Hello">
+    	<property name="name" value="张三"></property>
+    </bean> -->
+    <bean name="mysqlDao" class="com.kunlinr.lifealien.spring.ioc.dao.impl.UserDaoMySqlImpl"></bean>
+    <bean name="oracleDao" class="com.kunlinr.lifealien.spring.ioc.dao.impl.UserDaoOracleImpl"></bean>
+    <bean name="userService" class="com.kunlinr.lifealien.spring.ioc.service.impl.UserServiceImpl">
+    	<property name="userDao" ref="mysqlDao"></property>
+    </bean>
+</beans>

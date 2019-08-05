@@ -1,6 +1,0 @@
-select
-
-*
-
-from user
-
