@@ -8,8 +8,8 @@ import com.kunlinr.lifealien.main.web.service.UserServiceImpl;
 @Configuration
 public class MainConfiguration {
 	
-	@Bean
-	public UserServiceImpl userServiceImpl() {
-		return new UserServiceImpl();
-	}
+//	@Bean
+//	public UserServiceImpl userServiceImpl() {
+//		return new UserServiceImpl();
+//	}
 }

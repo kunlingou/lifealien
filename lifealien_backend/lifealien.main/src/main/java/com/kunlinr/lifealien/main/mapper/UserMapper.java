@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.context.annotation.Scope;
 
-@Mapper
+//@Mapper
 public interface UserMapper {
     long countByExample(UserExample example);
 

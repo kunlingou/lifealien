@@ -11,7 +11,7 @@ import org.springframework.web.socket.config.annotation.EnableWebSocket;
 @SpringBootApplication
 //@ComponentScan("com.kunlinr.lifealien")
 //@MapperScan(basePackages = {"com.kunlinr.lifealien.main.mapper","com.kunlinr.lifealien.enclosure.mapper"})
-@EnableJpaRepositories
+//@EnableJpaRepositories
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 @EnableWebSocket
 public class Application {

@@ -19,19 +19,20 @@ import com.kunlinr.lifealien.main.web.controller.pagination.PaginationMultiTypeV
 @RequestMapping("/api/persons")
 public class UserController {
 	
-	@Autowired
-	UserMapper userMapper;
+//	@Autowired
+//	UserMapper userMapper;
 	
-	@Autowired
-	UserService userService;
+//	@Autowired
+//	UserService userService;
 	
 //	@Autowired
 //	EnclosureMapper enclosureMapper;
 	@RequestMapping("/save")
 	public User save() {
-		User user = new User(0X19L, "goukunlin", "苟坤林","123456");
-		userService.save(user);
-		return userService.findName("goukunlin");
+//		User user = new User(0X19L, "goukunlin", "苟坤林","123456");
+//		userService.save(user);
+//		return userService.findName("goukunlin");
+		return null;
 	}
 	
 	@RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -43,7 +44,7 @@ public class UserController {
 		Map<String, PaginationMultiTypeValuesHelper> results = new HashMap<>();
 		PaginationMultiTypeValuesHelper multiValue = new PaginationMultiTypeValuesHelper();
 //		multiValue.setResults(userMapper.selectByExample(null));
-		multiValue.setResults(userService.findAll());
+//		multiValue.setResults(userService.findAll());
 		multiValue.setCount(4);
 		multiValue.setPage(1);
 		multiValue.setTotal(4L);

@@ -1,26 +1,24 @@
 package com.kunlinr.lifealien.main.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
-public class User implements Serializable{
+@Table(name = "user_test")
+public class User{
 	
 	private static final long serialVersionUID = 4943467772109474455L;
 	
+//	public User(Long id,String username,String title,String password) {
+//		this.id = id;
+//		this.username = username;
+//		this.title = title;
+//		this.password = password;
+//	}
 	public User() {
-	}
-	
-	public User(Long id,String username,String title,String password) {
-		this.id = id;
-		this.username = username;
-		this.title = title;
-		this.password = password;
+		System.out.println();
 	}
 
 	@Id

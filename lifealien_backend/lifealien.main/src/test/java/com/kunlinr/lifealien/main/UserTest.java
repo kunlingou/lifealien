@@ -32,8 +32,8 @@ public class UserTest {
 		//4.开启事务
 		Transaction transaction = session.beginTransaction();
 		//5.操作
-		User user = new User(0X20L, "goukunlin1", "苟坤林1","123");
-		session.save(user);
+//		User user = new User(0X20L, "goukunlin1", "苟坤林1","123");
+//		session.save(user);
 		//6.提交事务
 		transaction.commit();
 		//7.关闭资源
