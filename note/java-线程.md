@@ -666,3 +666,83 @@ class Message {
 【消费者】:key1  -  content1
 ```
 
+### 多线程深入话题
+
+#### 优雅地停止线程
+
+```
+public static boolean flag = true;
+	public static void main(String[] args) throws InterruptedException {
+		Runnable run = () ->{
+			for(int x =0; x<10; x++) {
+				try {
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				if(flag) {
+					System.out.println(Thread.currentThread().getName()+",x="+x);
+				}
+			}
+		};
+		Thread threadA = new Thread(run, "子线程A");
+		threadA.start();
+		Thread.sleep(200);
+		flag = false;
+	}
+```
+
+#### 后台守护线程
+
+- GC是最大的后台守护线程
+
+```
+public static void main(String[] args) throws InterruptedException {
+		Runnable run = () ->{
+			for(int x =0; x<5; x++) {
+				try {
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				System.out.println(Thread.currentThread().getName()+",x="+x);
+			}
+		};
+		Runnable run2 = () ->{
+			for(int x =0; x<Integer.MAX_VALUE; x++) {
+				try {
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				System.out.println(Thread.currentThread().getName()+",x="+x);
+			}
+		};
+		Thread threadA = new Thread(run, "用户线程");
+		Thread threadB = new Thread(run2, "守护线程");
+		threadB.setDaemon(true);//设置为守护线程
+		threadA.start();
+		threadB.start();
+	}
+	
+
+用户线程,x=0
+守护线程,x=0
+守护线程,x=1
+用户线程,x=1
+用户线程,x=2
+守护线程,x=2
+守护线程,x=3
+用户线程,x=3
+守护线程,x=4
+用户线程,x=4
+```
+
+#### volatile关键字
+
+- 进程变量操作时，拷贝副本，修改数据，同步数据。增加volatile时，直接内存操作。
+
+### 综合实例
+
+#### 数字加减
+
