@@ -41,3 +41,18 @@ public abstract interface Parent
 |      |            |      |
 |      |            |      |
 
+### 其他
+
+- Optional
+- AutoCloseable
+
+### Java 8 新特性
+
+- Lambda 表达式
+- 方法引用
+- 默认方法
+- 新工具
+- Stream API
+- Date Time API
+- Optional 类
+- Nashorn，JavaScript 引擎

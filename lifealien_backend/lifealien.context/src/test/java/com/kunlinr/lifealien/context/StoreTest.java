@@ -1,5 +1,8 @@
 package com.kunlinr.lifealien.context;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -112,5 +115,12 @@ public class StoreTest {
 //		System.out.println(context.get("a", List.class));
 //		Key<Runnable> key3 = context.new Key<Runnable>("a",Runnable.class);
 //		System.out.println(context.get(key3));
+	}
+	
+	@Test
+	public void Test3() throws FileNotFoundException {
+		System.out.println("Test3");
+		PrintStream printStream = new PrintStream(new File("D:\\新建文本文档.txt"));
+		printStream.write(12);
 	}
 }
