@@ -12,6 +12,23 @@ import org.junit.Test;
 
 public class VarTest {
 	
+	public static void main(String[] args) {
+		String S = "acd";
+		int K = 1;
+		S.length();
+		char[] ch = S.toCharArray();
+		for(int i=0;i<ch.length;i++) {
+			Integer.valueOf(ch[i]);
+//			ch
+		}
+//		Integer.MAX_VALUE
+		List<Integer> list0 = new ArrayList<>();
+	}
+	
+//	public List<List<Integer>> levelOrder(Node root) {
+//        
+//    }
+	
 //	@Test
 //	public void testInOrOutFor() {
 //		List<Student> stus = new ArrayList<Student>();
