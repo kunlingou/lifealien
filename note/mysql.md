@@ -39,14 +39,21 @@ default-storage-engine=INNODB
 
 - mysqld -install mysql --defaults-file=D:\ide\mysql-5.7.19-winx64\bin\my.ini
 
+- mysqld -install mysql --defaults-file=E:\software\mysql-5.7.19-winx64\bin\my.ini
+
+#### 卸载
+
+- mysqld -remove [服务名]
+
 #### 初始化
 
 - mysqld --initialize-insecure --user=mysql 
+- mysqld --initialize --user=mysql 
 - 保存打印出的初始密码
 
 #### 启动
 
-- 
+- net start mysql
 - mysql -u root -p
 - set password = password("新密码")
 #### bianry
