@@ -149,3 +149,12 @@ try {
 }
 ```
 
+### 注释内容
+
+```
+@implSpec
+This class is immutable and thread-safe.
+
+@since 1.8
+```
+
