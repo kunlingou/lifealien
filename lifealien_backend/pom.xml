@@ -24,7 +24,8 @@
 		<module>lifealien.context</module>
 		<module>lifealien.login</module>
     <module>lifealien.util</module>
-  </modules>
+    <module>lifealien.cache</module>
+	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
