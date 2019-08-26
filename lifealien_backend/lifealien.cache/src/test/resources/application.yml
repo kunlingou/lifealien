@@ -1,0 +1,35 @@
+# Server
+server:
+  port: 8000
+
+spring:
+  # DB
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lifeaide
+    username: root
+    password: mybatis
+  mail:
+     host: smtp.qq.com
+     username: 1162729917@qq.com
+     password: wrxnxhxtbxuxgfia
+     default-encoding: utf-8
+     properties:
+        mail:
+           smtp:
+              auth: true
+              starttls:
+                 enable: true
+                 required: true
+  # JPA
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      dialect: org.hibernate.dialect.MySQL5Dialect
+
+# mybatis
+#mybatis.type-aliases-package=com.kunlinr.lifealien.mapper

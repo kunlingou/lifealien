@@ -89,6 +89,11 @@ public static Integer valueOf(int i) {
 
 - Integer 和 int 比较时，会自动拆箱为 int 相当于两个 int 比较 
 
+#### byte
+
+- 字节
+- 二进制位(bit)
+
 #### short
 
 ```
@@ -275,4 +280,8 @@ System.out.println(s == s2); // 返回 true
 - String 不能被继承。因为 String 被声明为 final（最终类），所以不能被继承 。
 
 ### Java 中的运算符和流程控制 
+
+### Java中的日期
+
+#### long转timestamp
 

@@ -24,9 +24,9 @@ default-character-set=utf8
 #设置3306端口
 port = 3306 
 # 设置mysql的安装目录
-basedir=D:\ide\mysql-5.7.19-winx64
+basedir=D:/ide/mysql-5.7.19-winx64
 # 设置mysql数据库的数据的存放目录
-datadir=D:\ide\mysql-5.7.19-winx64\data
+datadir=D:/ide/mysql-5.7.19-winx64/data
 # 允许最大连接数
 max_connections=200
 # 服务端使用的字符集默认为8比特编码的latin1字符集
@@ -38,8 +38,8 @@ default-storage-engine=INNODB
 #### 安装
 
 - mysqld -install mysql --defaults-file=D:\ide\mysql-5.7.19-winx64\bin\my.ini
-
 - mysqld -install mysql --defaults-file=E:\software\mysql-5.7.19-winx64\bin\my.ini
+- mysqld --install --defaults-file=E:\software\mysql-5.7.19-winx64\bin\my.ini
 
 #### 卸载
 
@@ -49,6 +49,7 @@ default-storage-engine=INNODB
 
 - mysqld --initialize-insecure --user=mysql 
 - mysqld --initialize --user=mysql 
+- mysqld –initialize –console
 - 保存打印出的初始密码
 
 #### 启动
@@ -81,3 +82,4 @@ SELECT HEX(bin_id) AS bin_id FROM test_bin WHERE bin_id = x'FA34E10293C
 
 - unhex("16进制字符串")
 - hex("二进制")
+

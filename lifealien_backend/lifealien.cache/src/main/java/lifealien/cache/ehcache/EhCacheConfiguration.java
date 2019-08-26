@@ -26,6 +26,7 @@ public class EhCacheConfiguration {
 		return cacheManager;
 	}
 	
+	@Bean
 	public Cache<String, Object> getCache(){
 		return cacheManager.createCache("myCache", CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class,Object.class,ResourcePoolsBuilder.heap(10)));
 	}
