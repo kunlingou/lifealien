@@ -43,3 +43,4 @@
 | table-cell                    | 此元素会作为一个表格单元格显示（类似 <td> 和 <th>）          |
 | table-caption                 | 此元素会作为一个表格标题显示（类似 <caption>）               |
 | inherit                       | 规定应该从父元素继承 display 属性的值。                      |
+
