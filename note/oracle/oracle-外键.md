@@ -1,0 +1,1 @@
+- select 'alter table '||table_name||' drop constraint '||constraint_name||';' from user_constraints where table_name like 'GAMS_CARD%' and constraint_type = 'R';

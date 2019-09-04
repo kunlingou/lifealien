@@ -20,4 +20,5 @@ public class ArrayTest {
 	private void updateTest1(String[] array) {
 		array[0] = "name2";
 	}
+	
 }
