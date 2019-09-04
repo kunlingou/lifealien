@@ -27,6 +27,7 @@
 		<module>lifealien.login</module>
 		<module>lifealien.util</module>
 		<module>lifealien.cache</module>
+		<module>lifealien.webservice</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

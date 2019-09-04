@@ -6,14 +6,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @Configuration
-@ComponentScan({
-	"com.kunlinr.lifealien.login"
-})
-@EntityScan({
-	"com.kunlinr.lifealien.login"
-})
-@EnableJpaRepositories( 
-	basePackages = {"com.kunlinr.lifealien.login"}
-)
+//@ComponentScan({
+//	"com.kunlinr.lifealien.login"
+//})
+//@EntityScan({
+//	"com.kunlinr.lifealien.login"
+//})
+//@EnableJpaRepositories( 
+//	basePackages = {"com.kunlinr.lifealien.login"}
+//)
 public class LoginConfiguration {
 }
