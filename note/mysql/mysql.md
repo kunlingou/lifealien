@@ -44,6 +44,8 @@ max_connections=200
 character-set-server=utf8
 # 创建新表时将使用的默认存储引擎
 default-storage-engine=INNODB
+# 默认时区
+default-time-zone='+08:00'
 ```
 
 ### 安装
@@ -102,5 +104,14 @@ set password = password("新密码");
 
 ```
 mysqld -remove mysql
+```
+
+### 其他问题
+
+- The server time zone value 'ÖÐ¹ú±ê×¼Ê±¼ä' is unrec
+
+```
+SHOW VARIABLES LIKE '%time_zone%';
+SET GLOBAL time_zone='+8:00';
 ```
 
