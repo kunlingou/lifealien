@@ -60,3 +60,9 @@ D:\app\jdk\jdk1.8.0_162\bin\javaw.exe
 
 - 双击eclipse.exe即可启动
 
+### 构建后没有部分路径文件
+
+- 修改图中映射关系即可
+
+![1568773689994](C:\Users\KUNLIN~1\AppData\Local\Temp\1568773689994.png)
+
