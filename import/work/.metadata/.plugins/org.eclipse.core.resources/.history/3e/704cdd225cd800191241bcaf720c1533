@@ -1,0 +1,62 @@
+package com.jiuqi.ldrsz.datashow.config;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.annotation.Bean;
+import org.springframework.orm.hibernate5.HibernateOperations;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.orm.hibernate5.SessionFactoryUtils;
+
+import com.jiuqi.ldrsz.datashow.kpi.CaiwrzjsxKpi;
+import com.jiuqi.ldrsz.datashow.kpi.*;
+import com.jiuqi.ldrsz.datashow.kpi.IKpi;
+import com.jiuqi.ldrsz.datashow.service.ShowService;
+import com.jiuqi.ldrsz.datashow.web.DataShowController;
+
+@Configurable
+public class DataShowConfig {
+	
+	@Bean
+	public DataShowController dataShowController() {
+		return new DataShowController();
+	}
+	
+	@Bean
+	public ShowService showService() {
+		return new ShowService();
+	}
+	
+	@Bean
+	public HibernateOperations hibernateOperations() {
+		HibernateTemplate hibernateTemplate = new HibernateTemplate();
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		hibernateTemplate.setSessionFactory(sessionFactory);
+		return hibernateTemplate;
+	}
+	
+	@Bean
+	public List<IKpi> kpis() {
+		ArrayList<IKpi> kpis = new ArrayList<IKpi>();
+		kpis.add(new BangsbgchlKpi());
+		kpis.add(new BangsbgxlKpi());
+		kpis.add(new BangyfztcbqkKpi());
+		kpis.add(new CaiwrzjsxKpi());
+		kpis.add(new Dancyxpjfyl());
+		kpis.add(new Feiyjyl());
+		kpis.add(new RenjzybjbdnKpi());
+		kpis.add(new ShifglfzdrKpi());
+		kpis.add(new ShiynxzxlKpi());
+		kpis.add(new ZhixlKpi());
+		kpis.add(new ZongfycdelKpi());
+		return kpis;
+	}
+	
+	public ShifglfzdrKpi ShifglfzdrKpi() {
+		return new ShifglfzdrKpi();
+	}
+}

@@ -1,0 +1,95 @@
+package com.jiuqi.ldrsz.datainitial.entiy;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObject;
+import com.jiuqi.ldrsz.datainitial.provider.RSReadAndWriter;
+
+public class Plan extends BaseDataObject implements RSReadAndWriter{
+	
+	String unitid;
+	
+	String bs_type;
+	
+	Integer bs_count;
+	
+	Double bs_limit;
+	
+	Double bs_quota;
+	
+	Integer bs_year_limit;
+	
+	
+	public String getUnitid() {
+		return unitid;
+	}
+
+
+	public void setUnitid(String unitid) {
+		this.unitid = unitid;
+	}
+
+
+	public String getBs_type() {
+		return bs_type;
+	}
+
+
+	public void setBs_type(String bs_type) {
+		this.bs_type = bs_type;
+	}
+
+
+	public Integer getBs_count() {
+		return bs_count;
+	}
+
+
+	public void setBs_count(Integer bs_count) {
+		this.bs_count = bs_count;
+	}
+
+
+	public Double getBs_limit() {
+		return bs_limit;
+	}
+
+
+	public void setBs_limit(Double bs_limit) {
+		this.bs_limit = bs_limit;
+	}
+
+
+	public Double getBs_quota() {
+		return bs_quota;
+	}
+
+
+	public void setBs_quota(Double bs_quota) {
+		this.bs_quota = bs_quota;
+	}
+
+
+	public Integer getBs_year_limit() {
+		return bs_year_limit;
+	}
+
+
+	public void setBs_year_limit(Integer bs_year_limit) {
+		this.bs_year_limit = bs_year_limit;
+	}
+
+
+	@Override
+	public void Read(ResultSet rs) throws SQLException {
+		super.Read(rs);
+		this.unitid = rs.getString("UNITID");
+		this.bs_type =rs.getString("BS_TYPE");
+		this.bs_count = rs.getInt("BS_COUNT"); 
+		this.bs_limit =rs.getDouble("BS_LIMIT");
+		this.bs_quota =rs.getDouble("BS_QUOTA");
+		this.bs_year_limit =rs.getInt("BS_YEAR_LIMIT");
+	}
+
+}

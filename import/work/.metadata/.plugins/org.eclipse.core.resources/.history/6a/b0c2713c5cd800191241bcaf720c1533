@@ -1,0 +1,83 @@
+package com.jiuqi.ldrsz.datashow.config;
+
+import static com.jiuqi.ldrsz.datashow.constant.ShowConst.query_org_card;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.annotation.Bean;
+import org.springframework.orm.hibernate5.HibernateOperations;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.orm.hibernate5.SessionFactoryUtils;
+
+import com.jiuqi.ldrsz.datashow.kpi.CaiwrzjsxKpi;
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+import com.jiuqi.ldrsz.datashow.entity.OrgParams;
+import com.jiuqi.ldrsz.datashow.kpi.*;
+import com.jiuqi.ldrsz.datashow.kpi.IKpi;
+import com.jiuqi.ldrsz.datashow.service.ShowService;
+import com.jiuqi.ldrsz.datashow.web.DataShowController;
+
+@Configurable
+public class DataShowConfig {
+	
+	@Bean
+	public DataShowController dataShowController() {
+		return new DataShowController();
+	}
+	
+	@Bean
+	public ShowService showService() {
+		initCard();
+		return new ShowService();
+	}
+	
+	@Bean
+	public HibernateOperations hibernateOperations() {
+		HibernateTemplate hibernateTemplate = new HibernateTemplate();
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		hibernateTemplate.setSessionFactory(sessionFactory);
+		return hibernateTemplate;
+	}
+	
+	@Bean
+	public List<IKpi> kpis() {
+		ArrayList<IKpi> kpis = new ArrayList<IKpi>();
+		kpis.add(new BangsbgchlKpi());
+		kpis.add(new BangsbgxlKpi());
+		kpis.add(new BangyfztcbqkKpi());
+		kpis.add(new CaiwrzjsxKpi());
+		kpis.add(new Dancyxpjfyl());
+		kpis.add(new Feiyjyl());
+		kpis.add(new RenjzybjbdnKpi());
+		kpis.add(new ShifglfzdrKpi());
+		kpis.add(new ShiynxzxlKpi());
+		kpis.add(new ZhixlKpi());
+		kpis.add(new ZongfycdelKpi());
+		return kpis;
+	}
+	
+	private void initCard(BaseDataProvider baseDataProvider) {
+		Set<Unit> units = baseDataProvider.findAll(Unit.class).getBaseDataObjects();
+		Map<String,OrgParams> allData = new HashMap<>();
+		for(Unit unit : units) {
+			OrgParams orgParams = new OrgParams(unit);
+			List<Card> cards = new ArrayList<Card>();
+			template.query(query_org_card,new Object[] {unit.getId()},rs->{cards.add(new Card(rs));});
+			for(IKpi kpi:kpis) {
+				orgParams.put(kpi.getClass(), kpi.execute(cards,unit));
+			}
+			cards.clear();
+			allData.put(unit.getId(), orgParams);
+		}
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.jiuqi.ldrsz.datainitial.constant;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public interface QueryConst {
+	
+	Map<String, String> query = new HashMap<String, String>();
+	
+	String query_md_unit = "select id,code,name,parentg_code from md_unit";
+	
+}

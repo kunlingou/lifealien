@@ -1,0 +1,41 @@
+package com.jiuqi.ldrsz.datashow.web;
+
+import java.util.Map;
+import java.util.Map.Entry;
+
+import com.jiuqi.ldrsz.datashow.entity.OrgParams;
+
+public class WebResponse {
+	
+	Float caiwrzjsxKpi = 0.00f;
+	Float shifglfzdrKpi = 0.00f;
+	Float zhixlKpi = 0.00f;
+	Float feiyjyl = 0.00f;
+	Float bangyfztcbqkKpi = 0.00f;
+	Float dancyxpjfyl = 0.00f;
+	Float zongfycdelKpi = 0.00f;
+	Float bangsbgxlKpi = 0.00f;
+	Float shiynxzxlKpi = 0.00f;
+	Float bangsbgchlKpi = 0.00f;
+
+	public WebResponse(Map<String, OrgParams> initData) {
+		init(initData);
+	}
+
+	private void init(Map<String, OrgParams> initData) {
+		for(Entry<String, OrgParams> e:initData.entrySet()) {
+			OrgParams value = e.getValue();
+			caiwrzjsxKpi += Float.valueOf(value.get("CaiwrzjsxKpi").toString());
+			shifglfzdrKpi += Float.valueOf(value.get("ShifglfzdrKpi").toString());
+			zhixlKpi += Float.valueOf(value.get("ZhixlKpi").toString());
+			feiyjyl += Float.valueOf(value.get("Feiyjyl").toString());
+			bangyfztcbqkKpi += Float.valueOf(value.get("BangyfztcbqkKpi").toString());
+			dancyxpjfyl += Float.valueOf(value.get("Dancyxpjfyl").toString());
+			zongfycdelKpi += Float.valueOf(value.get("ZongfycdelKpi").toString());
+			bangsbgxlKpi += Float.valueOf(value.get("BangsbgxlKpi").toString());
+			shiynxzxlKpi += Float.valueOf(value.get("ShiynxzxlKpi").toString());
+			bangsbgchlKpi += Float.valueOf(value.get("BangsbgchlKpi").toString());
+		}
+	}
+
+}

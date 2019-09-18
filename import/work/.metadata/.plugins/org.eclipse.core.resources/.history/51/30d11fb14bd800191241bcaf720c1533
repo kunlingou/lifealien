@@ -1,0 +1,69 @@
+package com.jiuqi.ldrsz.datashow.service;
+
+import static com.jiuqi.ldrsz.datashow.constant.ShowConst.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.orm.hibernate5.HibernateOperations;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+import com.jiuqi.ldrsz.datainitial.service.DataInitialCacheService;
+import com.jiuqi.ldrsz.datashow.entity.OrgParams;
+import com.jiuqi.ldrsz.datashow.kpi.IKpi;
+
+public class ShowService {
+	
+	@Autowired
+	private HibernateOperations hibernatetemplate;
+	
+	@Autowired
+	private JdbcTemplate template;
+	
+	@Autowired
+	private DataInitialCacheService cacheService;
+	
+	@Autowired
+	private BaseDataProvider baseDataProvider;
+	
+	@Autowired
+	private List<IKpi> kpis;
+	
+	public Object initData() {
+		Set<Unit> units = baseDataProvider.findAll(Unit.class).getBaseDataObjects();
+		Map<String,OrgParams> allData = new HashMap<>();
+		for(Unit unit : units) {
+			OrgParams orgParams = new OrgParams(unit);
+			List<Card> cards = new ArrayList<Card>();
+			template.query(query_org_card,new Object[] {unit.getId()},rs->{cards.add(new Card(rs)});
+			for(IKpi kpi:kpis) {
+				orgParams.put(kpi.getClass(), kpi.execute(cards,unit));
+			}
+			cards.clear();
+		}
+
+		for(Unit unit : units) {
+			OrgParams orgParams = new OrgParams(unit);
+			List<Card> cards = hibernatetemplate.execute(session -> session.createNativeQuery(query_org_card.replace("?", "'"+unit.getId()+"'"), Card.class).getResultList());
+			for(IKpi kpi:kpis) {
+				orgParams.put(kpi.getClass(), kpi.execute(cards,unit));
+			}
+			cards.clear();
+//			cacheService.putCache("orgParams_"+unit.getId(), orgParams);
+			allData.put(unit.getId(), orgParams);
+		}
+		specialHandle(allData);
+		return allData;
+	}
+
+	private void specialHandle(Map<String, OrgParams> allData) {
+		// TODO Auto-generated method stub
+	}
+}

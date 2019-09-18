@@ -1,0 +1,20 @@
+package com.jiuqi.ldrsz.datainitial.provider;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class BaseDataObjects {
+	
+	Set<BaseDataObjects> baseDataObjects = new HashSet<BaseDataObjects>();
+
+	public Set<BaseDataObjects> getBaseDataObjects() {
+		return baseDataObjects;
+	}
+
+	public void setBaseDataObjects(Set<BaseDataObjects> baseDataObjects) {
+		this.baseDataObjects = baseDataObjects;
+	}
+	
+	
+	
+}

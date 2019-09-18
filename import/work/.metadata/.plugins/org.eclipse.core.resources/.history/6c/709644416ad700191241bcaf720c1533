@@ -1,0 +1,35 @@
+package com.jiuqi.ldrsz.datashow.config;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.context.annotation.Bean;
+import org.springframework.orm.hibernate5.HibernateOperations;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.orm.hibernate5.SessionFactoryUtils;
+
+import com.jiuqi.ldrsz.datashow.service.ShowService;
+import com.jiuqi.ldrsz.datashow.web.DataShowController;
+
+@Configurable
+public class DataShowConfig {
+	
+	@Bean
+	public DataShowController dataShowController() {
+		return new DataShowController();
+	}
+	
+	@Bean
+	public ShowService showService() {
+		return new ShowService();
+	}
+	
+	
+	@Bean
+	public HibernateOperations hibernateOperations() {
+		HibernateTemplate hibernateTemplate = new HibernateTemplate();
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		hibernateTemplate.setSessionFactory(sessionFactory);
+		return hibernateTemplate;
+	}
+}

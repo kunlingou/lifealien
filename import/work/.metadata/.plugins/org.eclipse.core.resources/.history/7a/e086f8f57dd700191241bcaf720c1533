@@ -1,0 +1,11 @@
+package com.jiuqi.ldrsz.datainitial.provider;
+
+import java.sql.ResultSet;
+
+public interface RSReadAndWriter {
+	
+	void Read(ResultSet rs);
+	
+	Object Write();
+	
+}

@@ -1,0 +1,18 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.List;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+
+public class BangyfztcbqkKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		
+		//实际办公用房面积
+		
+		
+		return null;
+	}
+
+}

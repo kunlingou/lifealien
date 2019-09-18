@@ -1,0 +1,60 @@
+package com.jiuqi.ldrsz.datainitial.entiy;
+
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.jiuqi.ldrsz.datainitial.annotation.ExcelColumn;
+
+@Entity
+@Table(name = "BS_CARD")
+public class Card {
+	@Id
+	@ExcelColumn(value = "id", col = 1, isNull = false)
+	private String id;
+	@Column
+	@ExcelColumn(value = "revision", col = 1, isNull = false)
+	private Integer revision;
+	@Column
+	@ExcelColumn(value = "卡片编号", col = 1, isNull = false, checkType = { 0 })
+	private String code;
+	@Column
+	@ExcelColumn(value = "使用人", col = 2, isNull = false, checkType = { 0 })
+	private String username;
+	@Column
+	@ExcelColumn(value = "单位", col = 3, isNull = false, checkType = { 0, 2 })
+	private String unitid;
+	@Column
+	@ExcelColumn(value = "资产记账日期", col = 4, isNull = false, checkType = { 0, 2 })
+	private Date bszctime;
+	@Column
+	@ExcelColumn(value = "价值", col = 5, isNull = false, checkType = { 0, 1, 2 })
+	private Double cost;
+	@Column
+	@ExcelColumn(value = "类型", col = 6, isNull = false, checkType = { 0, 2 })
+	private String typeid;
+	@Column
+	@ExcelColumn(value = "国产", col = 7, checkType = { 0, 2, 4 })
+	private Boolean made;
+	@Column
+	@ExcelColumn(value = "面积", col = 8, checkType = { 0, 1, 2 })
+	private Double area;
+	@Column
+	@ExcelColumn(value = "车牌号", col = 9, checkType = { 0, 3 })
+	private String carnumber;
+	@Column
+	@ExcelColumn(value = "创建时间", col = 10, checkType = { 0, 2 })
+	private Date createdtime;
+	@Column
+	@ExcelColumn(value = "财务入账日期", col = 11, isNull = false, checkType = { 0, 2 })
+	private Date bscwtime;
+	@Column
+	@ExcelColumn(value = "取得日期", col = 12, isNull = false, checkType = { 0, 2 })
+	private Date bsqdtime;
+	@Column
+	@ExcelColumn(value = "处置日期", col = 13, checkType = { 0, 2 })
+	private Date bscztime;
+	
+}

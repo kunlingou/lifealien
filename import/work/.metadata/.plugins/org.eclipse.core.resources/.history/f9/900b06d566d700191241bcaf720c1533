@@ -1,0 +1,9 @@
+dependencies {
+	
+	compile lib.spring_context
+	compile lib.spring_web
+    compile lib.hibernate_core
+	compile lib.spring_orm
+	compile lib.jackson_databind
+}
+

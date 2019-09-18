@@ -1,0 +1,62 @@
+package com.jiuqi.ldrsz.datainitial.provider;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+
+public abstract class BaseDataObject implements RSReadAndWriter{
+	
+	Map<String, Object> values = new HashMap<String, Object>();
+	
+	protected String id;
+	
+	protected String name;
+	
+	protected String code;
+	
+	protectedString title;
+
+	public Map<String, Object> getValues() {
+		return values;
+	}
+
+	public void setValues(Map<String, Object> values) {
+		this.values = values;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	@Override
+	public abstract void Read(ResultSet rs) throws SQLException;
+}

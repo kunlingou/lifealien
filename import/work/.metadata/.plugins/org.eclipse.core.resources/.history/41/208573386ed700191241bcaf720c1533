@@ -1,0 +1,23 @@
+package com.jiuqi.ldrsz.datashow.service;
+
+import java.util.List;
+
+import org.ehcache.Cache;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateOperations;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+
+public class ShowService {
+	
+	@Autowired
+	private HibernateOperations template;
+	
+	@Autowired
+	private Cache<String, Object> cache;
+	
+	public boolean initData() {
+		List<Card> cards = template.execute(session -> session.createNativeQuery("select * from bs_card", Card.class).getResultList());
+		return false;
+	}
+}

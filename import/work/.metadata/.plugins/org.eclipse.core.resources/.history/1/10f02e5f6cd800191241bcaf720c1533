@@ -1,0 +1,305 @@
+package com.jiuqi.ldrsz.datashow.web;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.jboss.logging.Param;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateOperations;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.jiuqi.ldrsz.datainitial.annotation.ExcelColumn;
+import com.jiuqi.ldrsz.datainitial.dao.TestCardRespository;
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.CheckTypeEnum;
+import com.jiuqi.ldrsz.datainitial.entiy.TestCard;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+import com.jiuqi.ldrsz.datainitial.service.DataInitialCacheService;
+import com.jiuqi.ldrsz.datainitial.service.ExcelService;
+import com.jiuqi.ldrsz.datainitial.utils.Convert;
+
+@RestController
+@RequestMapping("api")
+public class test {
+	@Autowired
+	DataInitialCacheService datainitService;
+	@Autowired
+	ExcelService excelService;
+	@Autowired
+	TestCardRespository testcardres;
+	@Autowired
+	private HibernateOperations template;
+	@Autowired
+	BaseDataProvider provider;
+	int row = 0;
+
+	@PostMapping("/card/insert")
+	public String importData2(@RequestBody String content) {
+		JSONObject message = new JSONObject();
+		if (content == null) {
+			message.put("code", 1);
+			message.put("msg", "参数为空");
+			return message.toString();
+		}
+		try {
+			List<TestCard> _readExcel = _readExcel(TestCard.class, new JSONObject(content));
+			testcardres.saveAll(_readExcel);
+			_readExcel.forEach(e->{
+				if(e.getArea() == null) {
+					e.setArea(0.00);
+				}
+				provider.getCards().get(e.getUnitid()).add(e.toCard());
+			});
+			
+			message.put("code", 0);
+			message.put("msg", "");
+		} catch (Exception e) {
+			message.put("code", 1);
+			Map<Integer, List<String>> object = (Map<Integer, List<String>>) datainitService.getCache().get(Convert.ERROR2);
+			System.out.println("压测报错信息：---"+object);
+			object.clear();
+			message.put("msg", object);
+		}
+		return message.toString();
+	}
+
+	public <T> List<T> _readExcel(Class<T> cls, JSONObject object) {
+		List<T> dataList = new ArrayList<>();
+		try {
+			List<Field> fields = Stream.of(cls.getDeclaredFields()).collect(Collectors.toList());
+			String[] row = new String[fields.size()];
+			for (int i = 0; i < fields.size(); i++) {
+				ExcelColumn annotation = fields.get(i).getAnnotation(ExcelColumn.class);
+				row[i] = annotation.value();
+			}
+			Map<String, List<Field>> classMap = getClassMap(fields);
+			Map<Integer, List<Field>> reflectionMap = null;// 索引-->columns
+			reflectionMap = getReflectionMap(row, classMap);
+			String[] value = getValue(row, object);
+			try {
+				T t = cls.newInstance();
+				if (handleField(t, value, reflectionMap))
+					{
+					dataList.add(t);
+					}
+			} catch (Exception e) {
+			}
+		} catch (Exception e) {
+		}
+		return dataList;
+	}
+
+	public String[] getValue(String[] row, JSONObject object) {
+		String[] value = new String[row.length];
+		for (int i = 0; i < row.length; i++) {
+			String string = row[i];
+			if (string.equalsIgnoreCase("id")) {
+				value[i] = "";
+				continue;
+			} else if (string.equalsIgnoreCase("revision")) {
+				value[i] = "";
+				continue;
+			} else if (string.equalsIgnoreCase("code")) {
+				value[i] = "";
+				continue;
+			}
+			String object2 = object.get(row[i]) + "";
+			value[i] = object2;
+		}
+		return value;
+	}
+
+	Map<String, List<Field>> getClassMap(List<Field> fields) {
+		Map<String, List<Field>> classMap = new HashMap<>();
+		fields.forEach(field -> {
+			ExcelColumn annotation = field.getAnnotation(ExcelColumn.class);
+			if (annotation != null) {
+				String value = annotation.value();
+				if (!StringUtils.hasText(value)) {
+					return;
+				}
+				if (!classMap.containsKey(value)) {
+					classMap.put(value, new ArrayList<>());
+				}
+				field.setAccessible(true);
+				classMap.get(value).add(field);
+			}
+		});
+		return classMap;
+	}
+
+	<T> boolean handleField(T t, String[] row, Map<Integer, List<Field>> reflectionMap) {
+		boolean allBlank = true;
+		for (int j = 0; j < row.length; j++) {
+			if (reflectionMap.containsKey(j)) {
+				String cellValue = row[j];
+				List<Field> fieldList = reflectionMap.get(j);
+				try {
+					if (!handleField(t, cellValue, fieldList.get(0))) {
+						allBlank = false;
+					}
+				} catch (Exception e) {
+					System.out.println("失败！");
+				}
+
+			}
+		}
+		return allBlank;
+	}
+
+	Map<Integer, List<Field>> getReflectionMap(String[] row, Map<String, List<Field>> classMap) {
+		Map<Integer, List<Field>> reflectionMap = new HashMap<>(16);
+		for (int j = 0; j < row.length; j++) {
+			String value = row[j];
+			if (classMap.containsKey(value)) {
+				reflectionMap.put(j, classMap.get(value));
+			}
+		}
+		return reflectionMap;
+	}
+
+	<T> boolean handleField(T t, String value, Field field) throws Exception {
+		boolean flag = true;
+		ExcelColumn annotation = field.getAnnotation(ExcelColumn.class);
+		if (annotation != null) {
+			String annotationvalue = annotation.value();
+			int[] checkType = annotation.checkType();
+			int col = annotation.col();
+			boolean auto = annotation.isAuto();
+			field.setAccessible(true);
+			for (int code : checkType) {
+				if (code == 0) {
+					if (Convert.isNull(value)) {
+						if (auto) {
+							isAuto(t, value, annotationvalue, field);
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isNull.getMessage());
+							flag = false;
+						}
+						break;
+					} else {
+						continue;
+					}
+				} else {
+					if (Convert.isNull(value)) {
+						break;
+					}
+					if (code == 1) {
+						if (Convert.isTypeError(t, value, annotationvalue, field)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isTypeError.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 2) {
+						if (Convert.isNegative(t, value, annotationvalue, field)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isNegative.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 3) {
+						if (Convert.isCPExist(t, value, annotationvalue, field, provider)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isCPExist.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 4) {
+						if (Convert.isGC(t, value, annotationvalue, field)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isGC.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 5) {
+						if (Convert.isDWExist(t, value, annotationvalue, field, provider)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isDWExist.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 6) {
+						if (Convert.isLXExist(t, value, annotationvalue, field, provider)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isLXExist.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 7) {
+						if (Convert.isCarNo(value)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isCarNo.getMessage());
+							flag = false;
+							break;
+						}
+					}
+				}
+			}
+
+		}
+		return flag;
+	}
+
+	private void buildErrorMessage(int key, String value) {
+		Map<Integer, List<String>> object = (Map<Integer, List<String>>) datainitService.getCache().get(Convert.ERROR2);
+		List<String> list = object.get(key);
+		if (list != null) {
+			list.add(value + "\r\n");
+		} else {
+			list = new ArrayList<>();
+			list.add(value + "\r\n");
+			object.put(key, list);
+		}
+	}
+
+	public <T> boolean isAuto(T t, String value, String annotationvalue, Field field) {
+		String name = field.getName();
+		try {
+			if (name.equalsIgnoreCase("id")) {
+				field.set(t, UUID.randomUUID().toString().toUpperCase().replace("-", ""));
+			} else if (name.equalsIgnoreCase("code")) {
+				long code = (long) datainitService.getCache(Convert.BILLCODE);
+				field.set(t, String.valueOf(code));
+				datainitService.putCache(Convert.BILLCODE, code + 1);
+			} else if (name.equalsIgnoreCase("revision")) {
+				field.set(t, 1);
+			} else if (name.equalsIgnoreCase("made")) {
+
+			}
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+}

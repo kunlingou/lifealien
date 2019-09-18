@@ -1,0 +1,55 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.DoubleAdder;
+import java.util.stream.Collectors;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.ClassType;
+import com.jiuqi.ldrsz.datainitial.entiy.Plan;
+import com.jiuqi.ldrsz.datainitial.entiy.Staff;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+
+/**
+ * 办公用房整体超标情况
+ * @author goukunlin
+ *
+ */
+public class BangyfztcbqkKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		Unit unit = Unit.class.cast(objects[0]);
+		//办公用房
+		Set<String> a = new HashSet<>();
+		a.add("EB91E62FDE4948AB89AED9E42651C9E1");
+		
+		
+		//计划标准
+		BaseDataObjects<Staff> planInfo = new BaseDataProvider().findAll(Staff.class);
+		double planMianj = planInfo.getBaseDataObjects().stream().filter(e->e.getUnitid().equals(unit.getId())).collect(Collectors.summarizingDouble(e->e.getBs_count() * e.getArea())).getSum();
+		
+		//实际办公用房面积
+		double actualMianj = cards.stream().filter(e->a.contains(e.getTypeid())).collect(Collectors.summarizingDouble(e->e.getArea())).getSum();
+		
+		Double result = (float)(actualMianj - planMianj)/planMianj;
+		
+		if(result>1.5) {
+			return -3;
+		}else if(result>1.2) {
+			return 0;
+		}else if(result>1) {
+			return 3;
+		}else{
+			return 5;
+		}
+	}
+
+}

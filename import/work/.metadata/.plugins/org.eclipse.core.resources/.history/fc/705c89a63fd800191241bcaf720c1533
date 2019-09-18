@@ -1,0 +1,34 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.IntSummaryStatistics;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.ClassType;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+
+/**
+ * 办公设备国产化率
+ * @author goukunlin
+ *
+ */
+public class BangsbgchlKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		
+		BaseDataObjects<ClassType> classInfo = new BaseDataProvider().findAll(ClassType.class);
+		List<Object> a = Arrays.asList(new String[] {"348CDB88461A407B9FD71F580E440A3B","3E608FDBF0F141D5B5D71DA8A173441A","6FC57B041ADE4D7987DC10F9BBA3A6EC","E62C4D45D0BC4D43A853B72EEBCF8717"});
+		//办公设备国产化
+		IntSummaryStatistics collect = cards.stream().filter(e->a.contains(e.getTypeid())).collect(Collectors.summarizingInt(e->true == e.getMade()?1:0));
+		
+		Double result = (double)collect.getSum()/collect.getCount();
+		return result;
+	}
+
+}

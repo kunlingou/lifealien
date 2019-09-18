@@ -1,0 +1,7 @@
+package com.jiuqi.ldrsz.datainitial.constant;
+
+public interface QueryConst {
+	
+	String query_md_unit = "select id,code,name,parentg_code from md_unit";
+	
+}

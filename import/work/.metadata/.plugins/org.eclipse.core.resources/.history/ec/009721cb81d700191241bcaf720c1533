@@ -1,0 +1,91 @@
+package com.jiuqi.ldrsz.datainitial.config;
+
+import org.ehcache.Cache;
+import org.ehcache.CacheManager;
+import org.ehcache.config.builders.CacheConfigurationBuilder;
+import org.ehcache.config.builders.CacheManagerBuilder;
+import org.ehcache.config.builders.ResourcePoolsBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.env.Environment;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.jiuqi.ldrsz.datainitial.entiy.CheckTypeEnum;
+import com.jiuqi.ldrsz.datainitial.factory.DataInitServiceBeanFactory;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+import com.jiuqi.ldrsz.datainitial.service.DataInitialCacheService;
+import com.jiuqi.ldrsz.datainitial.springjdbc.DBManagerBuilder;
+import com.jiuqi.ldrsz.datainitial.springjdbc.properties.DBKey;
+import com.jiuqi.ldrsz.datainitial.springjdbc.properties.DBProps;
+import com.jiuqi.ldrsz.datainitial.web.DataInitTialController;
+
+@Configurable
+//实体类注册
+@EntityScan({ "com.jiuqi.ldrsz.datainitial.entiy" })
+//datainitial包下bean注册
+@ComponentScan({ "com.jiuqi.ldrsz.datainitial" })
+public class DataInitTialConfig {
+	
+	@Autowired
+	Environment env;
+
+	@Bean
+	public DataInitTialController dataInitTialController() {
+		return new DataInitTialController();
+	}
+	
+	@Bean
+	public DataInitialCacheService dataInitialCacheService() {
+		return new DataInitialCacheService();
+	}
+
+	@Bean
+	public CacheManager getCacheManager() {
+		CacheManager cacheManager = CacheManagerBuilder
+				.newCacheManagerBuilder().withCache("preconfigured", CacheConfigurationBuilder
+						.newCacheConfigurationBuilder(String.class, Object.class, ResourcePoolsBuilder.heap(10)))
+				.build();
+		cacheManager.init();
+		return cacheManager;
+	}
+
+	@Bean
+	public Cache<String, Object> getCache(CacheManager cacheManager) {
+		return cacheManager.createCache("dataInitialCache", CacheConfigurationBuilder
+				.newCacheConfigurationBuilder(String.class, Object.class, ResourcePoolsBuilder.heap(10)));
+	}
+
+	@Bean
+	public DataInitServiceBeanFactory dataInitServiceBeanFactory() {
+		return new DataInitServiceBeanFactory();
+	}
+	
+	@Bean
+	public BaseDataProvider baseDataProvider() {
+		return new BaseDataProvider();
+	}
+	
+	@Bean
+	public JdbcTemplate jdbcTemplate() {
+		DBProps dbProps = new DBProps();
+		dbProps.setKey(DBKey.TARGRET);
+		if (env.containsProperty("jdbc.username")) {
+			dbProps.setUser(env.getProperty("jdbc.username"));
+		}
+		if (env.containsProperty("jdbc.password")) {
+			dbProps.setPassword(env.getProperty("jdbc.password"));
+		}
+		if (env.containsProperty("jdbc.driver-class-name")) {
+			dbProps.setDriverClass(env.getProperty("jdbc.driver-class-name"));
+		}
+		if (env.containsProperty("jdbc.url")) {
+			dbProps.setJdbcUrl(env.getProperty("jdbc.url"));
+		}
+		dbProps.setInitialPoolSize("5");
+		dbProps.setMaxPoolSize("10");
+		return DBManagerBuilder.getDBManager(DBKey.SOURCE).getTemplate(dbProps);
+	}
+}

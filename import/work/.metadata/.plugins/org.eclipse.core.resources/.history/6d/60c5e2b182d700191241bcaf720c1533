@@ -1,0 +1,14 @@
+package com.jiuqi.ldrsz.datainitial.constant;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.jiuqi.ldrsz.datainitial.provider.RSReadAndWriter;
+
+public interface QueryConst {
+	
+	Map<Class<? extends RSReadAndWriter>, String> query = new HashMap<Class<? extends RSReadAndWriter>, String>();
+	
+	String query_md_unit = "SELECT ID as \"ID\" FROM MD_UNIT";
+	
+}

@@ -1,0 +1,18 @@
+package com.jiuqi.ldrsz.datainitial.constant;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObject;
+import com.jiuqi.ldrsz.datainitial.provider.RSReadAndWriter;
+
+public interface QueryConst {
+	
+	Map<Class<? extends BaseDataObject>, String> query = new HashMap<>();
+	String query_md_unit = "SELECT ID,CODE,NAME,PARENTG_CODE FROM MD_UNIT";
+	String query_md_staff = "SELECT ID,BS_LEVEL,UNITID,BS_COUNT,AREA FROM MD_STAFF";
+	String query_md_classtype = "SELECT ID,CODE,NAME,BS_CLASS FROM MD_CLASSTYPE";
+	String query_bs_plan = "SELECT ID,UNITID,BS_TYPE,BS_COUNT,BS_LIMIT,BS_QUOTA,BS_YEAR_LIMIT FROM BS_PLAN";
+	String query_md_carcost = "SELECT ID,CAR_NUMBER,COST_TYPE,COST FROM MD_CARCOST";
+	String query_md_car = "SELECT ID,REVISION,CAR_NUMBER,MILEAGE FROM MD_CAR";
+}

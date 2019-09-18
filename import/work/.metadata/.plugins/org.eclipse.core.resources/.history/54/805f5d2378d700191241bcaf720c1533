@@ -1,0 +1,30 @@
+package com.jiuqi.ldrsz.datainitial.service;
+
+import org.ehcache.Cache;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class DataInitialCacheService {
+
+	@Autowired
+	Cache<String, Object> cache;
+
+	public Cache<String, Object> getCache() {
+		return cache;
+	}
+	
+	public <T> Object getCache(String key, Class<T> clazz) {
+		return cache.get(key);
+	}
+	
+	public void putCache(String key, String value) {
+		cache.put(key, value);
+	}
+	
+	public boolean containsKey(String key) {
+		return cache.containsKey(key);
+	}
+	
+	public String getFullKey(String table) {
+		return "baseData_"+table;
+	}
+}

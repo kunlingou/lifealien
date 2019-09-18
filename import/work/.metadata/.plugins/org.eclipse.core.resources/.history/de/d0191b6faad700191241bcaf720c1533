@@ -1,0 +1,56 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.DoubleAdder;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.ClassType;
+import com.jiuqi.ldrsz.datainitial.entiy.Plan;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+
+public class BangyfztcbqkKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		Unit unit = Unit.class.cast(objects[0]);
+		
+		BaseDataObjects<ClassType> classInfo = new BaseDataProvider().findAll(ClassType.class);
+		List<Object> a = Arrays.asList(new String[] {"办公用房"});
+		Set<String> ids = new HashSet<String>();
+		Set<String> types = new HashSet<String>();
+		
+		classInfo.getBaseDataObjects().forEach(e->{
+			if(a.contains(e.getBs_class())){
+				ids.add(e.getId());
+				types.add(e.getBs_class());
+			}
+		});
+		
+		//计划标准
+		AtomicInteger planNum = new AtomicInteger(0);
+		BaseDataObjects<Plan> planInfo = new BaseDataProvider().findAll(Plan.class);
+		planInfo.getBaseDataObjects().forEach(e->{
+			if(e.getUnitid().equals(unit.getId()) && !ids.contains(e.getBs_type())) {
+				planNum.addAndGet(e.getBs_count());
+			}
+		});
+		
+		
+		//实际办公用房面积
+		DoubleAdder actualMianj = new DoubleAdder();
+		cards.forEach(e->{
+			if(types.contains(e.getTypeid())) {
+				actualMianj.add(e.getArea());
+			}
+		});
+		
+		return null;
+	}
+
+}

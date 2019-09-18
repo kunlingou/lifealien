@@ -1,0 +1,48 @@
+package com.jiuqi.ldrsz.datainitial.factory;
+
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.orm.hibernate5.HibernateOperations;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.service.DataInitialCacheService;
+import static com.jiuqi.ldrsz.datainitial.constant.QueryConst.*;
+
+import java.util.List;
+import java.util.Map.Entry;
+/**
+ * @author zhangweimin
+ *
+ */
+public class DataInitServiceBeanFactory implements InitializingBean {
+	@Autowired
+	DataInitialCacheService initCacheService;
+//	@Autowired
+//	private HibernateOperations template;
+	@Autowired
+	private JdbcTemplate template;
+	
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		String value = "";
+		String key = "";
+		initCacheService.putCache(key, value);
+		
+		initBaseData();
+	}
+
+	private void initBaseData() {
+		buildQueryMap();
+		
+//		List<Unit> findByExample = template.findByExample(query_md_unit, new Unit());
+		for(Entry<Class<?>, String> entry : query.entrySet()) {
+			entry.getKey();
+		}
+	}
+
+	private void buildQueryMap() {
+		query.put(Unit.class, query_md_unit);
+	}
+
+}

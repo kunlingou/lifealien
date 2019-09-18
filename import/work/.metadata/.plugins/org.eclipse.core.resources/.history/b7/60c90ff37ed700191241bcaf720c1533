@@ -1,0 +1,56 @@
+package com.jiuqi.ldrsz.datainitial.entiy;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObject;
+import com.jiuqi.ldrsz.datainitial.provider.RSReadAndWriter;
+
+public class Unit extends BaseDataObject implements RSReadAndWriter{
+	
+	private String id;
+	
+	private String code;
+	
+	private String name;
+	
+	private String parentgCode;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getParentgCode() {
+		return parentgCode;
+	}
+
+	public void setParentgCode(String parentgCode) {
+		this.parentgCode = parentgCode;
+	}
+
+	@Override
+	public void Read(ResultSet rs) throws SQLException {
+		this.id = rs.getString("ID");
+	}
+	
+}

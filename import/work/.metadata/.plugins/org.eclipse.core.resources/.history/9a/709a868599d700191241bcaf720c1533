@@ -1,0 +1,18 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.List;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+
+public class ZhixlKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		
+		//计划配置资产数量
+		
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

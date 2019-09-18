@@ -1,0 +1,56 @@
+package com.jiuqi.ldrsz.datainitial.config;
+
+import org.ehcache.Cache;
+import org.ehcache.CacheManager;
+import org.ehcache.config.builders.CacheConfigurationBuilder;
+import org.ehcache.config.builders.CacheManagerBuilder;
+import org.ehcache.config.builders.ResourcePoolsBuilder;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.jiuqi.ldrsz.datainitial.entiy.CheckTypeEnum;
+import com.jiuqi.ldrsz.datainitial.factory.DataInitServiceBeanFactory;
+import com.jiuqi.ldrsz.datainitial.springjdbc.DBManagerBuilder;
+import com.jiuqi.ldrsz.datainitial.springjdbc.properties.DBKey;
+import com.jiuqi.ldrsz.datainitial.springjdbc.properties.DBProps;
+import com.jiuqi.ldrsz.datainitial.web.DataInitTialController;
+
+@Configurable
+//实体类注册
+@EntityScan({ "com.jiuqi.ldrsz.datainitial.entiy"})
+//datainitial包下bean注册
+@ComponentScan({ "com.jiuqi.ldrsz.datainitial"})
+public class DataInitTialConfig {
+	
+	@Bean
+	public DataInitTialController dataInitTialController() {
+		return new DataInitTialController();
+	}
+	
+	
+	 @Bean
+	 public CacheManager getCacheManager() {
+	  CacheManager cacheManager = CacheManagerBuilder.newCacheManagerBuilder().withCache("preconfigured", CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class,Object.class,ResourcePoolsBuilder.heap(10))).build();
+	  cacheManager.init();
+	  return cacheManager;
+	 }
+	 
+	 @Bean
+	 public Cache<String, Object> getCache(CacheManager cacheManager){
+	  return cacheManager.createCache("dataInitialCache", CacheConfigurationBuilder.newCacheConfigurationBuilder(String.class,Object.class,ResourcePoolsBuilder.heap(10)));
+	 }
+	 
+	 @Bean
+	 public DataInitServiceBeanFactory dataInitServiceBeanFactory() {
+		 return new DataInitServiceBeanFactory();
+	 }
+	 
+	 @Bean
+	 public JdbcTemplate jdbcTemplate() {
+		 DBProps dBProps = new DBProps();
+		 return DBManagerBuilder.getDBManager(DBKey.SOURCE).getTemplate(dBProps);
+	 }
+}

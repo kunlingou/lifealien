@@ -1,0 +1,112 @@
+package com.jiuqi.ldrsz.datainitial.springjdbc;
+
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.jiuqi.ldrsz.datainitial.springjdbc.properties.DBProps;
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+import com.mchange.v2.resourcepool.CannotAcquireResourceException;
+
+public class DBManager {
+	
+	private DBProps dbPropertiesInstance;
+	private ComboPooledDataSource dataSourceInstance;
+	private JdbcTemplate templateInstance;
+	
+	public static DBManager newDBManager(DBProps props) {
+		DBManager dbManager = new DBManager();
+		if(dbManager.getTemplate(props) != null) {
+			return dbManager;
+		}
+		return null;
+	}
+	
+	public JdbcTemplate getTemplate(DBProps props) {
+		if(dbPropertiesInstance!=null && dbPropertiesInstance.equals(props)) {
+			return templateInstance;
+		}else {
+			clear();
+		}
+		getDBProperties(props);
+		try {
+			getDataSource(dbPropertiesInstance);
+		} catch (SQLException ex) {
+			if(ex.getCause() instanceof CannotAcquireResourceException) {
+				CannotAcquireResourceException cause = (CannotAcquireResourceException) ex.getCause();
+				if(cause.getNestedThrowable() instanceof SQLException
+						&& 28000 == ((SQLException)cause.getNestedThrowable()).getErrorCode()) {
+					Log.info("账号被锁定");
+				}
+			}
+			clear();
+			Log.info(ex.getMessage());
+			return null;
+		}
+		return _getTemplate(dataSourceInstance);
+	}
+	
+	public void clear() {
+		dbPropertiesInstance = null;
+		dataSourceInstance = null;
+		templateInstance = null;
+	}
+	
+	public JdbcTemplate getCurrentTemplate() {
+		return templateInstance;
+	}
+	
+	public ComboPooledDataSource getDataSource(DBProps props) throws SQLException{
+		if(dataSourceInstance == null) {
+			_getDataSource(props);
+		}
+		return dataSourceInstance;
+	}
+	
+	public DBProps getDBProperties(DBProps props) {
+		if(dbPropertiesInstance == null) {
+			_getDBProperties(props);
+		}
+		return dbPropertiesInstance;
+	}
+	
+	private JdbcTemplate _getTemplate(ComboPooledDataSource dataSource) {
+		templateInstance = new JdbcTemplate(dataSource);
+		return templateInstance;
+	}
+	
+	private ComboPooledDataSource _getDataSource(DBProps props) throws SQLException{
+		dataSourceInstance = new ComboPooledDataSource();
+		dataSourceInstance.setUser(props.getUser());
+		dataSourceInstance.setPassword(props.getPassword());
+		dataSourceInstance.setJdbcUrl(props.getJdbcUrl());
+		try {
+			dataSourceInstance.setDriverClass(props.getDriverClass());
+			Class.forName(props.getDriverClass());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if(DriverManager.getConnection(dataSourceInstance.getJdbcUrl(), dataSourceInstance.getUser(), dataSourceInstance.getPassword())==null) {
+			throw new RuntimeException("not found class "+props.getDriverClass());
+		}
+		dataSourceInstance.setInitialPoolSize(Integer.valueOf(props.getInitialPoolSize()));
+		dataSourceInstance.setMaxPoolSize(Integer.valueOf(props.getMaxPoolSize()));
+		return dataSourceInstance;
+	}
+	
+	private DBProps _getDBProperties(DBProps props) {
+		try {
+			dbPropertiesInstance = props.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return dbPropertiesInstance;
+	}
+	
+	public DataSource getDataSource() {
+		return dataSourceInstance;
+	}
+}

@@ -1,0 +1,18 @@
+package com.jiuqi.ldrsz.datainitial.provider;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jiuqi.ldrsz.datainitial.service.DataInitialCacheService;
+
+public class BaseDataProvider {
+	
+	@Autowired
+	DataInitialCacheService initCacheService;
+	
+	public BaseDataObjects findById(String table,String id) {
+		String fullKey = initCacheService.getFullKey(table);
+		if(initCacheService.containsKey(fullKey)) {
+			initCacheService.getCache(fullKey,BaseDataObjects.class);
+		}
+	}
+}

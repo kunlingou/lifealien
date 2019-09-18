@@ -1,0 +1,23 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.List;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.ClassType;
+import com.jiuqi.ldrsz.datainitial.entiy.Staff;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+
+public class ZhixlKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		
+		//计划配置资产数量
+		BaseDataObjects<ClassType> findAll = new BaseDataProvider().findAll(ClassType.class);
+		
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

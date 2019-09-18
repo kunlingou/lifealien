@@ -1,0 +1,9 @@
+package com.jiuqi.ldrsz.datainitial.provider;
+
+public class BaseDataProvider {
+	
+	
+	public BaseDataObjects findById() {
+		
+	}
+}

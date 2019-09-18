@@ -1,0 +1,29 @@
+package com.jiuqi.ldrsz.datainitial.provider;
+
+import java.util.List;
+
+import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jiuqi.ldrsz.datainitial.service.DataInitialCacheService;
+
+public class BaseDataProvider {
+	
+	private final Logger logger = LoggerFactory.getLogger(BaseDataProvider.class);
+	
+	@Autowired
+	DataInitialCacheService initCacheService;
+	
+	public List<BaseDataObject> findById(String table,String id) {
+		String fullKey = initCacheService.getFullKey(table);
+		BaseDataObjects cache = null;
+		if(initCacheService.containsKey(fullKey)) {
+			cache = initCacheService.getCache(fullKey,BaseDataObjects.class);
+		}else {
+			logger.info("初始化基础数据失败:"+table);
+		}
+		return cache.findById(id);
+	}
+}

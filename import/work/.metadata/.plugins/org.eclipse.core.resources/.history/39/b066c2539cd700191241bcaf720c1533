@@ -1,0 +1,35 @@
+package com.jiuqi.ldrsz.datainitial.entiy;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObject;
+import com.jiuqi.ldrsz.datainitial.provider.RSReadAndWriter;
+
+public class Plan extends BaseDataObject implements RSReadAndWriter{
+	
+	String unitid;
+	
+	String bs_type;
+	
+	Integer bs_count;
+	
+	Double bs_limit;
+	
+	Double bs_quota;
+	
+	Integer bs_year_limit;
+	
+	
+	@Override
+	public void Read(ResultSet rs) throws SQLException {
+		super.Read(rs);
+		this.unitid = rs.getString("UNITID");
+		this.bs_type =rs.getString("BS_TYPE");
+		this.bs_count = rs.getInt("BS_COUNT"); 
+		this.bs_limit =rs.getDouble("BS_LIMIT");
+		this.bs_quota =rs.getDouble("BS_QUOTA");
+		this.bs_year_limit =rs.getInt("BS_YEAR_LIMIT");
+	}
+
+}

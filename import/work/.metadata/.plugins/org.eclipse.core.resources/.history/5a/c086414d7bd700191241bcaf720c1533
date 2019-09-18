@@ -1,0 +1,37 @@
+package com.jiuqi.ldrsz.datainitial.factory;
+
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.jiuqi.ldrsz.datainitial.service.DataInitialCacheService;
+import static com.jiuqi.ldrsz.datainitial.constant.QueryConst.*;
+/**
+ * @author zhangweimin
+ *
+ */
+public class DataInitServiceBeanFactory implements InitializingBean {
+	@Autowired
+	DataInitialCacheService initCacheService;
+	
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		String value = "";
+		String key = "";
+		initCacheService.putCache(key, value);
+		
+		initBaseData();
+	}
+
+	private void initBaseData() {
+		buildQueryMap();
+		
+		query.forEach(session ->{
+			session
+		});
+	}
+
+	private void buildQueryMap() {
+		query.put("md_unit", query_md_unit);
+	}
+
+}

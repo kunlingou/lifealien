@@ -1,0 +1,5 @@
+package com.jiuqi.ldrsz.datainitial.constant;
+
+public interface QueryConst {
+
+}

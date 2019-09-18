@@ -1,0 +1,66 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.DoubleAdder;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Carcost;
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.ClassType;
+import com.jiuqi.ldrsz.datainitial.entiy.Staff;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+
+/**
+ * 单车运行平均费用率
+ * @author goukunlin
+ *
+ */
+public class Dancyxpjfyl implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		Unit unit = Unit.class.cast(objects[0]);
+		
+		//车辆
+		Set<String> a = new HashSet<>();
+		a.add("3FB75C347F5549FE97235A74B4598D5F");
+		
+		BaseDataObjects<ClassType> classInfo = new BaseDataProvider().findAll(ClassType.class);
+		
+		//实际运行费用
+//		BaseDataObjects<Carcost> carInfo = new BaseDataProvider().findAll(Carcost.class);
+//		DoubleAdder actualjiaz = new DoubleAdder();
+//		DoubleAdder actualAlljiaz = new DoubleAdder();
+//		cards.stream().filter(e->a.contains(e.getTypeid())).forEach(e->{
+//			List<Carcost> findByField = carInfo.findByField("CAR_NUMBER", e.getCar_number());
+//			for(Carcost cost : findByField) {
+//				if(cost.getCost_type().equals("运行费用")) {
+//					actualjiaz.add(cost.getCost());
+//				}
+//				actualAlljiaz.add(cost.getCost());
+//			}
+//			actualjiaz.add(e.getArea());
+//		});
+		//车牌号
+		Set<String> chephs = cards.stream().filter(e->a.contains(e.getTypeid())).map(Card::getCar_number).collect(Collectors.toSet());
+				
+		
+		//实际运行费用
+		BaseDataObjects<Carcost> carInfo = new BaseDataProvider().findAll(Carcost.class);
+//		carInfo.getBaseDataObjects()
+		
+		carInfo.getBaseDataObjects().forEach(action);
+		
+		
+		Double result = (float)(actualjiaz.doubleValue())/actualAlljiaz.doubleValue();
+		
+		return result<=0?5:(result<=30 && result>0)?0:-5;
+	}
+
+}

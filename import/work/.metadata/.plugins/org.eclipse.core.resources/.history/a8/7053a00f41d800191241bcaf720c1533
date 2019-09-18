@@ -1,0 +1,20 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+
+public class CaiwrzjsxKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object...objects) {
+		List<Card> card0 = new ArrayList<Card>();
+		long card0 = cards.stream().filter(card->{
+			int diffDays = IKpi.diffDays(card.getBs_cz_time(), card.getBs_cw_time());
+			return diffDays>=0 && diffDays<=30;
+		}).count();
+		return (float)card0*5/cards.size();
+	}
+
+}

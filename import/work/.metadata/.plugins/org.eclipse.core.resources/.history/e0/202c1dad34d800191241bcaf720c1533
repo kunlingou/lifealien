@@ -1,0 +1,42 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.ClassType;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+
+/**
+ * 办公设备共享率
+ * @author goukunlin
+ *
+ */
+public class BangsbgxlKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		Unit unit = Unit.class.cast(objects[0]);
+		
+		BaseDataObjects<ClassType> classInfo = new BaseDataProvider().findAll(ClassType.class);
+		List<String> a1 = Arrays.asList(new String[] {"348CDB88461A407B9FD71F580E440A3B","3E608FDBF0F141D5B5D71DA8A173441A");
+		List<String> a2 = Arrays.asList(new String[] {"6FC57B041ADE4D7987DC10F9BBA3A6EC"});
+		
+		
+		Set<String> ids = new HashSet<String>();
+		Set<String> types = new HashSet<String>();
+		
+		classInfo.getBaseDataObjects().forEach(e->{
+			if(a.contains(e.getBs_class())){
+				ids.add(e.getId());
+				types.add(e.getBs_class());
+			}
+		});
+		return null;
+	}
+
+}

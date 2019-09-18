@@ -1,0 +1,57 @@
+package com.jiuqi.ldrsz.datashow.web;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import com.jiuqi.ldrsz.datashow.entity.OrgParams;
+
+public class WebResponse {
+	
+	Double caiwrzjsxKpi = 0.00f;
+	Double shifglfzdrKpi = 0.00f;
+	Double zhixlKpi = 0.00f;
+	Double feiyjyl = 0.00f;
+	Double bangyfztcbqkKpi = 0.00f;
+	Double dancyxpjfyl = 0.00f;
+	Double zongfycdelKpi = 0.00f;
+	Double bangsbgxlKpi = 0.00f;
+	Double shiynxzxlKpi = 0.00f;
+	Double bangsbgchlKpi = 0.00f;
+	
+	List<Object[]> zongpm = new ArrayList<Object[]>();
+
+	public WebResponse(Map<String, OrgParams> initData) {
+		init(initData);
+	}
+
+	private void init(Map<String, OrgParams> initData) {
+		int size = initData.size()-1;
+		for(Entry<String, OrgParams> e:initData.entrySet()) {
+			String key = e.getKey();
+			OrgParams value = e.getValue();
+			caiwrzjsxKpi += Double.valueOf(value.get("CaiwrzjsxKpi").toString());
+			shifglfzdrKpi += Double.valueOf(value.get("ShifglfzdrKpi").toString());
+			zhixlKpi += Double.valueOf(value.get("ZhixlKpi").toString());
+			feiyjyl += Double.valueOf(value.get("Feiyjyl").toString());
+			bangyfztcbqkKpi += Double.valueOf(value.get("BangyfztcbqkKpi").toString());
+			dancyxpjfyl += Double.valueOf(value.get("Dancyxpjfyl").toString());
+			zongfycdelKpi += Double.valueOf(value.get("ZongfycdelKpi").toString());
+			bangsbgxlKpi += Double.valueOf(value.get("BangsbgxlKpi").toString());
+			shiynxzxlKpi += Double.valueOf(value.get("ShiynxzxlKpi").toString());
+			bangsbgchlKpi += Double.valueOf(value.get("BangsbgchlKpi").toString());
+		}
+		caiwrzjsxKpi /= size;
+		shifglfzdrKpi /= size;
+		zhixlKpi /= size;
+		feiyjyl /= size;
+		bangyfztcbqkKpi /= size;
+		dancyxpjfyl /= size;
+		zongfycdelKpi /= size;
+		bangsbgxlKpi /= size;
+		shiynxzxlKpi /= size;
+		bangsbgchlKpi /= size;
+	}
+
+}

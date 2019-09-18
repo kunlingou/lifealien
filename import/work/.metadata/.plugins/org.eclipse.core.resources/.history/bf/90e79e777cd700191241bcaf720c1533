@@ -1,0 +1,75 @@
+package com.jiuqi.ldrsz.datainitial.springjdbc;
+
+import static com.jiuqi.ldrsz.datainitial.springjdbc.DriverClassName.com_mysql_jdbc_Driver;
+
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.jiuqi.np.gams2.datatrans.entity.bo.RawData;
+import com.jiuqi.np.gams2.datatrans.type.TypeUtil;
+
+public class JTUtil {
+	
+	public static RawData getRawData(ResultSet rs) {
+		RawData arg = null;
+		int len;
+		Object value = null;
+		ResultSetMetaData metaData = null;
+		try {
+			metaData = rs.getMetaData();
+			len = metaData.getColumnCount();
+			if((arg = new RawData(len)) != null && rs instanceof ResultSet) {
+				for(int i=1;i<=len;i++) {
+					value = rs.getObject(i);
+					arg.put(metaData.getColumnLabel(i), value);
+				}
+			}
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		return arg;
+	}
+	
+	public static String getDriverClassName(JdbcTemplate tempalte) {
+		if(tempalte instanceof TargetDBTemplate) {
+			return TargetDBTemplate.class.cast(tempalte).getDriverClassName();
+		}
+		return null;
+	}
+	
+	public static DBType getDBType(JdbcTemplate tempalte) {
+		if(com_mysql_jdbc_Driver.equals(getDriverClassName(tempalte))) {
+			return DBType.MYSQL;
+		}
+		return DBType.ORACLE;
+	}
+	
+	public static boolean isMysql(JdbcTemplate tempalte) {
+		return isDBType(tempalte, DBType.MYSQL);
+	}
+	
+	public static boolean isDBType(JdbcTemplate tempalte, DBType dbType) {
+		return dbType != null && dbType.equals(getDBType(tempalte));
+	}
+	
+	public static String getString(ResultSet rs,int arg0) throws SQLException{
+		Object object = rs.getObject(arg0);
+		if(object instanceof byte[]) {
+			return TypeUtil.getString(rs.getBytes(arg0));
+		}else {
+			return rs.getString(arg0);
+		}
+	}
+	
+	public static String getString(ResultSet rs,String arg0) throws SQLException{
+		Object object = rs.getObject(arg0);
+		if(object instanceof byte[]) {
+			return TypeUtil.getString(rs.getBytes(arg0));
+		}else {
+			return rs.getString(arg0);
+		}
+	}
+}

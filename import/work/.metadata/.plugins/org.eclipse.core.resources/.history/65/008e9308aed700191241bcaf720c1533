@@ -1,0 +1,53 @@
+package com.jiuqi.ldrsz.datainitial.provider;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+public class BaseDataObjects<E extends BaseDataObject> {
+	
+	Set<E> baseDataObjects = new HashSet<>();
+	
+	public BaseDataObjects() {
+		
+	}
+
+	public Set<E> getBaseDataObjects() {
+		return baseDataObjects;
+	}
+	
+	public void addBaseDataObject(E BaseDataObject) {
+		baseDataObjects.add(BaseDataObject);
+	}
+
+	public void setBaseDataObjects(Set<E> baseDataObjects) {
+		this.baseDataObjects = baseDataObjects;
+	}
+	
+	public List<E> findById(String id){
+		List<E> bo = new ArrayList<E>();
+		Iterator<E> iterator = baseDataObjects.iterator();
+		while(iterator.hasNext()) {
+			E next = iterator.next();
+			if(next.getId().equals(id)) {
+				bo.add(next);
+			}
+		}
+		return bo;
+	}
+	
+	public List<E> findByFieldName(String field,String id){
+		List<E> bo = new ArrayList<E>();
+		Iterator<E> iterator = baseDataObjects.iterator();
+		while(iterator.hasNext()) {
+			E next = iterator.next();
+			if(next.getValues().get(field).equals(id)) {
+				bo.add(next);
+			}
+		}
+		return bo;
+	}
+	
+}

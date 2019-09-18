@@ -1,0 +1,204 @@
+package com.jiuqi.ldrsz.datainitial.entiy;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.jiuqi.ldrsz.datainitial.annotation.ExcelColumn;
+import com.jiuqi.ldrsz.datainitial.provider.RSReadAndWriter;
+
+@Entity
+@Table(name = "BS_CARD")
+public class Card implements RSReadAndWriter {
+	@Id
+	@ExcelColumn(value = "id", col = -1, isAuto = true, checkType = { 0, 1 })
+	protected String id;
+	@Column
+	@ExcelColumn(value = "revision", col = 0, isAuto = true, checkType = { 0, 1 })
+	protected Integer revision;
+	@Column
+	@ExcelColumn(value = "卡片编号", col = 1, isAuto = true, checkType = { 0, 1 })
+	protected String code;
+	@Column
+	@ExcelColumn(value = "使用人", col = 2, checkType = { 0, 1 })
+	protected String username;
+	@Column
+	@ExcelColumn(value = "单位", col = 3, checkType = { 0, 1, 5 })
+	protected String unitid;
+	@Column
+	@ExcelColumn(value = "资产记账日期", col = 4, checkType = { 0, 1 })
+	protected Date bs_zc_time;
+	@Column
+	@ExcelColumn(value = "价值", col = 5, checkType = { 0, 1, 2 })
+	protected Double cost;
+	@Column
+	@ExcelColumn(value = "类型", col = 6, checkType = { 0, 1, 6 })
+	protected String typeid;
+	@Column
+	@ExcelColumn(value = "国产",isAuto = true, col = 7, checkType = { 0,  4 })
+	protected Boolean made;
+	@Column
+	@ExcelColumn(value = "面积", col = 8, checkType = {  1, 2 })
+	protected Double area;
+	@Column
+	@ExcelColumn(value = "车牌号", col = 9, checkType = { 1,7,3})
+	protected String car_number;
+	@Column
+	@ExcelColumn(value = "创建时间", col = 10, checkType = {  1 })
+	protected Date created_time;
+	@Column
+	@ExcelColumn(value = "财务入账日期", col = 11, checkType = { 0, 1 })
+	protected Date bs_cw_time;
+	@Column
+	@ExcelColumn(value = "取得日期", col = 12, checkType = { 0, 1 })
+	protected Date bs_qd_time;
+	@Column
+	@ExcelColumn(value = "处置日期", col = 13, checkType = { 1 })
+	protected Date bs_cz_time;
+	public Card() {
+	
+	}
+	
+	public Card(ResultSet rs) throws SQLException {
+		Read(rs);
+	}
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Integer getRevision() {
+		return revision;
+	}
+
+	public void setRevision(Integer revision) {
+		this.revision = revision;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getUnitid() {
+		return unitid;
+	}
+
+	public void setUnitid(String unitid) {
+		this.unitid = unitid;
+	}
+
+	public Date getBs_zc_time() {
+		return bs_zc_time;
+	}
+
+	public void setBs_zc_time(Date bs_zc_time) {
+		this.bs_zc_time = bs_zc_time;
+	}
+
+	public Double getCost() {
+		return cost;
+	}
+
+	public void setCost(Double cost) {
+		this.cost = cost;
+	}
+
+	public String getTypeid() {
+		return typeid;
+	}
+
+	public void setTypeid(String typeid) {
+		this.typeid = typeid;
+	}
+
+	public Boolean getMade() {
+		return made;
+	}
+
+	public void setMade(Boolean made) {
+		this.made = made;
+	}
+
+	public Double getArea() {
+		return area;
+	}
+
+	public void setArea(Double area) {
+		this.area = area;
+	}
+
+	public String getCar_number() {
+		return car_number;
+	}
+
+	public void setCar_number(String car_number) {
+		this.car_number = car_number;
+	}
+
+	public Date getCreated_time() {
+		return created_time;
+	}
+
+	public void setCreated_time(Date created_time) {
+		this.created_time = created_time;
+	}
+
+	public Date getBs_cw_time() {
+		return bs_cw_time;
+	}
+
+	public void setBs_cw_time(Date bs_cw_time) {
+		this.bs_cw_time = bs_cw_time;
+	}
+
+	public Date getBs_qd_time() {
+		return bs_qd_time;
+	}
+
+	public void setBs_qd_time(Date bs_qd_time) {
+		this.bs_qd_time = bs_qd_time;
+	}
+
+	public Date getBs_cz_time() {
+		return bs_cz_time;
+	}
+
+	public void setBs_cz_time(Date bs_cz_time) {
+		this.bs_cz_time = bs_cz_time;
+	}
+
+	@Override
+	public void Read(ResultSet rs) throws SQLException {
+		this.id = rs.getString("ID");
+		this.username = rs.getString("USERNAME");
+		this.unitid = rs.getString("UNITID");
+		this.bs_zc_time = rs.getDate("BS_ZC_TIME");
+		this.cost = rs.getDouble("COST");
+		this.typeid = rs.getString("TYPEID");
+		this.made = rs.getBoolean("MADE");
+		this.area = rs.getDouble("AREA");
+		this.car_number = rs.getString("CAR_NUMBER");
+		this.bs_cw_time = rs.getDate("BS_CW_TIME");
+		this.bs_qd_time = rs.getDate("BS_QD_TIME");
+		this.bs_cz_time = rs.getDate("BS_CZ_TIME");
+	}
+}

@@ -1,0 +1,165 @@
+package com.jiuqi.ldrsz.datashow.web;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+
+import com.jiuqi.ldrsz.datashow.entity.OrgParams;
+
+public class WebResponse {
+	
+	private Double caiwrzjsxKpi = 0.00;
+	private Double shifglfzdrKpi = 0.00;
+	private Double zhixlKpi = 0.00;
+	private Double feiyjyl = 0.00;
+	private Double bangyfztcbqkKpi = 0.00;
+	private Double dancyxpjfyl = 0.00;
+	private Double zongfycdelKpi = 0.00;
+	private Double bangsbgxlKpi = 0.00;
+	private Double shiynxzxlKpi = 0.00;
+	private Double bangsbgchlKpi = 0.00;
+	
+	private List<Object[]> zongpm = new ArrayList<Object[]>();
+
+	public WebResponse(Map<String, OrgParams> initData) {
+		init(initData);
+	}
+
+	private void init(Map<String, OrgParams> initData) {
+		int size = initData.size();
+		for(Entry<String, OrgParams> e:initData.entrySet()) {
+			OrgParams value = e.getValue();
+			Double _caiwrzjsxKpi = value.getDouble("CaiwrzjsxKpi");
+			Double _shifglfzdrKpi = value.getDouble("ShifglfzdrKpi");
+			Double _zhixlKpi = value.getDouble("ZhixlKpi");
+			Double _feiyjyl = value.getDouble("Feiyjyl");
+			Double _bangyfztcbqkKpi = value.getDouble("BangyfztcbqkKpi");
+			Double _dancyxpjfyl = value.getDouble("Dancyxpjfyl");
+			Double _zongfycdelKpi = value.getDouble("ZongfycdelKpi");
+			Double _bangsbgxlKpi = value.getDouble("BangsbgxlKpi");
+			Double _shiynxzxlKpi = value.getDouble("ShiynxzxlKpi");
+			Double _bangsbgchlKpi = value.getDouble("BangsbgchlKpi");
+			caiwrzjsxKpi += _caiwrzjsxKpi;
+			shifglfzdrKpi += _shifglfzdrKpi;
+			zhixlKpi += _zhixlKpi;
+			feiyjyl += _feiyjyl;
+			bangyfztcbqkKpi += _bangyfztcbqkKpi;
+			dancyxpjfyl += _dancyxpjfyl;
+			zongfycdelKpi += _zongfycdelKpi;
+			bangsbgxlKpi += _bangsbgxlKpi;
+			shiynxzxlKpi += _shiynxzxlKpi;
+			bangsbgchlKpi += _bangsbgchlKpi;
+			zongpm.add(new Object[] {value.getUnit().getName(),(_caiwrzjsxKpi+_shifglfzdrKpi+_zhixlKpi+_feiyjyl+_bangyfztcbqkKpi+_dancyxpjfyl+_zongfycdelKpi+_bangsbgxlKpi+_shiynxzxlKpi+_bangsbgchlKpi)});
+		}
+		caiwrzjsxKpi /= size;
+		shifglfzdrKpi /= size;
+		zhixlKpi /= size;
+		feiyjyl /= size;
+		bangyfztcbqkKpi /= size;
+		dancyxpjfyl /= size;
+		zongfycdelKpi /= size;
+		bangsbgxlKpi /= size;
+		shiynxzxlKpi /= size;
+		bangsbgchlKpi /= size;
+		Collections.sort(zongpm, new Comparator<Object[]>() {
+			@Override
+			public int compare(Object[] o1, Object[] o2) {
+				
+				return Double.valueOf(o1[1].toString())<Double.valueOf(o2[1].toString())?1:-1;
+			}
+		});
+	}
+
+	public Double getCaiwrzjsxKpi() {
+		return caiwrzjsxKpi;
+	}
+
+	public void setCaiwrzjsxKpi(Double caiwrzjsxKpi) {
+		this.caiwrzjsxKpi = caiwrzjsxKpi;
+	}
+
+	public Double getShifglfzdrKpi() {
+		return shifglfzdrKpi;
+	}
+
+	public void setShifglfzdrKpi(Double shifglfzdrKpi) {
+		this.shifglfzdrKpi = shifglfzdrKpi;
+	}
+
+	public Double getZhixlKpi() {
+		return zhixlKpi;
+	}
+
+	public void setZhixlKpi(Double zhixlKpi) {
+		this.zhixlKpi = zhixlKpi;
+	}
+
+	public Double getFeiyjyl() {
+		return feiyjyl;
+	}
+
+	public void setFeiyjyl(Double feiyjyl) {
+		this.feiyjyl = feiyjyl;
+	}
+
+	public Double getBangyfztcbqkKpi() {
+		return bangyfztcbqkKpi;
+	}
+
+	public void setBangyfztcbqkKpi(Double bangyfztcbqkKpi) {
+		this.bangyfztcbqkKpi = bangyfztcbqkKpi;
+	}
+
+	public Double getDancyxpjfyl() {
+		return dancyxpjfyl;
+	}
+
+	public void setDancyxpjfyl(Double dancyxpjfyl) {
+		this.dancyxpjfyl = dancyxpjfyl;
+	}
+
+	public Double getZongfycdelKpi() {
+		return zongfycdelKpi;
+	}
+
+	public void setZongfycdelKpi(Double zongfycdelKpi) {
+		this.zongfycdelKpi = zongfycdelKpi;
+	}
+
+	public Double getBangsbgxlKpi() {
+		return bangsbgxlKpi;
+	}
+
+	public void setBangsbgxlKpi(Double bangsbgxlKpi) {
+		this.bangsbgxlKpi = bangsbgxlKpi;
+	}
+
+	public Double getShiynxzxlKpi() {
+		return shiynxzxlKpi;
+	}
+
+	public void setShiynxzxlKpi(Double shiynxzxlKpi) {
+		this.shiynxzxlKpi = shiynxzxlKpi;
+	}
+
+	public Double getBangsbgchlKpi() {
+		return bangsbgchlKpi;
+	}
+
+	public void setBangsbgchlKpi(Double bangsbgchlKpi) {
+		this.bangsbgchlKpi = bangsbgchlKpi;
+	}
+
+	public List<Object[]> getZongpm() {
+		return zongpm;
+	}
+
+	public void setZongpm(List<Object[]> zongpm) {
+		this.zongpm = zongpm;
+	}
+	
+}

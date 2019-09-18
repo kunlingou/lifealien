@@ -1,0 +1,15 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.List;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+
+public class ShifglfzdrKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards) {
+		
+		return null;
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.List;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+
+public class BangyfztcbqkKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

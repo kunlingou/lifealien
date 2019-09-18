@@ -1,0 +1,43 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.Staff;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+import com.jiuqi.ldrsz.datashow.entity.OrgParams;
+
+public class ShifglfzdrKpi implements IKpi{
+	
+
+	@Override
+	public Object execute(List<Card> cards,Object...objects) {
+		Unit unit = Unit.class.cast(objects[0]);
+		Set<String> persons = new HashSet<String>();
+		
+		//编制数
+		BaseDataObjects<Staff> findAll = new BaseDataProvider().findAll(Staff.class);
+		long bianzCount = findAll.getBaseDataObjects().stream().filter(e->e.getUnitid().equals(unit.getId())).collect(Collectors.summarizingDouble(e->e.getBs_count())).getCount();
+		
+//		findAll.getBaseDataObjects().forEach(e-> {
+//			if(e.getUnitid().equals(unit.getId())) {
+//				allpersonNum.addAndGet(e.getBs_count());
+//			}
+//		});
+		cards.forEach(card->{
+			if(card.getUsername() != null) {
+				persons.add(card.getUsername());
+			}
+		});
+		return persons.size()>count * 0.8?5:0;
+	}
+
+}

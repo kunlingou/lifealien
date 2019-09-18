@@ -1,0 +1,41 @@
+package com.jiuqi.ldrsz.datashow.web;
+
+import java.io.File;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateOperations;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.databind.JsonNode;
+
+@RestController
+@RequestMapping("DataShow")
+public class DataShowController {
+	@Autowired
+	private HibernateOperations template;
+	@GetMapping("/test")
+	public String test() {
+		return "Hello NP";
+	}
+	@PostMapping("/showData")
+	@Transactional
+	public boolean showData(@RequestBody JsonNode code) {
+		System.out.println("content---"+code);
+		StringBuffer sb = new StringBuffer("select a.code from bs_card ").append("  a  where 1=1 and a.code = :code");
+			  Object queryForObject = template.execute(session ->{
+					  session.beginTransaction(); 
+					  Object singleResult = session.createNativeQuery(sb.toString())
+					    .setParameter("code", code.get("code").asText()).getSingleResult();
+					  session.getTransaction().commit();
+					  return singleResult ;
+			  } );
+		return false;
+	}
+}

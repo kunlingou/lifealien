@@ -1,0 +1,18 @@
+dependencies {
+	compile lib.spring_context
+	compile lib.spring_web
+	compile lib.spring_ehcache
+	compile lib.commons_io
+	compile lib.poi
+	compile lib.poi_ooxml
+    compile lib.commons_fileupload
+    compile lib.jackson_databind
+	compile lib.json
+    compile lib.javax_persistence_api
+    compile lib.spring_data_jpa
+    compile lib.hibernate_core
+    compile lib.spring_orm
+    compile lib.jackson_databind
+    compile lib.javacsv
+}
+

@@ -1,0 +1,16 @@
+package com.jiuqi.ldrsz.datainitial.constant;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObject;
+import com.jiuqi.ldrsz.datainitial.provider.RSReadAndWriter;
+
+public interface QueryConst {
+	
+	Map<Class<? extends BaseDataObject>, String> query = new HashMap<>();
+	
+	String query_md_unit = "SELECT ID,CODE,NAME,PARENTG_CODE FROM MD_UNIT";
+	String query_md_staff = "SELECT ID,BS_LEVEL,NAME,PARENTG_CODE FROM MD_STAFF";
+	
+}

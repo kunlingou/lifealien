@@ -1,0 +1,7 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+public interface IKpi {
+	
+	Object execute();
+
+}

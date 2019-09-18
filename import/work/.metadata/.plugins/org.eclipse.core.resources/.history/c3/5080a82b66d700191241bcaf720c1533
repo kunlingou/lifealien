@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  
+spring:
+  application:
+    name: test
+  jpa:
+    database: oracle
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      dialect: org.hibernate.dialect.Oracle10gDialect
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: yfdx
+    password: yfdx
+
+ 
+ #=============oracle==============
+jdbc:
+  driver-class-name: oracle.jdbc.driver.OracleDriver
+  url: jdbc:oracle:thin:@localhost:1521:orcl
+  username: yfdx
+  password: yfdx
+  

@@ -1,0 +1,41 @@
+package com.jiuqi.ldrsz.datainitial.provider;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
+public class BaseDataObjects<E extends BaseDataObject> {
+	
+	Set<E> baseDataObjects = new HashSet<E>();
+	
+	public BaseDataObjects() {
+		
+	}
+
+	public Set<E> getBaseDataObjects() {
+		return baseDataObjects;
+	}
+	
+	public void addBaseDataObject(E BaseDataObject) {
+		baseDataObjects.add(BaseDataObject);
+	}
+
+	public void setBaseDataObjects(Set<E> baseDataObjects) {
+		this.baseDataObjects = baseDataObjects;
+	}
+	
+	public List<BaseDataObject> findById(String id){
+		List<BaseDataObject> bo = new ArrayList<BaseDataObject>();
+		Iterator<E> iterator = baseDataObjects.iterator();
+		while(iterator.hasNext()) {
+			BaseDataObject next = iterator.next();
+			if(next.getId().equals(id)) {
+				bo.add(next);
+			}
+		}
+		return bo;
+	}
+	
+}

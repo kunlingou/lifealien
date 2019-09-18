@@ -1,0 +1,46 @@
+package com.jiuqi.ldrsz.datashow.entity;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datashow.kpi.CaiwrzjsxKpi;
+
+public class OrgParams {
+	
+	Map<String, Object> params = new HashMap<>();
+	
+	
+	private Unit unit; 
+	
+	
+	public OrgParams(Unit unit) {
+		this.unit = unit;
+	}
+	
+	public Object get(String name) {
+		return params.get(name);
+	}
+	
+	public Object getCaiwrzjsx() {
+		return params.get(CaiwrzjsxKpi.class.getSimpleName());
+	}
+
+	public Map<String, Object> getParams() {
+		return params;
+	}
+
+	public void setParams(Map<String, Object> params) {
+		this.params = params;
+	}
+
+	public Unit getUnit() {
+		return unit;
+	}
+
+	public void setUnit(Unit unit) {
+		this.unit = unit;
+	}
+	
+	
+}

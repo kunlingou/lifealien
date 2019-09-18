@@ -1,0 +1,56 @@
+package com.jiuqi.ldrsz.datashow.web;
+
+import java.util.Map;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateOperations;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.jiuqi.ldrsz.datashow.entity.OrgParams;
+import com.jiuqi.ldrsz.datashow.service.ShowService;
+
+@RestController
+@RequestMapping("DataShow")
+public class DataShowController {
+	@Autowired
+	private HibernateOperations template;
+	
+	@Autowired
+	private ShowService showService;
+	
+	
+	@GetMapping("/test")
+	public String test() {
+		return "Hello NP";
+	}
+	@PostMapping("/showData")
+	@Transactional
+	public boolean showData(@RequestBody JsonNode code) {
+		System.out.println("content---"+code);
+		StringBuffer sb = new StringBuffer("select a.code from bs_card ").append("  a  where 1=1 and a.code = :code");
+			  Object queryForObject = template.execute(session ->{
+					  session.beginTransaction(); 
+					  Object singleResult = session.createNativeQuery(sb.toString())
+					    .setParameter("code", code.get("code").asText()).getSingleResult();
+					  session.getTransaction().commit();
+					  return singleResult ;
+			  } );
+		return false;
+	}
+	
+	@PostMapping("/initData")
+	public Object initData(@RequestBody JsonNode code) {
+		long t1 = System.nanoTime();
+		Map<String,OrgParams> initData = showService.initData();
+		long t2 = System.nanoTime();
+		System.out.print("初始化总耗时："+(t2-t1)/1000000000+"s");
+		return new WebResponse(initData);
+	}
+}

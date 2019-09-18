@@ -1,0 +1,149 @@
+package com.jiuqi.ldrsz.datainitial.entiy;
+
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.jiuqi.ldrsz.datainitial.annotation.ExcelColumn;
+
+@Entity
+@Table(name = "BS_CARD")
+public class Card {
+	@Id
+	@ExcelColumn(value = "id", col = 1, isNull = false)
+	private String id;
+	@Column
+	@ExcelColumn(value = "revision", col = 1, isNull = false)
+	private Integer revision;
+	@Column
+	@ExcelColumn(value = "卡片编号", col = 1, isNull = false, checkType = { 0 })
+	private String code;
+	@Column
+	@ExcelColumn(value = "使用人", col = 2, isNull = false, checkType = { 0 })
+	private String username;
+	@Column
+	@ExcelColumn(value = "单位", col = 3, isNull = false, checkType = { 0, 2 })
+	private String unitid;
+	@Column
+	@ExcelColumn(value = "资产记账日期", col = 4, isNull = false, checkType = { 0, 2 })
+	private Date bs_zc_time;
+	@Column
+	@ExcelColumn(value = "价值", col = 5, isNull = false, checkType = { 0, 1, 2 })
+	private Double cost;
+	@Column
+	@ExcelColumn(value = "类型", col = 6, isNull = false, checkType = { 0, 2 })
+	private String typeid;
+	@Column
+	@ExcelColumn(value = "国产", col = 7, checkType = { 0, 2, 4 })
+	private Boolean made;
+	@Column
+	@ExcelColumn(value = "面积", col = 8, checkType = { 0, 1, 2 })
+	private Double area;
+	@Column
+	@ExcelColumn(value = "车牌号", col = 9, checkType = { 0, 3 })
+	private String car_number;
+	@Column
+	@ExcelColumn(value = "创建时间", col = 10, checkType = { 0, 2 })
+	private Date created_time;
+	@Column
+	@ExcelColumn(value = "财务入账日期", col = 11, isNull = false, checkType = { 0, 2 })
+	private Date bs_cw_time;
+	@Column
+	@ExcelColumn(value = "取得日期", col = 12, isNull = false, checkType = { 0, 2 })
+	private Date bs_qd_time;
+	@Column
+	@ExcelColumn(value = "处置日期", col = 13, checkType = { 0, 2 })
+	private Date bs_cz_time;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public Integer getRevision() {
+		return revision;
+	}
+	public void setRevision(Integer revision) {
+		this.revision = revision;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getUnitid() {
+		return unitid;
+	}
+	public void setUnitid(String unitid) {
+		this.unitid = unitid;
+	}
+	public Date getBs_zc_time() {
+		return bs_zc_time;
+	}
+	public void setBs_zc_time(Date bs_zc_time) {
+		this.bs_zc_time = bs_zc_time;
+	}
+	public Double getCost() {
+		return cost;
+	}
+	public void setCost(Double cost) {
+		this.cost = cost;
+	}
+	public String getTypeid() {
+		return typeid;
+	}
+	public void setTypeid(String typeid) {
+		this.typeid = typeid;
+	}
+	public Boolean getMade() {
+		return made;
+	}
+	public void setMade(Boolean made) {
+		this.made = made;
+	}
+	public Double getArea() {
+		return area;
+	}
+	public void setArea(Double area) {
+		this.area = area;
+	}
+	public String getCar_number() {
+		return car_number;
+	}
+	public void setCar_number(String car_number) {
+		this.car_number = car_number;
+	}
+	public Date getCreated_time() {
+		return created_time;
+	}
+	public void setCreated_time(Date created_time) {
+		this.created_time = created_time;
+	}
+	public Date getBs_cw_time() {
+		return bs_cw_time;
+	}
+	public void setBs_cw_time(Date bs_cw_time) {
+		this.bs_cw_time = bs_cw_time;
+	}
+	public Date getBs_qd_time() {
+		return bs_qd_time;
+	}
+	public void setBs_qd_time(Date bs_qd_time) {
+		this.bs_qd_time = bs_qd_time;
+	}
+	public Date getBs_cz_time() {
+		return bs_cz_time;
+	}
+	public void setBs_cz_time(Date bs_cz_time) {
+		this.bs_cz_time = bs_cz_time;
+	}
+}

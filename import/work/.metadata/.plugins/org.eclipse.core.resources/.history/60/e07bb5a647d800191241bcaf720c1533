@@ -1,0 +1,49 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.DoubleAdder;
+import java.util.stream.Collectors;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.ClassType;
+import com.jiuqi.ldrsz.datainitial.entiy.Plan;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+
+/**
+ * 费用节约率
+ * @author goukunlin
+ *
+ */
+public class Feiyjyl implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		Unit unit = Unit.class.cast(objects[0]);
+		
+		//便携式计算机
+		Set<String> a = new HashSet<>();
+		a.add("3E608FDBF0F141D5B5D71DA8A173441A");
+		
+		Double actZongfl = 0.00;
+		
+		
+		//价格标准上限
+		BaseDataObjects<Plan> planInfo = new BaseDataProvider().findAll(Plan.class);
+		DoubleSummaryStatistics jiaz = planInfo.getBaseDataObjects().stream().filter(e->e.getUnitid().equals(unit.getId()) && a.contains(e.getBs_type())).collect(Collectors.summarizingDouble(e->e.getBs_limit()));
+		
+		//实际价值、数量
+		DoubleSummaryStatistics actual = cards.stream().filter(e->a.contains(e.getTypeid())).collect(Collectors.summarizingDouble(e->e.getCost()));
+		
+		double result =(float)actual.getSum()/(jiaz.getAverage() * actual.getCount());
+		
+		return (result<=0.8)?5:(result<=1)?3:0;
+	}
+
+}

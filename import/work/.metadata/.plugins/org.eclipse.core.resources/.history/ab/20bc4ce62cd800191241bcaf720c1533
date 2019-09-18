@@ -1,0 +1,13 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.List;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+
+public interface IKpi {
+	
+	Object execute(List<Card> cards, Object...objects);
+	
+	/**所有数据*/
+//	Object execute0();
+}

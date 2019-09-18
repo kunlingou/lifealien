@@ -1,0 +1,58 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.DoubleAdder;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Carcost;
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.ClassType;
+import com.jiuqi.ldrsz.datainitial.entiy.Plan;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+
+/**
+ * 总费用超定额率
+ * @author goukunlin
+ *
+ */
+public class ZongfycdelKpi implements IKpi{
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		Unit unit = Unit.class.cast(objects[0]);
+		
+		//车辆
+		Set<String> a = new HashSet<>();
+		a.add("3FB75C347F5549FE97235A74B4598D5F");
+		
+		BaseDataObjects<Plan> plan = new BaseDataProvider().findAll(Plan.class);
+		BaseDataObjects<Carcost> carcost = new BaseDataProvider().findAll(Carcost.class);
+		
+		//车辆定额费用
+		DoubleSummaryStatistics planfeiy = plan.getBaseDataObjects().stream().filter(e->e.getUnitid().equals(unit.getId()) && a.contains(e.getBs_type())).collect(Collectors.summarizingDouble(e->e.getBs_quota()));
+		
+		//满足条件的车牌号
+		Set<String> chephs = cards.stream().filter(e->a.contains(e.getTypeid())).map(Card::getCar_number).collect(Collectors.toSet());
+		//所有车辆费用
+		DoubleSummaryStatistics collect = carcost.getBaseDataObjects().stream().filter(e->chephs.contains(e.getCar_number())).collect(Collectors.summarizingDouble(e->e.getCost()));
+		
+		Double result = ((float)collect.getSum()/chephs.size())/planfeiy.getAverage();
+		
+		if(result<=1) {
+			return 5;
+		}else if(result<=1.2) {
+			return 3;
+		}else if(result<=1.5) {
+			return 0;
+		}else{
+			return -3;
+		}
+	}
+}

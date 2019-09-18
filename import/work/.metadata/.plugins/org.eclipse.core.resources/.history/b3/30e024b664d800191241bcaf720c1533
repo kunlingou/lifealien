@@ -1,0 +1,194 @@
+package com.jiuqi.ldrsz.datainitial.entiy;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.jiuqi.ldrsz.datainitial.annotation.ExcelColumn;
+import com.jiuqi.ldrsz.datainitial.provider.RSReadAndWriter;
+
+@Entity
+@Table(name = "BS_CARD")
+public class TestCard  implements RSReadAndWriter {
+	@Id
+	@ExcelColumn(value = "id", col = -1, isAuto = true, checkType = { 0, 1 })
+	private String id;
+	@Column
+	@ExcelColumn(value = "revision", col = 0, isAuto = true, checkType = { 0, 1 })
+	private Integer revision;
+	@Column
+	@ExcelColumn(value = "code", col = 1, isAuto = true, checkType = { 0, 1 })
+	private String code;
+	@Column
+	@ExcelColumn(value = "username", col = 2, checkType = { 0, 1 })
+	private String username;
+	@Column
+	@ExcelColumn(value = "unitid", col = 3, checkType = { 0, 1, 5 })
+	private String unitid;
+	@Column
+	@ExcelColumn(value = "bs_zc_time", col = 4, checkType = { 0, 1 })
+	private Date bs_zc_time;
+	@Column
+	@ExcelColumn(value = "cost", col = 5, checkType = { 0, 1, 2 })
+	private Double cost;
+	@Column
+	@ExcelColumn(value = "typeid", col = 6, checkType = { 0, 1, 6 })
+	private String typeid;
+	@Column
+	@ExcelColumn(value = "made",isAuto = true, col = 7, checkType = { 0,  4 })
+	private Boolean made;
+	@Column
+	@ExcelColumn(value = "area", col = 8, checkType = {  1, 2 })
+	private Double area;
+	@Column
+	@ExcelColumn(value = "car_number", col = 9, checkType = { 1,7,3})
+	private String car_number;
+	@Column
+	@ExcelColumn(value = "created_time", col = 10, checkType = {  1 })
+	private Date created_time;
+	@Column
+	@ExcelColumn(value = "bs_cw_time", col = 11, checkType = { 0, 1 })
+	private Date bs_cw_time;
+	@Column
+	@ExcelColumn(value = "bs_qd_time", col = 12, checkType = { 0, 1 })
+	private Date bs_qd_time;
+	@Column
+	@ExcelColumn(value = "bs_cz_time", col = 13, checkType = { 1 })
+	private Date bs_cz_time;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Integer getRevision() {
+		return revision;
+	}
+
+	public void setRevision(Integer revision) {
+		this.revision = revision;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getUnitid() {
+		return unitid;
+	}
+
+	public void setUnitid(String unitid) {
+		this.unitid = unitid;
+	}
+
+	public Date getBs_zc_time() {
+		return bs_zc_time;
+	}
+
+	public void setBs_zc_time(Date bs_zc_time) {
+		this.bs_zc_time = bs_zc_time;
+	}
+
+	public Double getCost() {
+		return cost;
+	}
+
+	public void setCost(Double cost) {
+		this.cost = cost;
+	}
+
+	public String getTypeid() {
+		return typeid;
+	}
+
+	public void setTypeid(String typeid) {
+		this.typeid = typeid;
+	}
+
+	public Boolean getMade() {
+		return made;
+	}
+
+	public void setMade(Boolean made) {
+		this.made = made;
+	}
+
+	public Double getArea() {
+		return area;
+	}
+
+	public void setArea(Double area) {
+		this.area = area;
+	}
+
+	public String getCar_number() {
+		return car_number;
+	}
+
+	public void setCar_number(String car_number) {
+		this.car_number = car_number;
+	}
+
+	public Date getCreated_time() {
+		return created_time;
+	}
+
+	public void setCreated_time(Date created_time) {
+		this.created_time = created_time;
+	}
+
+	public Date getBs_cw_time() {
+		return bs_cw_time;
+	}
+
+	public void setBs_cw_time(Date bs_cw_time) {
+		this.bs_cw_time = bs_cw_time;
+	}
+
+	public Date getBs_qd_time() {
+		return bs_qd_time;
+	}
+
+	public void setBs_qd_time(Date bs_qd_time) {
+		this.bs_qd_time = bs_qd_time;
+	}
+
+	public Date getBs_cz_time() {
+		return bs_cz_time;
+	}
+
+	public void setBs_cz_time(Date bs_cz_time) {
+		this.bs_cz_time = bs_cz_time;
+	}
+
+	@Override
+	public void Read(ResultSet rs) throws SQLException {
+	}
+	
+	public Card toCard() {
+		
+		return null;
+		
+	}
+}
+

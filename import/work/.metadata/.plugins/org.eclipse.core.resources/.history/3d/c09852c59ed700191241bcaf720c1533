@@ -1,0 +1,39 @@
+package com.jiuqi.ldrsz.datainitial.entiy;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObject;
+import com.jiuqi.ldrsz.datainitial.provider.RSReadAndWriter;
+
+public class Staff extends BaseDataObject implements RSReadAndWriter{
+	
+	String unitid;
+	
+	Integer bs_count;
+	
+	
+	public String getUnitid() {
+		return unitid;
+	}
+
+	public void setUnitid(String unitid) {
+		this.unitid = unitid;
+	}
+
+	public Integer getBs_count() {
+		return bs_count;
+	}
+
+	public void setBs_count(Integer bs_count) {
+		this.bs_count = bs_count;
+	}
+
+	@Override
+	public void Read(ResultSet rs) throws SQLException {
+		super.Read(rs);
+		this.unitid = rs.getString("UNITID");
+		this.bs_count = rs.getInt("BS_COUNT");
+	}
+
+}

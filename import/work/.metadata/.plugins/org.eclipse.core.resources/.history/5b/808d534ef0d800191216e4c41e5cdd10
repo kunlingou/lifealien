@@ -1,0 +1,594 @@
+package com.jiuqi.ldrsz.datashow.web;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.ehcache.Cache;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.jiuqi.ldrsz.datainitial.annotation.ExcelColumn;
+import com.jiuqi.ldrsz.datainitial.dao.TestCardRespository;
+import com.jiuqi.ldrsz.datainitial.entiy.CheckTypeEnum;
+import com.jiuqi.ldrsz.datainitial.entiy.TestCard;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+import com.jiuqi.ldrsz.datainitial.service.DataInitialCacheService;
+import com.jiuqi.ldrsz.datainitial.service.ExcelService;
+import com.jiuqi.ldrsz.datainitial.utils.Convert;
+import com.jiuqi.ldrsz.datashow.entity.OrgParams;
+import com.jiuqi.ldrsz.datashow.service.ShowService;
+import com.jiuqi.ldrsz.datashow.utils.ApplicationContextProvider;
+
+@RestController
+@RequestMapping("api")
+public class test {
+	@Autowired
+	private ShowService showService;
+	@Autowired
+	DataInitialCacheService datainitService;
+	@Autowired
+	ExcelService excelService;
+	@Autowired
+	TestCardRespository testcardres;
+	
+	@Autowired
+	JdbcTemplate jdbcTemplate;
+	
+	@Autowired
+	BaseDataProvider provider;
+	int row = 1;
+	String type1 ="";
+	
+	@PostMapping("/card/insert")
+	public String importData2(@RequestBody String code) {
+		JSONObject message = new JSONObject();
+		if (code == null) {
+			message.put("code", 1);
+			message.put("msg", "参数为空");
+			return message.toString();
+		}
+		try {
+			long t1 = System.nanoTime();
+			System.out.println("t1--"+t1);
+			List<TestCard> _readExcel = _readExcel(TestCard.class, new JSONObject(code));
+			testcardres.saveAll(_readExcel);
+			_readExcel.forEach(e->{
+//				if(e.getArea() == null) {
+//					e.setArea(0.00);
+//				}
+				provider.getCards().get(e.getUnitid()).add(e.toCard());
+			});
+			long t2 = System.nanoTime();
+			Cache<String, Object> cache = datainitService.getCache();
+			Map<Integer, List<String>> object = (Map<Integer, List<String>>) cache.get(Convert.ERROR);
+			System.out.println("导入耗时："+(t2-t1)/1000000000+"s");
+			System.out.println("总条数" + (row)+",导入："+_readExcel.size());
+			System.out.println(" 报错信息：--" + object);
+			cache.remove("allrow");
+			cache.remove(Convert.ERROR);
+			//initData1(t1);
+			message.put("code", 0);
+			message.put("msg", "");
+		} catch (Exception e) {
+			message.put("code", 1);
+			Cache<String, Object> cache = datainitService.getCache();
+			Map<Integer, List<String>> object = (Map<Integer, List<String>>) datainitService.getCache().get(Convert.ERROR2);
+			System.out.println("压测报错信息：---"+object);
+			cache.remove(Convert.ERROR2);;
+			message.put("msg", object);
+		}
+		return message.toString();
+	}
+	
+	
+	@PostMapping("/card/initData")
+	public WebResponse initData() {
+		long  t1 = System.nanoTime();
+		Map<String,Object> result = new HashMap<String,Object>();
+		try {
+			initMap();
+			CountDownLatch latch = new CountDownLatch(query.size());
+			Semaphore semaphore = new Semaphore(6);
+			ExecutorService threadPool = Executors.newCachedThreadPool();
+			query.forEach((key,item)->{
+				String[] dataSource = {key,item};
+				JdbcTemplate jdbcTemplate = ApplicationContextProvider.getBean("jdbcTemplate");
+				threadPool.execute(new StatisThread(semaphore, latch,dataSource, result,jdbcTemplate));
+			});
+			latch.await();
+			threadPool.shutdown();
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
+		
+		
+		
+		
+		
+//		Map<String, Object> result = mapvalue();
+		for(String key : result.keySet()) {
+			System.out.println(key+":"+result.get(key)+"分\r\n");
+		}
+		Map<String,OrgParams> initData = showService.initData();
+		WebResponse webResponse = new WebResponse(initData);
+		long  t4 = System.nanoTime();
+		System.out.println("耗时："+(t4-t1)/1000000000+"s");
+//		System.out.println("指标--\n");
+//		System.out.println("财务入账及时性--"+webResponse.getCaiwrzjsxKpi()+"\n");
+//		System.out.println("是否管理到责任人--"+webResponse.getShifglfzdrKpi()+"\n");
+//		System.out.println("执行率--"+webResponse.getZhixlKpi()+"\n");
+//		System.out.println("费用节约率--"+webResponse.getFeiyjyl()+"\n");
+//		System.out.println("办公用房整体超标情况--"+webResponse.getBangyfztcbqkKpi()+"\n");
+//		System.out.println("单车运行平均费用--"+webResponse.getDancyxpjfyl()+"\n");
+//		System.out.println("总费用超额率--"+webResponse.getZongfycdelKpi()+"\n");
+//		System.out.println("办公设备共享率（打印机）--"+webResponse.getBangsbgxlKpi()+"\n");
+//		System.out.println("使用年限执行率--"+webResponse.getShiynxzxlKpi()+"\n");
+//		System.out.println("办公设备国产化率--"+webResponse.getBangsbgchlKpi()+"\n");
+//		System.out.println("办公软件国产化率--"+webResponse.getBangrjgchlKPI()+"\n");
+		System.out.println("总排名--"+"\n");
+		webResponse.getZongpm().stream().forEach(e ->System.out.println(e[0]+","+e[1]+","+e[2]+";"));
+		System.out.println("财务入账及时性单位排行--\n");
+		webResponse.getCaiwpm().stream().forEach(e ->System.out.println(e[0]+","+e[1]+","+e[2]+";"));
+		System.out.println("人均占用打印机--\n");
+		webResponse.getDaypm().stream().forEach(e ->System.out.println(e[0]+","+e[1]+","+e[2]+";"));
+		System.out.println("人均占用笔记本--\n");
+		webResponse.getBijpm().stream().forEach(e ->System.out.println(e[0]+","+e[1]+","+e[2]+";"));
+		System.out.println("人均占用办公--\n");
+		webResponse.getBangpm().stream().forEach(e ->System.out.println(e[0]+","+e[1]+","+e[2]+";"));
+		return null;
+	}
+	
+	
+	public WebResponse initData1(long t1) {
+		Map<String,OrgParams> initData = showService.initData();
+		long  t4 = System.nanoTime();
+		System.out.print("总耗时："+(t4-t1)/1000000000+"s \r");
+		WebResponse webResponse = new WebResponse(initData);
+		System.out.println("指标--\n");
+		System.out.println("财务入账及时性--"+webResponse.getCaiwrzjsxKpi()+"\n");
+		System.out.println("是否管理到责任人--"+webResponse.getShifglfzdrKpi()+"\n");
+		System.out.println("执行率--"+webResponse.getZhixlKpi()+"\n");
+		System.out.println("费用节约率--"+webResponse.getFeiyjyl()+"\n");
+		System.out.println("办公用房整体超标情况--"+webResponse.getBangyfztcbqkKpi()+"\n");
+		System.out.println("单车运行平均费用--"+webResponse.getDancyxpjfyl()+"\n");
+		System.out.println("总费用超额率--"+webResponse.getZongfycdelKpi()+"\n");
+		System.out.println("办公设备共享率（打印机）--"+webResponse.getBangsbgxlKpi()+"\n");
+		System.out.println("使用年限执行率--"+webResponse.getShiynxzxlKpi()+"\n");
+		System.out.println("办公设备国产化率--"+webResponse.getBangsbgchlKpi()+"\n");
+		System.out.println("办公软件国产化率--"+webResponse.getBangrjgchlKPI()+"\n");
+		System.out.println("总排名--"+"\n");
+		webResponse.getZongpm().stream().forEach(e ->System.out.println(e[0]+","+e[1]+","+e[2]+";"));
+		System.out.println("财务入账及时性单位排行--\n");
+		webResponse.getCaiwpm().stream().forEach(e ->System.out.println(e[0]+","+e[1]+","+e[2]+";"));
+		System.out.println("人均占用打印机--\n");
+		webResponse.getDaypm().stream().forEach(e ->System.out.println(e[0]+","+e[1]+","+e[2]+";"));
+		System.out.println("人均占用笔记本--\n");
+		webResponse.getBijpm().stream().forEach(e ->System.out.println(e[0]+","+e[1]+","+e[2]+";"));
+		System.out.println("人均占用办公--\n");
+		webResponse.getBangpm().stream().forEach(e ->System.out.println(e[0]+","+e[1]+","+e[2]+";"));
+		return webResponse;
+	}
+
+	public <T> List<T> _readExcel(Class<T> cls, JSONObject object) {
+		List<T> dataList = new ArrayList<>();
+		try {
+			List<Field> fields = Stream.of(cls.getDeclaredFields()).collect(Collectors.toList());
+			String[] row = new String[fields.size()];
+			for (int i = 0; i < fields.size(); i++) {
+				ExcelColumn annotation = fields.get(i).getAnnotation(ExcelColumn.class);
+				row[i] = annotation.value();
+			}
+			Map<String, List<Field>> classMap = getClassMap(fields);
+			Map<Integer, List<Field>> reflectionMap = null;// 索引-->columns
+			reflectionMap = getReflectionMap(row, classMap);
+			String[] value = getValue(row, object);
+			try {
+				T t = cls.newInstance();
+				if (handleField(t, value, reflectionMap))
+					{
+					dataList.add(t);
+					}
+			} catch (Exception e) {
+			}
+		} catch (Exception e) {
+		}
+		return dataList;
+	}
+
+	public String[] getValue(String[] row, JSONObject object) {
+		String[] value = new String[row.length];
+		for (int i = 0; i < row.length; i++) {
+			String string = row[i];
+			if (string.equalsIgnoreCase("id")) {
+				value[i] = "";
+				continue;
+			} else if (string.equalsIgnoreCase("revision")) {
+				value[i] = "";
+				continue;
+			} else if (string.equalsIgnoreCase("code")) {
+				value[i] = "";
+				continue;
+			}
+			String object2 = object.get(row[i]) + "";
+			value[i] = object2;
+		}
+		return value;
+	}
+
+	Map<String, List<Field>> getClassMap(List<Field> fields) {
+		Map<String, List<Field>> classMap = new HashMap<>();
+		fields.forEach(field -> {
+			ExcelColumn annotation = field.getAnnotation(ExcelColumn.class);
+			if (annotation != null) {
+				String value = annotation.value();
+				if (!StringUtils.hasText(value)) {
+					return;
+				}
+				if (!classMap.containsKey(value)) {
+					classMap.put(value, new ArrayList<>());
+				}
+				field.setAccessible(true);
+				classMap.get(value).add(field);
+			}
+		});
+		return classMap;
+	}
+
+	<T> boolean handleField(T t, String[] row, Map<Integer, List<Field>> reflectionMap) {
+		boolean allBlank = true;
+		for (int j = 0; j < row.length; j++) {
+			if (reflectionMap.containsKey(j)) {
+				String cellValue = row[j];
+				List<Field> fieldList = reflectionMap.get(j);
+				try {
+					if (!handleField(t, cellValue, fieldList.get(0))) {
+						allBlank = false;
+					}
+				} catch (Exception e) {
+					System.out.println("失败！");
+				}
+
+			}
+		}
+		return allBlank;
+	}
+
+	Map<Integer, List<Field>> getReflectionMap(String[] row, Map<String, List<Field>> classMap) {
+		Map<Integer, List<Field>> reflectionMap = new HashMap<>(16);
+		for (int j = 0; j < row.length; j++) {
+			String value = row[j];
+			if (classMap.containsKey(value)) {
+				reflectionMap.put(j, classMap.get(value));
+			}
+		}
+		return reflectionMap;
+	}
+
+	<T> boolean handleField(T t, String value, Field field) throws Exception {
+		boolean flag = true;
+		ExcelColumn annotation = field.getAnnotation(ExcelColumn.class);
+		if (annotation != null) {
+			String annotationvalue = annotation.value();
+			int[] checkType = annotation.checkType();
+			int col = annotation.col();
+			boolean auto = annotation.isAuto();
+			field.setAccessible(true);
+			String name = field.getName();
+			for (int code : checkType) {
+				if (code == 0) {
+					if (Convert.isNull(value)) {
+						if (auto) {
+							isAuto(t, value, annotationvalue, field);
+						} else {
+							if(name.equals("area") && type1 == "7038FC3367A54F22A551609ABD1D45F1") {
+								buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+										+ CheckTypeEnum.isNull.getMessage());
+								flag = false;
+							}else {
+								continue;
+							}
+						}
+						break;
+					} else {
+						continue;
+					}
+				} else {
+					if (Convert.isNull(value)) {
+						break;
+					}
+					if (code == 1) {
+						if (Convert.isTypeError(t, value, annotationvalue, field)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isTypeError.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 2) {
+						if (Convert.isNegative(t, value, annotationvalue, field)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isNegative.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 3) {
+						if (Convert.isCPExist(t, value, annotationvalue, field, provider)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isCPExist.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 4) {
+						if (Convert.isGC(t, value, annotationvalue, field)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isGC.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 5) {
+						if (Convert.isDWExist(t, value, annotationvalue, field, provider)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isDWExist.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 6) {
+						if (Convert.isLXExist(t, value, annotationvalue, field, provider)) {
+							type1 = value;
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isLXExist.getMessage());
+							flag = false;
+							break;
+						}
+					} else if (code == 7) {
+						if (Convert.isCarNo(value)) {
+							continue;
+						} else {
+							buildErrorMessage(row, "第" + row + "行，第" + col + "列:,字段'" + annotationvalue + "'"
+									+ CheckTypeEnum.isCarNo.getMessage());
+							flag = false;
+							break;
+						}
+					}
+				}
+			}
+
+		}
+		return flag;
+	}
+
+	private void buildErrorMessage(int key, String value) {
+		Map<Integer, List<String>> object = (Map<Integer, List<String>>) datainitService.getCache().get(Convert.ERROR2);
+		List<String> list = object.get(key);
+		if (list != null) {
+			list.add(value + "\n");
+		} else {
+			list = new ArrayList<>();
+			list.add(value + "\n");
+			object.put(key, list);
+		}
+	}
+
+	public <T> boolean isAuto(T t, String value, String annotationvalue, Field field) {
+		String name = field.getName();
+		try {
+			if (name.equalsIgnoreCase("id")) {
+				field.set(t, UUID.randomUUID().toString().toUpperCase().replace("-", ""));
+			} else if (name.equalsIgnoreCase("code")) {
+				long code = (long) datainitService.getCache(Convert.BILLCODE);
+				field.set(t, String.valueOf(code));
+				datainitService.putCache(Convert.BILLCODE, code + 1);
+			} else if (name.equalsIgnoreCase("revision")) {
+				field.set(t, 1);
+			} else if (name.equalsIgnoreCase("made")) {
+
+			}
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+	
+	
+
+	@Autowired
+	private JdbcTemplate template;
+	Map<String, String> query = new HashMap<>();
+	/**
+	 * 财务入账及时性
+	 */
+	public String caiwjsx = "select " + "       sum((case\r\n"
+			+ "             when abs(card.bs_zc_time - card.bs_cw_time) > 30 then\r\n" + "              0\r\n"
+			+ "             else\r\n" + "              1\r\n" + "           end)) * 5 / count(1) \"分数\"\r\n"
+			+ "  from bs_card card\r\n" + " where card.bs_cz_time is null";
+
+	/**
+	 * 是否管理责任到人
+	 */
+	public String shifzrdr = " select (case when sy.syrsum >zb.bzrsum * 0.3 then 5 else 0 end ) \"分数\" from (\r\n"
+			+ "select sum(count(distinct a.username)) syrsum from bs_card a left join md_unit b on a.unitid = b.id where a.bs_cz_time  is null and a.username is not null group by b.code,b.name ) sy,(\r\n"
+			+ "select sum(sum(c.bs_count)) bzrsum from md_staff c left join md_unit d on c.unitid = d.id  group by d.code,d.name) zb";
+	/**
+	 * 执行率
+	 */
+	public String zhixl = "select ( case  \r\n"
+			+ "when 0.95  < cl.kpcl/pzs.jhpzs and cl.kpcl/pzs.jhpzs <= 1.05 then 5 \r\n"
+			+ "when ((0.85 < cl.kpcl/pzs.jhpzs and cl.kpcl/pzs.jhpzs <= 0.95) or (1.05 < cl.kpcl/pzs.jhpzs and cl.kpcl/pzs.jhpzs <= 1.15) ) then 4 \r\n"
+			+ "when ((0.75 < cl.kpcl/pzs.jhpzs and cl.kpcl/pzs.jhpzs <= 0.85) or (1.15 < cl.kpcl/pzs.jhpzs and cl.kpcl/pzs.jhpzs <= 1.30) ) then 3\r\n"
+			+ "when ((0.50 < cl.kpcl/pzs.jhpzs and cl.kpcl/pzs.jhpzs <= 0.7) or (1.30 < cl.kpcl/pzs.jhpzs and cl.kpcl/pzs.jhpzs <= 1.50) ) then 2\r\n"
+			+ "when ((0.30 < cl.kpcl/pzs.jhpzs and cl.kpcl/pzs.jhpzs <= 0.5) or (1.50 < cl.kpcl/pzs.jhpzs and cl.kpcl/pzs.jhpzs <= 2.0) ) then 1\r\n"
+			+ "else 0\r\n" + "  end \r\n"
+			+ " ) \"分数\" from (select sum(count(*)) kpcl from bs_card a left join md_unit b on a.unitid = b.id\r\n"
+			+ "where a.bs_cz_time is null and a.typeid not in (select e.id from md_classtype e where e.code='11' or e.code='02')\r\n"
+			+ "group by b.code,b.name order by b.code)  cl, \r\n"
+			+ "(select sum(sum(f.bs_count)) jhpzs from bs_plan f left join md_unit b on f.unitid = b.id\r\n"
+			+ "where f.bs_type not in (select e.id from md_classtype e where e.code='11' or e.code='02')\r\n"
+			+ "group by b.code,b.name order by b.code) pzs";
+	/**
+	 * 费用节约率
+	 */
+	public String feiyl = "select " + "(case when pzzfy.sjpzzfy/(jgsx.limit_avg * pzzsl.sjpzzs) <= 0.80 then 5\r\n"
+			+ "      when pzzfy.sjpzzfy/(jgsx.limit_avg * pzzsl.sjpzzs) > 0.8 and pzzfy.sjpzzfy/(jgsx.limit_avg * pzzsl.sjpzzs)<=1 then 3\r\n"
+			+ "        else 0 end\r\n" + " ) \"分数\"\r\n" + "\r\n"
+			+ "from (select sum(sum(a.cost))  sjpzzfy from bs_card a left join  md_unit b on a.unitid = b.id\r\n"
+			+ "where a.bs_cz_time is null and a.typeid in (select e.id from md_classtype e where e.code='04')\r\n"
+			+ "group by b.code,b.name order by b.code) pzzfy,\r\n" + "\r\n"
+			+ "(select sum(f.bs_limit)/count(1) limit_avg from bs_plan f left join md_unit b on f.unitid = b.id\r\n"
+			+ "where f.bs_type in (select e.id from md_classtype e where e.code='04')\r\n"
+			+ "order by b.code)  jgsx,\r\n" + "\r\n"
+			+ "(select  sum(count(a.id)) sjpzzs from bs_card a left join  md_unit b on a.unitid = b.id\r\n"
+			+ "where a.typeid in (select e.id from md_classtype e where e.code='04') and a.bs_cz_time is null\r\n"
+			+ "group by b.code,b.name order by b.code) pzzsl";
+
+	/**
+	 * 办公用房整体超标情况
+	 */
+	public String bangyfzhengtqk = "select " + " (case when (bgmj.area-sta.bz)/sta.bz <= 0 then 5 \r\n"
+			+ "  when (bgmj.area-sta.bz)/sta.bz <= 0.3 then 0 \r\n" + "    else -5 end ) \"分数\"\r\n" + "from (\r\n"
+			+ "select sum(card.area) area from bs_card card left join md_classtype tp on tp.id=card.typeid where bs_cz_time is null and tp.code=11) bgmj,\r\n"
+			+ "\r\n" + "(select sum(staff.area * staff.bs_count) bz from md_staff staff ) sta";
+	/**
+	 * 单车运行平均费用率
+	 */
+	public String dancyxpjfyl = "select " + "       (case\r\n"
+			+ "         when (yxfy.yxfy / xslc.xslc) / avgfy.avgfy <= 0.8 then\r\n" + "          5\r\n"
+			+ "         when (yxfy.yxfy / xslc.xslc) / avgfy.avgfy <= 1 then\r\n" + "          3\r\n"
+			+ "         when (yxfy.yxfy / xslc.xslc) / avgfy.avgfy <= 1.5 then\r\n" + "          0\r\n"
+			+ "         else\r\n" + "          -3\r\n" + "       end) \"分数\"\r\n" + "  from （select sum(cost) yxfy\r\n"
+			+ "  from md_carcost\r\n" + " where cost_type = '运行费用') yxfy,\r\n" + "\r\n"
+			+ " (select sum(car.mileage) xslc\r\n" + "    from md_car car\r\n" + "    left join bs_card card\r\n"
+			+ "      on card.car_number = car.car_number\r\n" + "    left join md_classtype tp\r\n"
+			+ "      on tp.id = card.typeid\r\n" + "   where card.bs_cz_time is null\r\n"
+			+ "     and car.id is not null\r\n" + "     and tp.code = '01') xslc,\r\n" + "\r\n"
+			+ " (select avg(ccost.cost) avgfy\r\n" + "    from md_carcost ccost\r\n" + "    left join bs_card card\r\n"
+			+ "      on card.car_number = ccost.car_number\r\n" + "    left join md_classtype tp\r\n"
+			+ "      on tp.id = card.typeid\r\n" + "    left join md_car md_car\r\n"
+			+ "      on md_car.car_number = card.car_number\r\n" + "   where card.bs_cz_time is null\r\n"
+			+ "     and md_car.id is not null\r\n" + "     and tp.code = '01') avgfy";
+	/**
+	 * 总费用超定额率
+	 */
+	public String feiycedl = "select "
+			+ "(case when (yxfy.yxfy/clcount.clcount)/bs_quota.bs_quota <= 1 then 5 when (yxfy.yxfy/clcount.clcount)/bs_quota.bs_quota <= 1.2 then 3 when (yxfy.yxfy/clcount.clcount)/bs_quota.bs_quota <= 1.5 then 0 else -3 end  ) \"分数\"\r\n"
+			+ " from  \r\n"
+			+ "(select sum(ccost.cost) yxfy from md_carcost ccost left join bs_card card on card.car_number=ccost.car_number  left join md_classtype tp on tp.id=card.typeid where card.bs_cz_time is null and tp.code = '01') yxfy,\r\n"
+			+ "(select count(1)  clcount from  bs_card card left join md_classtype tp on tp.id=card.typeid where card.bs_cz_time is null and tp.code = '01') clcount,\r\n"
+			+ "(select avg(bs_plan.bs_quota) bs_quota from bs_plan bs_plan left join md_classtype tp on tp.id=bs_plan.bs_type where tp.code = '01') bs_quota";
+	/**
+	 * 办公设备共享率（打印机）
+	 */
+	public String bangsbgxl = "select  "
+			+ "  ( case when dnsl.dnsl/dysl.dysl <1 then 0  when dnsl.dnsl/dysl.dysl <1.5 then 1  when dnsl.dnsl/dysl.dysl <2 then 2 else 3 end\r\n"
+			+ ") \"分数\"  from \r\n"
+			+ "(select count(*) dnsl from bs_card b left join md_classtype c on c.id = b.typeid where c.code in ('03','04') and b.bs_cz_time is null ) dnsl,\r\n"
+			+ "(select count(*) dysl from bs_card b left join md_classtype c on c.id = b.typeid where c.code='05' and b.bs_cz_time is null ) dysl";
+	/**
+	 * 使用年限执行率
+	 */
+	public String shiynxzxl = "select " + "       (case\r\n"
+			+ "         when synxhj.synxhj / zdsynxhj.zdsynxhj < 0.7 then\r\n" + "          -3\r\n"
+			+ "         when synxhj.synxhj / zdsynxhj.zdsynxhj < 1 then\r\n" + "          0\r\n"
+			+ "         when synxhj.synxhj / zdsynxhj.zdsynxhj < 1.5 then\r\n" + "          3\r\n"
+			+ "         when synxhj.synxhj / zdsynxhj.zdsynxhj <= 2 then\r\n" + "          5\r\n"
+			+ "       end) \"分数\"\r\n" + "  from (select sum(bp.bs_year_limit) zdsynxhj\r\n"
+			+ "          from bs_card bd_card\r\n" + "          left join (select md_classtype.id,\r\n"
+			+ "                           bs_plan.unitid,\r\n" + "                           bs_plan.bs_year_limit\r\n"
+			+ "                      from bs_plan bs_plan\r\n"
+			+ "                      left join md_classtype md_classtype\r\n"
+			+ "                        on md_classtype.id = bs_plan.bs_type\r\n"
+			+ "                     where md_classtype.code in ('03', '04', '05', '06')) bp\r\n"
+			+ "            on bp.id = bd_card.typeid\r\n" + "           and bp.unitid = bd_card.unitid\r\n"
+			+ "         where bp.id is not null) zdsynxhj,\r\n"
+			+ "       (select coalesce(sum(ceil(to_char(bs_card.bs_cz_time, 'yyyy') -\r\n"
+			+ "                                 to_char(bs_card.bs_qd_time, 'yyyy'))),\r\n"
+			+ "                        0) synxhj\r\n" + "          from bs_card bs_card\r\n"
+			+ "          left join md_classtype c\r\n" + "            on c.id = bs_card.typeid\r\n"
+			+ "         where c.code in ('03', '04', '05', '06')\r\n"
+			+ "           and bs_card.bs_cz_time is not null) synxhj";
+	/**
+	 * 办公设备国产化率
+	 */
+	public String bangsbgchl = "select "
+			+ "(case when gchsb.gchsb/qbsb.qbsb >= 0.6 then 5 when gchsb.gchsb/qbsb.qbsb >= 0.3 then 3 else 0 end \r\n"
+			+ ") \"分数\"\r\n" + " from \r\n"
+			+ "(select count(*) gchsb from bs_card b left join md_classtype c on c.id = b.typeid where c.code in ('03','04','05','06') and b.made='1' and b.bs_cz_time is null) gchsb,\r\n"
+			+ "(select count(*) qbsb from bs_card b left join md_classtype c on c.id = b.typeid where c.code in ('03','04','05','06') and b.bs_cz_time is null) qbsb";
+
+	/**
+	 * 办公软件国产化率
+	 */
+	public String bangrjgchl = "select ROUND((gchrj.gchrj/qbrj.qbrj) * 6 ,2) \"分数\"\r\n" + " from \r\n"
+			+ "(select count(*) gchrj from bs_card b left join md_classtype c on c.id = b.typeid where c.name='软件' and b.made='1' and b.bs_cz_time is null ) gchrj,\r\n"
+			+ "(select count(*) qbrj from bs_card b left join md_classtype c on c.id = b.typeid where c.name='软件'and b.bs_cz_time is null ) qbrj";
+
+	public String caiwrzjsxdwpm ="select unit.name \"单位名称\",\r\n" + 
+			"       unit.code \"单位编号\",\r\n" + 
+			"       sum((case\r\n" + 
+			"             when abs(card.bs_zc_time - card.bs_cw_time)> 30 then\r\n" + 
+			"              0\r\n" + 
+			"             else\r\n" + 
+			"              1\r\n" + 
+			"           end)) * 5 / count(1) \"分数\"\r\n" + 
+			"  from bs_card card\r\n" + 
+			"  left join md_unit unit\r\n" + 
+			"    on unit.id = card.unitid\r\n" + 
+			" where card.bs_cz_time is null\r\n" + 
+			" group by card.unitid, unit.name, unit.code\r\n" + 
+			" order by \"分数\" desc,unit.code asc;";
+	
+	public Map<String, Object> mapvalue() {
+		Map<String, Object> query2 = new HashMap<>();
+		initMap();
+		for (String key : query.keySet()) {
+			template.query(query.get(key), rs -> {
+				query2.put(key, rs.getObject(1));
+			});
+		}
+		return query2;
+	}
+
+	public void initMap() {
+		query.put("财务入账及时性", caiwjsx);
+		query.put("是否管理责任到人", shifzrdr);
+		query.put("执行率", zhixl);
+		query.put("费用节约率", feiyl);
+		query.put("办公用房整体超标情况", bangyfzhengtqk);
+		query.put("单车运行平均费用率", dancyxpjfyl);
+		query.put("总费用超定额率", feiycedl);
+		query.put("办公设备共享率（打印机）", bangsbgxl);
+		query.put("使用年限执行率", shiynxzxl);
+		query.put("办公设备国产化率", bangsbgchl);
+		query.put("办公软件国产化率", bangrjgchl);
+
+	}
+
+
+
+}

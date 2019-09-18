@@ -1,0 +1,10 @@
+package ldrsz.datashow;
+
+import com.jiuqi.ldrsz.datashow.service.ShowService;
+
+public class ShowServiceTest {
+	
+	public static void main(String[] args) {
+		ShowService showService = new ShowService();
+	}
+}

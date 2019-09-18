@@ -1,0 +1,93 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.DoubleAdder;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Carcost;
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.ClassType;
+import com.jiuqi.ldrsz.datainitial.entiy.Plan;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+
+/**
+ * 总费用超定额率
+ * @author goukunlin
+ *
+ */
+public class ZongfycdelKpi implements IKpi{
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		Unit unit = Unit.class.cast(objects[0]);
+		
+		BaseDataObjects<Plan> plan = new BaseDataProvider().findAll(Plan.class);
+		BaseDataObjects<ClassType> classInfo = new BaseDataProvider().findAll(ClassType.class);
+		BaseDataObjects<Carcost> carcost = new BaseDataProvider().findAll(Carcost.class);
+		
+		List<Object> a = Arrays.asList(new String[] {"车辆"});
+		Set<String> ids = new HashSet<String>();
+		Set<String> types = new HashSet<String>();
+		
+		classInfo.getBaseDataObjects().forEach(e->{
+			if(a.contains(e.getBs_class())){
+				ids.add(e.getId());
+				types.add(e.getBs_class());
+			}
+		});
+		
+		//车辆定额费用
+		DoubleAdder planfeiy = new DoubleAdder();
+		AtomicInteger plansl = new AtomicInteger(0);
+		plan.getBaseDataObjects().forEach(e->{
+			if(e.getUnitid().equals(unit.getId()) && ids.contains(e.getBs_type())) {
+				planfeiy.add(e.getBs_quota());
+				plansl.addAndGet(1);
+				return;
+			}
+		});
+		Double feiy = (float)planfeiy.doubleValue()/plansl.doubleValue();
+		
+		//车辆总费用
+		DoubleAdder zfeiy = new DoubleAdder();
+		//满足条件的车牌号
+		Set<String> chephs = cards.stream().filter(e->types.contains(e.getTypeid())).map(Card::getCar_number).collect(Collectors.toSet());
+		
+		DoubleSummaryStatistics collect = carcost.getBaseDataObjects().stream().filter(e->chephs.contains(e.getCar_number())).collect(Collectors.summarizingDouble(e->e.getCost()));
+//		classInfo.getBaseDataObjects().forEach(e->{
+//			if(a.contains(e.getBs_class())){
+//				ids.add(e.getId());
+//				types.add(e.getBs_class());
+//			}
+//		});
+		
+		//实际运行费用
+		BaseDataObjects<Carcost> carInfo = new BaseDataProvider().findAll(Carcost.class);
+		DoubleAdder actualjiaz = new DoubleAdder();
+		DoubleAdder actualAlljiaz = new DoubleAdder();
+		cards.forEach(e->{
+			if(types.contains(e.getTypeid())) {
+				List<Carcost> findByField = carInfo.findByField("CAR_NUMBER", e.getCar_number());
+				for(Carcost cost : findByField) {
+					if(cost.getCost_type().equals("运行费用")) {
+						actualjiaz.add(cost.getCost());
+					}
+					actualAlljiaz.add(cost.getCost());
+				}
+				actualjiaz.add(e.getArea());
+			}
+		});
+		
+		
+		Double result = (float)(actualjiaz.doubleValue())/actualAlljiaz.doubleValue();
+		
+		return result<=0?5:(result<=30 && result>0)?0:-5;
+	}
+}

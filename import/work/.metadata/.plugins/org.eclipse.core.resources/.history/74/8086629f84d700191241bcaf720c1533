@@ -1,0 +1,11 @@
+package com.jiuqi.ldrsz.datashow.entity;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+
+public class OrgParams {
+	
+	
+	private Unit unit; 
+	
+	
+}

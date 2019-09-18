@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.jiuqi.ldrsz.datainitial.entiy">
+	<class name="Card" table="BS_CARD">
+		<id name="id" type="string" column="id" length="16"/>
+        <property name="revision" type="integer" column="revision" not-null="false"/>
+        <property name="code" type="string" column="code" not-null="false"/>
+        <property name="username" type="string" column="username" not-null="false"/>
+        <property name="unitid" type="string" column="unitid" not-null="false"/>
+        <property name="bs_zc_time" type="timestamp" column="bs_zc_time" not-null="false"/>
+        <property name="cost" type="double" column="cost" not-null="false"/>
+        <property name="typeid" type="string" column="typeid" not-null="false"/>
+        <property name="made" type="character" column="made" not-null="false"/>
+        <property name="area" type="double" column="area" not-null="false"/>
+        <property name="car_number" type="string" column="car_number" not-null="false"/>
+        <property name="created_time" type="timestamp" column="created_time" not-null="false"/>
+        <property name="bs_cw_time" type="timestamp" column="bs_cw_time" not-null="false"/>
+        <property name="bs_qd_time" type="timestamp" column="bs_qd_time" not-null="false"/>
+        <property name="bs_cz_time" type="timestamp" column="bs_cz_time" not-null="false"/>
+        
+	</class>
+</hibernate-mapping>

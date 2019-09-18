@@ -1,0 +1,15 @@
+package com.jiuqi.ldrsz.datainitial.entiy;
+
+public class Unit {
+	
+	String id;
+	
+	String code;
+	
+	String name;
+	
+	String parentg_code;
+	
+	
+	
+}

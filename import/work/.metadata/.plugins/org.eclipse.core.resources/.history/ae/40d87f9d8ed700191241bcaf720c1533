@@ -1,0 +1,25 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+
+public class CaiwrzjsxKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards) {
+		cards.forEach(card->{
+			int diffDays = diffDays(card.getBs_cz_time(), card.getBs_cw_time());
+		});
+		return null;
+	}
+	
+	private int diffDays(Date st, Date end){
+		//TODO 待确认
+		if(st.after(end)) return -1;
+		if(end.getYear()>st.getYear()) return Integer.MAX_VALUE;
+		return end.getMonth() - st.getMonth();
+	}
+}

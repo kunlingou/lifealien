@@ -1,0 +1,27 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datashow.entity.OrgParams;
+
+public class ShifglfzdrKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards,Object...objects) {
+		Unit unit = Unit.class.cast(objects[0]);
+		Set<String> persons = new HashSet<String>();
+		cards.forEach(card->{
+			if(card.getUsername() != null) {
+				persons.add(card.getUsername());
+			}
+		});
+		return new DecimalFormat("0.00").format((float)card0.size()*5/cards.size());
+	}
+
+}

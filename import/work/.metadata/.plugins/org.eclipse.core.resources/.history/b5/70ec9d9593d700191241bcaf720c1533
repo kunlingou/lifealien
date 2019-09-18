@@ -1,0 +1,32 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+
+public class CaiwrzjsxKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards) {
+		List<Card> card0 = new ArrayList<Card>();
+		cards.forEach(card->{
+			int diffDays = diffDays(card.getBs_cz_time(), card.getBs_cw_time());
+			if(diffDays>=0 && diffDays<=30) {
+				card0.add(card);
+			}
+		});
+		return new DecimalFormat("0.00").format((float)card0.size()*5/cards.size());
+	}
+	
+	private int diffDays(Date st, Date end){
+		//TODO 待确认
+		if(st == null || end == null) return -1;
+		return (int) ((st.getTime() - end.getTime()) / (1000*3600*24));
+//		if(st.after(end)) return -1;
+//		if(end.getYear()>st.getYear()) return Integer.MAX_VALUE;
+//		return (end.getMonth() - st.getMonth())*30;
+	}
+}

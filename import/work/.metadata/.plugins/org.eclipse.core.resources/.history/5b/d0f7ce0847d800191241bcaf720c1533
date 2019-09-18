@@ -1,0 +1,73 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.DoubleAdder;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+import com.jiuqi.ldrsz.datainitial.entiy.ClassType;
+import com.jiuqi.ldrsz.datainitial.entiy.Plan;
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataObjects;
+import com.jiuqi.ldrsz.datainitial.provider.BaseDataProvider;
+
+/**
+ * 费用节约率
+ * @author goukunlin
+ *
+ */
+public class Feiyjyl implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		Unit unit = Unit.class.cast(objects[0]);
+		
+		//便携式计算机
+		Set<String> a2 = new HashSet<>();
+		a2.add("3E608FDBF0F141D5B5D71DA8A173441A");
+		
+		BaseDataObjects<ClassType> classInfo = new BaseDataProvider().findAll(ClassType.class);
+		List<Object> a = Arrays.asList(new String[] {"3E608FDBF0F141D5B5D71DA8A173441A"});
+		Set<String> ids = new HashSet<String>();
+		Set<String> types = new HashSet<String>();
+		
+		Double actZongfl = 0.00;
+		
+		classInfo.getBaseDataObjects().forEach(e->{
+			if(a.contains(e.getBs_class())){
+				ids.add(e.getId());
+				types.add(e.getBs_class());
+				return;
+			}
+		});
+		
+		//价格标准上限
+		DoubleAdder jiaz = new DoubleAdder();
+		BaseDataObjects<Plan> planInfo = new BaseDataProvider().findAll(Plan.class);
+		planInfo.getBaseDataObjects().forEach(e->{
+			if(e.getUnitid().equals(unit.getId()) && ids.contains(e.getBs_type())) {
+				jiaz.add(e.getBs_limit());
+				return;
+			}
+		});
+		
+		//实际价值
+		DoubleAdder actualJiaz = new DoubleAdder();
+		//实际数量
+		AtomicInteger actualNum = new AtomicInteger(0);
+		cards.forEach(e->{
+			if(types.contains(e.getTypeid())) {
+				actualNum.addAndGet(1);
+				actualJiaz.add(e.getCost());
+			}
+		});
+		
+		double result =(float)actualJiaz.doubleValue()/(jiaz.doubleValue() * actualNum.get());
+		
+		return (result<=0.8)?5:(result<=1)?3:0;
+	}
+
+}

@@ -1,0 +1,29 @@
+package com.jiuqi.ldrsz.datashow.entity;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Unit;
+import com.jiuqi.ldrsz.datashow.kpi.CaiwrzjsxKpi;
+
+public class OrgParams {
+	
+	Map<String, Object> params = new HashMap<>();
+	
+	
+	private Unit unit; 
+	
+	
+	public OrgParams(Unit unit) {
+		this.unit = unit;
+	}
+	
+	public Object get(String name) {
+		return params.get(name);
+	}
+	
+	@SuppressWarnings("unlikely-arg-type")
+	public Object getCaiwrzjsx() {
+		return params.get(CaiwrzjsxKpi.class.getSimpleName());
+	}
+}

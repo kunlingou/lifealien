@@ -1,0 +1,19 @@
+package com.jiuqi.ldrsz.datashow.kpi;
+
+import java.util.List;
+
+import com.jiuqi.ldrsz.datainitial.entiy.Card;
+
+/**
+ * 办公设备国产化率
+ * @author goukunlin
+ *
+ */
+public class BangsbgchlKpi implements IKpi{
+
+	@Override
+	public Object execute(List<Card> cards, Object... objects) {
+		return null;
+	}
+
+}
