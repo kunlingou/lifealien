@@ -149,3 +149,25 @@ set VAR_VM_ARGUMENTS="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=7
 endlocal
 ```
 
+### 自动备份
+
+```
+set "dbname=RMDX"
+set "dbword=RMDX"
+d:
+cd d:\background\sql
+
+: exp sj10/sj10@orcl file=sj10.dmp
+: exp RMDX/RMDX file=RMDX.dmp owner=RMDX
+expdp %dbname%/%dbword% schemas=%dbname% directory=exp_dir dumpfile=%dbname%.dump
+
+: cd d:\background
+c:
+cd C:\Program Files\WinRAR 
+rar a d:\background\extoracle\%dbname%.rar -ag d:\background\sql
+d:
+cd d:\background\sql
+
+del *.* /q
+```
+

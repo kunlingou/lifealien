@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -23,6 +23,8 @@
 </script>
 </head>
 <body>
+	<div>${pageContext.request.contextPath }</div>
+	<div>${itemsList }</div>
 	<form name="itemsForm" method="post">
 		查询条件：
 		<table width="100%" border=1>
@@ -34,14 +36,14 @@
 				
 			</tr>
 		</table>
-		商品列表：
+		用户列表：
 		<table width="100%" border=1>
 			<tr>
 				<td>选择</td>
-				<td>商品名称</td>
-				<td>商品价格</td>
-				<td>生产日期</td>
-				<td>商品描述</td>
+				<td>用户名</td>
+				<td>密码</td>
+				<td>年龄</td>
+				<td>住址</td>
 				<td>操作</td>
 			</tr>
 			<c:forEach items="${itemsList }" var="item">
