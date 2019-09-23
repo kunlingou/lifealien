@@ -18,6 +18,8 @@
         select *
         from t_librarian
         where 1=1
-            and id = #{id} and user_name = #{name}
+            <!-- and id = #{id} and user_name = #{name} -->
+        <!-- #{id} 引用变量，变量名为id; ${11}引用固定值，值为11 -->
+        and id like '%'+#{id}
     </select>
 </mapper>
