@@ -1,55 +1,59 @@
 package com.kunlinr.mybatis.entity;
 
+/**
+ * @author kunlingou
+ * @date 2019/09/24
+ */
 public class Librarian {
-	
-	private Integer id;
-	
-	private String userName;
-	
-	private String password;
-	
-	private Integer age;
-	
-	private String position;
-	
-	public Integer getid() {
-		return id;
-	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    private Integer id;
 
-	public String getUserName() {
-		return userName;
-	}
+    private String userName;
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+    private String password;
 
-	public String getPassword() {
-		return password;
-	}
+    private Integer age;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    private String position;
 
-	public Integer getAge() {
-		return age;
-	}
+    public Integer getid() {
+        return id;
+    }
 
-	public void setAge(Integer age) {
-		this.age = age;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getPosition() {
-		return position;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public void setPosition(String position) {
-		this.position = position;
-	}
-	
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
 }
