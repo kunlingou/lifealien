@@ -66,3 +66,6 @@ D:\app\jdk\jdk1.8.0_162\bin\javaw.exe
 
 ![1568773689994](C:\Users\KUNLIN~1\AppData\Local\Temp\1568773689994.png)
 
+### xsd离线约束
+
+- Window-Preference-XML Catalog-User Specified Entries 
