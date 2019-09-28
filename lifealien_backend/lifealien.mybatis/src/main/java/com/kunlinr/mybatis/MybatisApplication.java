@@ -14,9 +14,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.kunlinr.mybatis.dao")
 public class MybatisApplication {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         SpringApplication.run(MybatisApplication.class, args);
     }

@@ -7,11 +7,11 @@
 
 ```bash
 cd [相对路径或绝对路径]
-: cd 特殊字符
-cd ~[用户名] / cd : 当前登录用户主目录
-cd - : 上次目录
-cd . : 当前目录
-cd . : 上级目录
+# cd 特殊字符
+cd ~[用户名] / cd # 当前登录用户主目录
+cd - # 上次目录
+cd . # 当前目录
+cd . # 上级目录
 ```
 
 ### pwd
@@ -19,8 +19,8 @@ cd . : 上级目录
 - Print Working Directory
 
 ```bash
-whoami : 当前登录用户
-pwd : 当前所在目录
+whoami # 当前登录用户
+pwd # 当前所在目录
 ```
 
 ### ls
@@ -62,9 +62,9 @@ pwd : 当前所在目录
 - make directories ，创建新目录。
 - mkdir [-mp] 目录名
 
-```
--m : 手动配置权限
--p : 递归创建目录
+```bash
+-m # 手动配置权限
+-p # 递归创建目录
 mkdir -m 711 test2
 mkdir -p lm/movie/jp/cangls
 ```
@@ -74,7 +74,37 @@ mkdir -p lm/movie/jp/cangls
 - remove empty directories，删除空目录 
 - rmdir [-p] 目录名
 
-```
+```bash
 rmdir -p lm/movie/jp/cangls
 ```
+
+### touch
+
+- 创建文件，修改文件的时间参数 。
+- touch [选项] 文件名
+- 选项：
+
+```
+-a：只修改文件的访问时间；
+-c：仅修改文件的时间参数（3 个时间参数都改变），如果文件不存在，则不建立新文件。
+-d：后面可以跟预修订的日期，而不用当前的日期，即把文件的 atime 和 mtime 时间改为指定的时间。
+-m：只修改文件的数据修改时间。
+-t：命令后面可以跟欲修订的时间，而不用目前的时间，时间书写格式为 YYMMDDhhmm。
+```
+
+```bash
+touch bols # 建立名为 bols 的空文件
+ll --time=atime bols # 查看访问时间
+touch bols
+ll --time=atime bols # 访问时间变化
+
+touch -d "2017-05-04 15:44" bols # 修改 bols 文件的 atime 和 mtime
+ll bols; ll --time=atime bols; ll --time=ctime bols # ctime更新为当前服务器的时间
+```
+
+### 时间参数
+
+- 访问时间（Access Time，简称 atime）：只要文件的内容被读取，访问时间就会更新。例如，使用 cat 命令可以查看文件的内容，此时文件的访问时间就会发生改变。
+- 数据修改时间（Modify Time，简称 mtime）：当文件的内容数据发生改变，此文件的数据修改时间就会跟着相应改变。
+- 状态修改时间（Change Time，简称 ctime）：当文件的状态发生变化，就会相应改变这个时间。比如说，如果文件的权限或者属性发生改变，此时间就会相应改变。
 

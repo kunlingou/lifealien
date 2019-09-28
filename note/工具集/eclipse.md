@@ -64,7 +64,7 @@ D:\app\jdk\jdk1.8.0_162\bin\javaw.exe
 
 - 修改图中映射关系即可
 
-![1568773689994](C:\Users\KUNLIN~1\AppData\Local\Temp\1568773689994.png)
+![1568773689994](https://img2018.cnblogs.com/blog/1722725/201909/1722725-20190924185750339-1701582381.png)
 
 ### xsd离线约束
 
