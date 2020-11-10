@@ -1,0 +1,35 @@
+{
+    "const": {
+        "search_1": "韩国女团"
+    },
+    "actions": [
+        {
+            "type": "open_browser",
+            "content": "default"
+        },
+        {
+            "type": "open_page",
+            "content": "http://www.baidu.com/"
+        },
+        {
+            "type": "input",
+            "key": "#kw",
+            "content": "韩国女团"
+        },
+        {
+            "type": "delay",
+            "content": "2"
+        },
+        {
+            "type": "click",
+            "key": "#su"
+        },
+        {
+            "type": "delay",
+            "content": "2"
+        },
+        {
+            "type": "close_browser"
+        }
+    ]
+}

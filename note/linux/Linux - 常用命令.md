@@ -108,3 +108,10 @@ ll bols; ll --time=atime bols; ll --time=ctime bols # ctime更新为当前服务
 - 数据修改时间（Modify Time，简称 mtime）：当文件的内容数据发生改变，此文件的数据修改时间就会跟着相应改变。
 - 状态修改时间（Change Time，简称 ctime）：当文件的状态发生变化，就会相应改变这个时间。比如说，如果文件的权限或者属性发生改变，此时间就会相应改变。
 
+### yum
+
+```
+yum install net-tools //ifconfig
+yum install iptables-services //防火墙
+```
+

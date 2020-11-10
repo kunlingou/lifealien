@@ -1,0 +1,19 @@
+{
+    "const": {
+        "search_1": "韩国女团"
+    },
+    "actions": [
+        {
+            "type": "open_browser",
+            "content": "default"
+        },
+        {
+            "type": "open_page",
+            "content": "https://www.douyu.com/g_JX3"
+        },
+        {
+            "type": "delay",
+            "content": "2"
+        }
+    ]
+}

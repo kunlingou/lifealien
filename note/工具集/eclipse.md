@@ -70,9 +70,16 @@ D:\app\jdk\jdk1.8.0_162\bin\javaw.exe
 
 - Window-Preference-XML Catalog-User Specified Entries 
 
+```
+D:\ide\xsd\dubbo.xsd
+NameSpace Name
+http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+```
+
 ## 常用组件
 
 ### 阿里p3c
 
 - 代码规范检查插件p3c，是根据《阿里巴巴Java开发手册》转化而成的自动化插件。 
 - 参考链接：<https://www.cnblogs.com/lsysy/p/9954785.html> 
+

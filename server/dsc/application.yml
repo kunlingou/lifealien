@@ -1,0 +1,11 @@
+# Server
+server:
+  port: 8001
+  
+spring:
+  # DB
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/taotao
+    username: root
+    password: 123456
